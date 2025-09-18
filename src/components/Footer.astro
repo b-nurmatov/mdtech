@@ -1,0 +1,40 @@
+---
+import Icon from "./Icon.astro";
+
+const socialMedia = [
+    { name: "telegram", href: "https://t.me/your_channel" },
+    { name: "instagram", href: "https://instagram.com/your_page" },
+    { name: "facebook", href: "https://facebook.com/your_page" },
+];
+---
+
+<footer class="w-full flex justify-center items-center bg-slate-950 text-white">
+    <div
+        class="w-full lg:container px-4 py-10 lg:px-8 flex flex-col lg:flex-row-reverse gap-8 justify-between lg:items-center"
+    >
+        <div class="flex flex-col lg:flex-row lg:items-center gap-8">
+            <a
+                href="tel: +998715430987"
+                class="text-2xl/[100%] text-white font-bold hover:text-white/70 active:text-white/60 flex gap-1 items-center"
+            >
+                <Icon name="phone" class="size-6" />
+                <span>+998 71 543 09 87</span>
+            </a>
+            <ul class="flex gap-2 flex-row items-center">
+                {
+                    socialMedia.map((item) => (
+                        <li>
+                            <a
+                                href={item.href}
+                                class="text-accent-green hover:text-accent-green-dark active:text-accent-green-light"
+                            >
+                                <Icon name={item.name} class="size-10" />
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+        <p class="text-white/70 text-base uppercase">© MDMarketing 2025</p>
+    </div>
+</footer>

@@ -1,0 +1,42 @@
+---
+import Icon from "./Icon.astro";
+
+const menu = [
+    { label: "О компании", href: "/about" },
+    { label: "Оборудование", href: "/equipment" },
+    { label: "Решения", href: "/solutions" },
+    { label: "Проекты", href: "/projects" },
+    { label: "Акции", href: "/promotions" },
+    { label: "Карьера", href: "/careers" },
+    { label: "Блог", href: "/blog" },
+    { label: "Контакты", href: "/contacts" },
+];
+---
+
+<nav class="w-full flex justify-center items-center bg-gray-900 text-white">
+    <div
+        class="w-full lg:container px-4 py-10 lg:px-8 flex flex-col lg:flex-row gap-8 justify-between"
+    >
+        <ul class="flex flex-col lg:flex-row gap-6">
+            {
+                menu.map((item) => (
+                    <li>
+                        <a
+                            href={item.href}
+                            class="text-base uppercase font-semibold hover:underline active:text-white/70"
+                        >
+                            {item.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <a
+            href="#"
+            class="text-base text-white/70 font-semibold underline hover:text-white active:text-white/70 flex gap-1 items-center"
+        >
+            <Icon name="git-merge-fill" class="size-4" />
+            <span>Карта сайта</span>
+        </a>
+    </div>
+</nav>
