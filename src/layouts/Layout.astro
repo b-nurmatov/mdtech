@@ -1,13 +1,49 @@
+---
+import "../assets/styles.css";
+
+import TopMenu from "../components/TopMenu.astro";
+import MainMenu from "../components/MainMenu.astro";
+import FooterServicesMenu from "../components/FooterServicesMenu.astro";
+import FooterNav from "../components/FooterNav.astro";
+import Footer from "../components/Footer.astro";
+---
+
 <!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="preload"
+            href="/sprite.svg"
+            as="image"
+            type="image/svg+xml"
+        />
+        <script src="../assets/scripts.js"></script>
         <meta name="generator" content={Astro.generator} />
-        <title>Astro Basics</title>
+        <title>{Astro.props.title}</title>
     </head>
-    <body>
-        <slot />
+    <body class="text-emph-high">
+        <script>
+            if (!document.querySelector("svg[sprite]")) {
+                fetch("/sprite.svg")
+                    .then((r) => r.text())
+                    .then((svg) => {
+                        const div = document.createElement("div");
+                        div.hidden = true;
+                        div.innerHTML = svg;
+                        document.body.appendChild(div);
+                    });
+            }
+        </script>
+        <TopMenu />
+        <MainMenu />
+        <main class="w-full flex flex-col items-center">
+            <slot />
+        </main>
+        <FooterServicesMenu />
+        <FooterNav />
+        <Footer />
     </body>
 </html>
