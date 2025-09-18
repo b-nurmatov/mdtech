@@ -1,0 +1,54 @@
+---
+import Icon from "./Icon.astro";
+
+const menu = [
+    { label: "О компании", href: "/about" },
+    { label: "Партнёры", href: "/text-page" },
+    { label: "Карьера", href: "/text-page" },
+    { label: "Блог", href: "/blog" },
+    { label: "Контакты", href: "/contacts" },
+];
+
+const socialMedia = [
+    { name: "telegram", href: "https://t.me/your_channel" },
+    { name: "instagram", href: "https://instagram.com/your_page" },
+    { name: "facebook", href: "https://facebook.com/your_page" },
+];
+---
+
+<div
+    class="w-full h-topMenu bg-surface-3 hidden xl:flex justify-center items-center"
+>
+    <div
+        class="w-full lg:container px-4 lg:px-8 flex justify-between items-center"
+    >
+        <ul class="flex gap-3 lg:gap-6 flex-row items-baseline">
+            {
+                menu.map((item) => (
+                    <li>
+                        <a
+                            href={item.href}
+                            class="text-base/[100%] text-emph-medium hover:underline active:text-emph-high"
+                        >
+                            {item.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+        <ul class="flex gap-2 flex-row items-center">
+            {
+                socialMedia.map((item) => (
+                    <li>
+                        <a
+                            href={item.href}
+                            class="text-emph-low hover:text-accent-green active:text-accent-green-dark"
+                        >
+                            <Icon name={item.name} class="size-8" />
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</div>
