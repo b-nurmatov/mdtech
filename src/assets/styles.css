@@ -1,1 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+    --default-font-family: "Nunito Sans", sans-serif;
+
+    --color-accent-green: rgb(93, 189, 61);
+    --color-accent-green-light: rgb(145, 221, 120);
+    --color-accent-green-dark: rgb(65, 159, 34);
+    --color-accent-blue: rgb(96, 106, 224);
+    --color-accent-red: rgb(222, 73, 99);
+    --color-emph-high: rgb(15, 23, 43);
+    --color-emph-medium: rgb(49, 65, 88);
+    --color-emph-low: rgb(144, 161, 185);
+    --color-border: rgb(202, 213, 226);
+    --color-surface-1: rgb(255, 255, 255);
+    --color-surface-2: rgb(241, 245, 249);
+    --color-surface-3: rgb(226, 232, 240);
+    --color-surface-4: var(--color-slate-300);
+
+    --spacing-topMenu: 3rem;
+
+    --spacing-mainMenu-desktop: 6rem;
+    --spacing-mainMenu: 3rem;
+    --spacing-mainMenu-nav: calc(100dvh - var(--spacing-mainMenu));
+    --spacing-mainMenu-nav-desktop: calc(
+        100dvh - var(--spacing-mainMenu-desktop)
+    );
+
+    --radius-generic: 0.75rem;
+
+    --text-h1: 3rem;
+    --text-h2: 2.5rem;
+    --text-h3: 2.25rem;
+    --text-h4: 1.88rem;
+    --text-h5: 1.5rem;
+    --text-h6: 1.25rem;
+    --text-p-large: 1.13rem;
+    --text-p: 1rem;
+    --text-p-small: 0.88rem;
+
+    --leading-h1: 100%;
+    --leading-h2: 100%;
+    --leading-h3: 110%;
+    --leading-h4: 120%;
+    --leading-h5: 130%;
+    --leading-h6: 140%;
+    --leading-p-large: 160%;
+    --leading-p: 150%;
+    --leading-p-small: 142.86%;
+
+    --font-weight-h1: 800;
+    --font-weight-h2: 700;
+    --font-weight-h3: 700;
+    --font-weight-h4: 700;
+    --font-weight-h5: 700;
+    --font-weight-h6: 700;
+}
+
+.m-h1,
+.m-h2,
+.m-h3,
+.m-h4,
+.m-h5,
+.m-h6 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.m-p,
+.m-p-large,
+.m-p-small {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.table {
+    table-layout: fixed;
+}
+
+.table td {
+    padding: 0.75rem 0.25rem 0.75rem 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+    word-wrap: break-word;
+}
+.table td:first-child {
+    padding-left: 0;
+}
+.table td:last-child {
+    padding-right: 0;
+}
+
+.table thead td {
+    color: var(--color-emph-medium);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 150%;
+}
+
+.table tr {
+    border-bottom: 0.0625rem solid var(--color-surface-4);
+}
