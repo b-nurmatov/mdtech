@@ -1,0 +1,161 @@
+---
+import Icon from "./Icon.astro";
+
+import equipmentMenu from "../data/equipmentMenu.json";
+import servicesMenu from "../data/servicesMenu.json";
+
+const nav = [
+    {
+        label: "Оборудование",
+        icon: "share_poll",
+        href: "/equipment",
+        submenu: {
+          object: equipmentMenu,
+          targetId: "submenu-1",
+        },
+        showOnDesktop: true,
+    },
+    {
+        label: "Услуги",
+        icon: "new_custom19",
+        href: "/services-list",
+        submenu: {
+          object: servicesMenu,
+          targetId: "submenu-2",
+        },
+        showOnDesktop: true,
+    },
+    {
+        label: "Решения",
+        icon: "new_custom63",
+        href: "/solutions",
+        submenu: null,
+        showOnDesktop: true,
+    },
+    {
+        label: "Проекты",
+        icon: "record",
+        href: "/projects",
+        submenu: null,
+        showOnDesktop: true,
+    },
+    {
+        label: "Акции",
+        icon: "announcement",
+        href: "/text-page",
+        submenu: null,
+        showOnDesktop: true,
+    },
+    {
+        label: "О компани",
+        icon: "announcement",
+        href: "/about",
+        submenu: null,
+        showOnDesktop: false,
+    },
+    {
+        label: "Партнёры",
+        icon: "announcement",
+        href: "/text-page",
+        submenu: null,
+        showOnDesktop: false,
+    },
+    {
+        label: "Карьера",
+        icon: "announcement",
+        href: "/text-page",
+        submenu: null,
+        showOnDesktop: false,
+    },
+    {
+        label: "Блог",
+        icon: "announcement",
+        href: "/blog",
+        submenu: null,
+        showOnDesktop: false,
+    },
+    {
+        label: "Контакты",
+        icon: "announcement",
+        href: "/contacts",
+        submenu: null,
+        showOnDesktop: false,
+    },
+];
+---
+
+<div class="w-full bg-surface-1 sticky top-0 flex justify-center h-mainMenu 2xl:h-mainMenu-desktop border-surface-4 border-t border-b">
+    <div class="w-full lg:container px-4 lg:px-8 flex items-center gap-8">
+        <div class="flex xl:hidden flex-1 xl:flex-none items-center">
+            <button class="text-emph-medium data-[dropped]:text-accent-green-dark xl:hidden" data-mainMenu-toggle data-targetId="mainMenu-nav">
+                <Icon name="menu" class="size-6"></Icon>
+            </button>
+        </div>
+        <div class="flex justify-center items-center">
+            <a href="/">
+                <img src="/logo.svg" alt="" class="h-8 2xl:h-16">
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <nav id="mainMenu-nav" class="w-dvw xl:w-auto h-mainMenu-nav xl:h-auto absolute xl:static left-0 top-mainMenu mt-[-1px] z-30 bg-surface-1 xl:bg-transparent overflow-y-auto hidden xl:flex data-[dropped]:flex flex-col flex-1 xl:justify-end">
+            <ul class="flex flex-col xl:flex-row xl:items-center divide-surface-4 divide-y xl:divide-y-0">
+                {
+                    nav.map((item) => (
+                        <li class=`${item.showOnDesktop ? '' : 'xl:hidden'}`>
+                            {
+                            item.submenu ? (
+                            <p class="flex items-center gap-2 uppercase text-base/[100%] 2xl:text-xl/[100%] font-semibold text-emph-medium sticky top-0 bg-surface-1 xl:bg-transparent p-4 p-4 xl:px-4 xl:py-0 xl:h-mainMenu hover:text-accent-green-dark active:text-accent-green border-surface-4 data-[dropped]:border-b cursor-pointer group" data-submenu-toggle data-targetId={item.submenu.targetId}>
+                                <Icon name={item.icon} class="size-5 2xl:size-6 group-[[data-dropped]]:text-accent-green-dark" />
+                                <span>{item.label}</span>
+                                <Icon name="chevron-down" class="size-5 2xl:size-6 -ml-1 group-[[data-dropped]]:-scale-100" />
+                            </p>
+
+                            <!-- Submenu -->
+                            <div id={item.submenu.targetId} class="w-full xl:h-mainMenu-nav-desktop hidden data-[dropped]:flex flex-col justify-start items-center bg-surface-1 xl:absolute xl:left-0 xl:top-mainMenu 2xl:top-mainMenu-desktop xl:overflow-y-auto">
+                                <div class="w-full xl:container grid grid-cols-1 xl:grid-cols-4 gap-x-4 xl:gap-x-8 gap-y-8 xl:gap-y-16 p-4 xl:p-8 xl:pb-24">
+                                    {
+                                        item.submenu.object.map(submenu => (
+                                        <div class="flex flex-col gap-2 xl:gap-4">
+                                            <p class="text-lg/[100%] font-bold text-accent-green-dark">{submenu.title.label}</p>
+                                            <ul class="flex flex-col gap-2 xl:gap-4">
+                                                {submenu.list.map(subitem => (
+                                                <li>
+                                                    <a href="#" class="text-base/[100%] text-emph-high hover:underline hover:text-accent-green-dark active:text-accent-green">{subitem.label}</a>
+                                                </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                            <!-- /Submenu -->
+
+                            ) : (
+                            <a href={item.href} class="flex items-center gap-2 uppercase text-base/[100%] 2xl:text-xl/[100%] font-semibold text-emph-medium sticky top-0 bg-surface-1 xl:bg-transparent p-4 xl:px-4 xl:py-0 xl:h-mainMenu hover:text-accent-green-dark active:text-accent-green">
+                                <Icon name={item.icon} class="size-5 2xl:size-6" />
+                                <span>{item.label}</span>
+                            </a>
+                            )
+                            }
+
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+        <!-- /Navigation -->
+
+        <div class="flex flex-1 xl:flex-none justify-end items-center">
+            <a
+                href="tel: +998715430987"
+                class="flex justify-center items-center gap-2 text-accent-green-dark xl:text-white xl:bg-accent-green hover:bg-accent-green-dark active:bg-accent-green-light xl:py-1 xl:pl-2 xl:pr-3 rounded-md text-base/[100%] 2xl:text-xl/[100%] font-bold"
+            >
+                <Icon name="phone" class="size-6" />
+                <span class="hidden sm:inline">+998 71 543 09 87</span>
+            </a>
+        </div>
+
+    </div>
+</div>
