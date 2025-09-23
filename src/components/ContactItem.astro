@@ -1,0 +1,31 @@
+---
+import Icon from "./Icon.astro";
+
+const { data } = Astro.props;
+---
+
+<div class="flex items-center gap-4 py-3 border-b border-surface-4">
+    <Icon name={data.icon} class={"size-10 " + data.iconColorClass} />
+    <div>
+        <h5 class="text-sm font-bold">{data.title}</h5>
+        {
+            data.href ? (
+                <a
+                    href={data.href}
+                    class="text-sm underline hover:text-accent-green-dark active:text-accent-green"
+                >
+                    {data.label}
+                </a>
+            ) : (
+                <p class="text-sm">{data.label}</p>
+            )
+        }
+        {
+            data.caption ? (
+                <p class="text-sm italic text-emph-medium">{data.caption}</p>
+            ) : (
+                ""
+            )
+        }
+    </div>
+</div>

@@ -1,0 +1,209 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ContactItem from "../components/ContactItem.astro";
+import pages from "../data/pages.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.contacts.label,
+        href: pages.contacts.href,
+    },
+];
+
+const contactsTashkent = {
+    phoneSales: {
+        title: "Отдел продаж",
+        label: "+998 71 987 65 43",
+        href: "tel: +998719876543",
+        caption: "С 09:00 до 18:00",
+        icon: "call",
+        iconColorClass: "text-accent-green",
+    },
+    phoneTechSupport: {
+        title: "Техническая поддержка",
+        label: "+998 71 987 65 43",
+        href: "tel: +998719876543",
+        caption: "Круглосуточно",
+        icon: "call",
+        iconColorClass: "text-accent-green",
+    },
+    telegram: {
+        title: "Telegram",
+        label: "@mdtech",
+        href: "https://t.me/",
+        caption: "",
+        icon: "share_post",
+        iconColorClass: "text-accent-blue",
+    },
+    email: {
+        title: "E-mail",
+        label: "mail@mdtech.uz",
+        href: "mailto: mail@mdtech.uz",
+        caption: "",
+        icon: "email",
+        iconColorClass: "text-accent-red",
+    },
+    address: {
+        title: "Адрес",
+        label: "Юнусабадский район, ул. Амира Темура, 25, офис 4",
+        href: "",
+        caption: "",
+        icon: "new_account",
+        iconColorClass: "text-accent-green",
+    },
+    schedule: {
+        title: "График работы",
+        label: "Пн-Пт с 09:00 до 18:00",
+        href: "",
+        caption: "",
+        icon: "new_event",
+        iconColorClass: "text-accent-blue",
+    },
+};
+
+const contactsSamarkand = {
+    phoneSales: {
+        title: "Отдел продаж",
+        label: "+998 66 123 45 67",
+        href: "tel: +998661234567",
+        caption: "С 09:00 до 18:00",
+        icon: "call",
+        iconColorClass: "text-accent-green",
+    },
+    phoneTechSupport: {
+        title: "Техническая поддержка",
+        label: "+998 66 123 45 67",
+        href: "tel: +998661234567",
+        caption: "Круглосуточно",
+        icon: "call",
+        iconColorClass: "text-accent-green",
+    },
+    telegram: {
+        title: "Telegram",
+        label: "@mdtech",
+        href: "https://t.me/",
+        caption: "",
+        icon: "share_post",
+        iconColorClass: "text-accent-blue",
+    },
+    email: {
+        title: "E-mail",
+        label: "mail@mdtech.uz",
+        href: "mailto: mail@mdtech.uz",
+        caption: "",
+        icon: "email",
+        iconColorClass: "text-accent-red",
+    },
+    address: {
+        title: "Адрес",
+        label: "ул. Рудаки, 123, офис 45",
+        href: "",
+        caption: "",
+        icon: "new_account",
+        iconColorClass: "text-accent-green",
+    },
+    schedule: {
+        title: "График работы",
+        label: "Пн-Пт с 09:00 до 18:00",
+        href: "",
+        caption: "",
+        icon: "new_event",
+        iconColorClass: "text-accent-blue",
+    },
+};
+---
+
+<Layout title="Контакты">
+    <div
+        class="w-full flex flex-col items-center py-8 border-b border-surface-4 sm:min-h-80 bg-linear-0 from-surface-1 to-surface-3 relative overflow-hidden"
+    >
+        <Container>
+            <Breadcrumbs list={breadcrumbs} />
+        </Container>
+        <Container>
+            <h1 class="h1 uppercase">Контакты</h1>
+            <p class="paragraph">
+                Мы всегда на связи. Свяжитесь с нами удобным для вас <br
+                />способом, чтобы обсудить ваш проект или получить консультацию.
+            </p>
+        </Container>
+        <img
+            src="/contacts/contacts_page-hero.webp"
+            alt=""
+            class="hidden lg:block absolute top-0 lg:right-[calc((100%-64rem)/2)] xl:right-[calc((100%-80rem)/2)] 2xl:right-[calc((100%-96rem)/2)] w-[25rem] xl:w-[33rem] h-full object-contain xl:object-cover"
+        />
+    </div>
+    <Container class="py-8 lg:py-16 flex flex-col gap-4">
+        <div class="mb-4">
+            <h2 class="h2">Ташкент</h2>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+            >
+                <ul class="flex flex-col">
+                    {
+                        Object.values(contactsTashkent).map((item) => (
+                            <li>
+                                <ContactItem data={item} />
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div
+                    class="relative overflow-hidden lg:col-start-2 lg:col-end-4 rounded-generic border border-surface-4 max-sm:aspect-video"
+                >
+                    <a
+                        href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps"
+                        style="color:#eee;font-size:12px;position:absolute;top:0px;"
+                        >Ташкент</a
+                    ><a
+                        href="https://yandex.uz/maps/geo/1750709438/?ll=69.399357%2C41.233683&utm_medium=mapframe&utm_source=maps&z=11.14"
+                        style="color:#eee;font-size:12px;position:absolute;top:14px;"
+                        >Яндекс Карты — транспорт, навигация, поиск мест</a
+                    ><iframe
+                        src="https://yandex.uz/map-widget/v1/?ll=69.399357%2C41.233683&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNzUwNzA5NDM4EhZPyrt6YmVraXN0b24sIFRvc2hrZW50IgoNOY-KQhWgPiVC&z=11.14"
+                        allowfullscreen="true"
+                        class="relative w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="h2">Самарканд</h1>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
+            >
+                <ul class="flex flex-col">
+                    {
+                        Object.values(contactsSamarkand).map((item) => (
+                            <li>
+                                <ContactItem data={item} />
+                            </li>
+                        ))
+                    }
+                </ul>
+                <div
+                    class="relative overflow-hidden lg:col-start-2 lg:col-end-4 rounded-generic border border-surface-4 max-sm:aspect-video"
+                >
+                    <a
+                        href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps"
+                        style="color:#eee;font-size:12px;position:absolute;top:0px;"
+                        >Ташкент</a
+                    ><a
+                        href="https://yandex.uz/maps/geo/1750709438/?ll=69.399357%2C41.233683&utm_medium=mapframe&utm_source=maps&z=11.14"
+                        style="color:#eee;font-size:12px;position:absolute;top:14px;"
+                        >Яндекс Карты — транспорт, навигация, поиск мест</a
+                    ><iframe
+                        src="https://yandex.uz/map-widget/v1/?ll=66.951569%2C39.660101&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgk3NzEyNzc5ODUSF0_Ku3piZWtpc3RvbiwgU2FtYXJxYW5kIgoNoPOFQhUbnh5C&z=12.77"
+                        allowfullscreen="true"
+                        class="relative w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+    </Container>
+</Layout>
