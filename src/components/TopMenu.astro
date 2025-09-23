@@ -10,9 +10,17 @@ const menu = [
 ];
 
 const socialMedia = [
-    { name: "telegram", href: "https://t.me/your_channel" },
-    { name: "instagram", href: "https://instagram.com/your_page" },
-    { name: "facebook", href: "https://facebook.com/your_page" },
+    { name: "telegram", href: "https://t.me/your_channel", label: "Telegram" },
+    {
+        name: "instagram",
+        href: "https://instagram.com/your_page",
+        label: "Instagram",
+    },
+    {
+        name: "facebook",
+        href: "https://facebook.com/your_page",
+        label: "Facebook",
+    },
 ];
 ---
 
@@ -43,6 +51,8 @@ const socialMedia = [
                         <a
                             href={item.href}
                             class="text-emph-low hover:text-accent-green active:text-accent-green-dark"
+                            title={item.label}
+                            aria-label={item.label}
                         >
                             <Icon name={item.name} class="size-8" />
                         </a>

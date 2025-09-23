@@ -2,9 +2,17 @@
 import Icon from "./Icon.astro";
 
 const socialMedia = [
-    { name: "telegram", href: "https://t.me/your_channel" },
-    { name: "instagram", href: "https://instagram.com/your_page" },
-    { name: "facebook", href: "https://facebook.com/your_page" },
+    { name: "telegram", href: "https://t.me/your_channel", label: "Telegram" },
+    {
+        name: "instagram",
+        href: "https://instagram.com/your_page",
+        label: "Instagram",
+    },
+    {
+        name: "facebook",
+        href: "https://facebook.com/your_page",
+        label: "Facebook",
+    },
 ];
 ---
 
@@ -16,6 +24,8 @@ const socialMedia = [
             <a
                 href="tel: +998715430987"
                 class="text-2xl/[100%] text-white font-bold hover:text-white/70 active:text-white/60 flex gap-1 items-center"
+                title="Телефон"
+                aria-label="Телефон (позвонить)"
             >
                 <Icon name="phone" class="size-6" />
                 <span>+998 71 543 09 87</span>
@@ -27,6 +37,8 @@ const socialMedia = [
                             <a
                                 href={item.href}
                                 class="text-accent-green hover:text-accent-green-dark active:text-accent-green-light"
+                                title={item.label}
+                                aria-label={item.label}
                             >
                                 <Icon name={item.name} class="size-10" />
                             </a>

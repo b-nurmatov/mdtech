@@ -1,0 +1,62 @@
+{
+  "homepage": {
+    "label": "Главная",
+    "href": "/"
+  },
+  "contacts": {
+    "label": "Контакты",
+    "href": "/contacts"
+  },
+  "about": {
+    "label": "О компании",
+    "href": "/about"
+  },
+  "textPage": {
+    "label": "Текстовая страница",
+    "href": "/text_page"
+  },
+  "equipmentOverview": {
+    "label": "Оборудование",
+    "href": "/equipment_overview"
+  },
+  "equipmentCategory": {
+    "label": "Оборудование. Категория",
+    "href": "/equipment_category"
+  },
+  "equipmentPage": {
+    "label": "Оборудование. Товар",
+    "href": "/equipment_category"
+  },
+  "servicesOverview": {
+    "label": "Услуги",
+    "href": "/services_overview"
+  },
+  "servicePage": {
+    "label": "Оборудование. Товар",
+    "href": "/service_page"
+  },
+  "projectsOverview": {
+    "label": "Проекты",
+    "href": "/projects_overview"
+  },
+  "projectPage": {
+    "label": "Проект",
+    "href": "/project_page"
+  },
+  "solutionsOverview": {
+    "label": "Решения",
+    "href": "/solutions_overview"
+  },
+  "solutionPage": {
+    "label": "Страница решения",
+    "href": "/solution_page"
+  },
+  "blog": {
+    "label": "Блог",
+    "href": "/blog"
+  },
+  "blogArticle": {
+    "label": "Статья блога",
+    "href": "/blog_article"
+  }
+}

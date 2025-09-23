@@ -3,12 +3,13 @@ import Icon from "./Icon.astro";
 
 import equipmentMenu from "../data/equipmentMenu.json";
 import servicesMenu from "../data/servicesMenu.json";
+import pages from "../data/pages.json"
 
 const nav = [
     {
-        label: "Оборудование",
+        label: pages.equipmentOverview.label,
         icon: "share_poll",
-        href: "/equipment",
+        href: pages.equipmentOverview.href,
         submenu: {
           object: equipmentMenu,
           targetId: "submenu-1",
@@ -16,9 +17,9 @@ const nav = [
         showOnDesktop: true,
     },
     {
-        label: "Услуги",
+        label: pages.servicesOverview.label,
         icon: "new_custom19",
-        href: "/services-list",
+        href: pages.servicesOverview.href,
         submenu: {
           object: servicesMenu,
           targetId: "submenu-2",
@@ -26,58 +27,58 @@ const nav = [
         showOnDesktop: true,
     },
     {
-        label: "Решения",
+        label: pages.solutionsOverview.label,
         icon: "new_custom63",
-        href: "/solutions",
+        href: pages.solutionsOverview.href,
         submenu: null,
         showOnDesktop: true,
     },
     {
-        label: "Проекты",
+        label: pages.projectsOverview.label,
         icon: "record",
-        href: "/projects",
+        href: pages.projectsOverview.href,
         submenu: null,
         showOnDesktop: true,
     },
     {
         label: "Акции",
         icon: "announcement",
-        href: "/text-page",
+        href: pages.textPage.href,
         submenu: null,
         showOnDesktop: true,
     },
     {
-        label: "О компани",
+        label: pages.about.label,
         icon: "announcement",
-        href: "/about",
+        href: pages.about.href,
         submenu: null,
         showOnDesktop: false,
     },
     {
         label: "Партнёры",
         icon: "announcement",
-        href: "/text-page",
+        href: pages.textPage.href,
         submenu: null,
         showOnDesktop: false,
     },
     {
         label: "Карьера",
         icon: "announcement",
-        href: "/text-page",
+        href: pages.textPage.href,
         submenu: null,
         showOnDesktop: false,
     },
     {
-        label: "Блог",
+        label: pages.blog.label,
         icon: "announcement",
-        href: "/blog",
+        href: pages.blog.href,
         submenu: null,
         showOnDesktop: false,
     },
     {
-        label: "Контакты",
+        label: pages.contacts.label,
         icon: "announcement",
-        href: "/contacts",
+        href: pages.contacts.href,
         submenu: null,
         showOnDesktop: false,
     },
@@ -151,6 +152,8 @@ const nav = [
             <a
                 href="tel: +998715430987"
                 class="flex justify-center items-center gap-2 text-accent-green-dark xl:text-white xl:bg-accent-green hover:bg-accent-green-dark active:bg-accent-green-light xl:py-1 xl:pl-2 xl:pr-3 rounded-md text-base/[100%] 2xl:text-xl/[100%] font-bold"
+                title="Телефон"
+                aria-label="Телефон (позвонить)"
             >
                 <Icon name="phone" class="size-6" />
                 <span class="hidden sm:inline">+998 71 543 09 87</span>

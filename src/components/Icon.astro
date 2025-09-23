@@ -1,5 +1,5 @@
 ---
-const { name, class: extraClasses = "" } = Astro.props;
+const { name, ariaLabel, class: extraClasses = "" } = Astro.props;
 ---
 
 <svg
@@ -11,6 +11,8 @@ const { name, class: extraClasses = "" } = Astro.props;
     stroke-linecap="round"
     stroke-linejoin="round"
     class={extraClasses}
+    aria-hidden={ariaLabel ? "false" : "true"}
+    aria-label={ariaLabel ? ariaLabel : ""}
 >
     <use type="image/svg+xml" href=`/sprite.svg#${name}`></use>
 </svg>
