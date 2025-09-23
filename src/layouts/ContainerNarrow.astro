@@ -1,3 +1,7 @@
-<div class="w-full lg:container xl:max-w-7xl px-4 xl:px-8">
+---
+const { class: extraClasses = "" } = Astro.props;
+---
+
+<div class={"w-full lg:container xl:max-w-7xl px-4 xl:px-8 " + extraClasses}>
     <slot />
 </div>
