@@ -1,6 +1,23 @@
 ---
-import "../assets/styles.css";
 import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
 ---
 
-<Layout />
+<Layout title="Главная страница">
+    <Container>
+        <div class="slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+            </div>
+        </div>
+        <script>
+            const swiper = new Swiper(".slider", {
+                autoplay: true,
+                wrapperClass: "slider-wrapper",
+                slideClass: "slider-slide",
+            });
+        </script>
+    </Container>
+</Layout>
