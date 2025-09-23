@@ -36,9 +36,10 @@
     --text-h4: 1.88rem;
     --text-h5: 1.5rem;
     --text-h6: 1.25rem;
-    --text-p-large: 1.13rem;
-    --text-p: 1rem;
-    --text-p-small: 0.88rem;
+    --text-paragraph-large: 1.13rem;
+    --text-paragraph: 1rem;
+    --text-paragraph-small: 0.88rem;
+    --text-caption: 0.75rem;
 
     --leading-h1: 100%;
     --leading-h2: 100%;
@@ -46,9 +47,10 @@
     --leading-h4: 120%;
     --leading-h5: 130%;
     --leading-h6: 140%;
-    --leading-p-large: 160%;
-    --leading-p: 150%;
-    --leading-p-small: 142.86%;
+    --leading-paragraph-large: 160%;
+    --leading-paragraph: 150%;
+    --leading-paragraph-small: 142.86%;
+    --leading-caption: 133.33%;
 
     --font-weight-h1: 800;
     --font-weight-h2: 700;
@@ -56,6 +58,37 @@
     --font-weight-h4: 700;
     --font-weight-h5: 700;
     --font-weight-h6: 700;
+}
+
+.h1 {
+    @apply text-[calc(var(--text-h1)*0.6)] sm:text-h1 leading-h1 font-extrabold mt-[1em] mb-[0.5em];
+}
+.h2 {
+    @apply text-[calc(var(--text-h2)*0.6)] sm:text-h2 leading-h2 font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+.h3 {
+    @apply text-[calc(var(--text-h3)*0.6)] sm:text-h3 leading-h3 font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+.h4 {
+    @apply text-[calc(var(--text-h4)*0.6)] sm:text-h4 leading-h4 font-extrabold sm:font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+.h5 {
+    @apply text-[calc(var(--text-h5)*0.7)] sm:text-h5 leading-h5 font-extrabold sm:font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+.h6 {
+    @apply text-[calc(var(--text-h6)*0.75)] sm:text-h6 leading-h6 font-extrabold sm:font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+.paragraph {
+    @apply text-paragraph leading-paragraph mt-[1em] mb-[1em];
+}
+.paragraph-large {
+    @apply text-paragraph-large leading-paragraph-large mt-[1em] mb-[1em];
+}
+.paragraph-small {
+    @apply text-paragraph-small leading-paragraph-small mt-[1em] mb-[1em];
+}
+.caption {
+    @apply text-caption leading-caption my-[1em];
 }
 
 .m-h1,
@@ -68,9 +101,9 @@
     margin-bottom: 0.5em;
 }
 
-.m-p,
-.m-p-large,
-.m-p-small {
+.m-paragraph,
+.m-paragraph-large,
+.m-paragraph-small {
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -102,4 +135,50 @@
 
 .table tr {
     border-bottom: 0.0625rem solid var(--color-surface-4);
+}
+
+ul.list,
+ol.list {
+    font-size: 1rem;
+    line-height: 150%;
+}
+
+ul.list li,
+ol.list li {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-surface-4);
+    box-sizing: border-box;
+    display: flex;
+}
+
+ol.list {
+    list-style: decimal;
+    list-style-position: inside;
+    counter-reset: ol-counter;
+}
+ol.list li {
+    counter-increment: ol-counter;
+}
+ol.list li::before {
+    content: counter(ol-counter) ".";
+    margin-right: 0.5rem;
+    color: var(--color-accent-green-dark);
+    font-size: 1rem;
+    line-height: 150%;
+    font-weight: 700;
+}
+
+ul.list {
+    list-style: disc;
+    list-style-position: inside;
+}
+ul.list li::before {
+    content: "•";
+    margin-top: -0.09375rem;
+    margin-right: 0.5rem;
+    color: var(--color-accent-green-dark);
+    font-size: 1rem;
+    line-height: 150%;
+    font-weight: 700;
 }
