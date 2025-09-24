@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CardSolution from "../components/CardSolution.astro";
+import pages from "../data/pages.json";
+import solutionsList from "../data/solutionsList.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: "Готовые решения",
+        href: pages.solutionsOverview.href,
+    },
+];
+
+const categories = [
+    {
+        label: "Все",
+        current: true,
+    },
+    {
+        label: "ИТ-инфраструктура под ключ (для филиалов/офисов)",
+    },
+    {
+        label: "Облачные решения и резервное копирование",
+    },
+    {
+        label: "Видеоконференцсвязь",
+    },
+    {
+        label: "Серверы и системы хранения данных",
+    },
+    {
+        label: "Сетевая инфраструктура (ЛВС/СКС)",
+    },
+    {
+        label: "Информационная безопасность",
+    },
+    {
+        label: "Беспроводные сети (Wi-Fi)",
+    },
+    {
+        label: "Печать и документооборот",
+    },
+    {
+        label: "Видеонаблюдение и СКУД",
+    },
+];
+---
+
+<Layout>
+    <div
+        class="w-full flex flex-col items-center bg-surface-3 min-h-[36.25rem] py-8 border-b border-surface-4 relative overflow-hidden"
+    >
+        <Container class="z-10">
+            <Breadcrumbs list={breadcrumbs} />
+        </Container>
+        <Container class="z-10">
+            <h1 class="h1 uppercase text-emph-medium max-w-[40rem]">
+                Готовые решения
+            </h1>
+            <p class="paragraph-large max-w-[40rem]">
+                Экономьте время и бюджет с комплексными решениями «под ключ» от
+                MD Tech. Мы подобрали оптимальные конфигурации оборудования и
+                услуг для типовых задач — просто выберите подходящий вариант.
+            </p>
+            <ul
+                class="flex flex-col md:flex-row md:flex-wrap gap-1 max-w-[45rem]"
+            >
+                {
+                    categories.map((item) => (
+                        <li>
+                            <a
+                                href="#"
+                                class={`inline-flex px-4 py-2.5 border rounded-generic text-lg/[100%] font-semibold ${
+                                    item.current
+                                        ? "bg-accent-green hover:bg-accent-green-dark active:bg-accent-green-light text-white border-accent-green"
+                                        : "bg-surface-1 hover:bg-surface-3 active:bg-surface-2 text-emph-medium border-surface-4"
+                                }`}
+                            >
+                                {item.label}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </Container>
+        <img
+            src="/solutions_overview/solutions_overview_page-hero.webp"
+            alt=""
+            aria-hidden="true"
+            class="hidden lg:block absolute lg:bottom-0 lg:right-auto lg:left-[calc(53%)] xl:left-[calc(50%-0.375rem)] max-w-none lg:w-[54.38rem] h-full xl:h-full object-contain mix-blend-multiply"
+        />
+    </div>
+    <Container>
+        <div
+            class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 -mx-2 lg:-mx-4 pt-4 pb-8"
+        >
+            {
+                Object.values(solutionsList).map((item) => (
+                    <CardSolution
+                        title={item.title}
+                        description={item.description}
+                        image={item.image}
+                        price={item.price}
+                        href={pages.solutionPage.href}
+                    />
+                ))
+            }
+        </div>
+    </Container>
+</Layout>
