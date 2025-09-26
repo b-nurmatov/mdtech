@@ -1,0 +1,45 @@
+---
+import CardImageBlock from "./CardImageBlock.astro";
+
+const {
+    clientName,
+    projectName,
+    date,
+    dateValue,
+    projectIndustry,
+    projectType,
+    image,
+    href,
+} = Astro.props;
+---
+
+<article class="flex">
+    <a
+        href={href}
+        class="@container group/card flex flex-col-reverse justify-end w-full self-stretch rounded-generic p-2 lg:p-4 hover:bg-surface-1 border border-transparent hover:border-surface-4"
+    >
+        <div>
+            <div class="flex flex-col gap-4 my-4">
+                <h3 set:html={clientName} class="text-lg/[100%] font-bold" />
+                <p set:html={projectName} class="text-base/[100%]" />
+            </div>
+            <ul
+                class="flex flex-wrap gap-2 pt-4 border-t border-surface-4 text-xs/[100%] text-emph-medium *:not-last:after:content-['/'] *:after:ml-2"
+            >
+                {
+                    [projectIndustry, projectType].map((item) => (
+                        <li set:html={item} class="" />
+                    ))
+                }
+            </ul>
+        </div>
+        <CardImageBlock
+            image={image}
+            alt={projectName}
+            infoBlock={true}
+            date={date}
+            dateValue={dateValue}
+            aspectRatio="4/3"
+        />
+    </a>
+</article>

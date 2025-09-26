@@ -1,0 +1,28 @@
+---
+const { image, alt, infoBlock, date, dateValue, aspectRatio } = Astro.props;
+---
+
+<div class="relative">
+    <img
+        src={image}
+        alt={alt}
+        class={`w-full aspect-[${aspectRatio ? aspectRatio : "3/2"}] object-cover bg-surface-4 rounded-generic lg:group-hover/card:rounded-[calc(var(--radius-generic)/4)] group-hover/card:rounded-[calc(var(--radius-generic)/2)] transition-all duration-500`}
+    />
+    {
+        infoBlock ? (
+            <div class="absolute left-0 bottom-0 w-full p-2">
+                {date ? (
+                    <time
+                        datetime={dateValue}
+                        set:html={date}
+                        class="inline-block bg-white px-2 py-1.5 rounded-full text-sm/[100%] text-emph-medium font-semibold"
+                    />
+                ) : (
+                    ""
+                )}
+            </div>
+        ) : (
+            ""
+        )
+    }
+</div>
