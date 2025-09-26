@@ -1,0 +1,24 @@
+---
+const { label, options, id, class: extraClasses = "" } = Astro.props;
+---
+
+<div class={"flex flex-col " + extraClasses}>
+    {
+        label ? (
+            <label
+                for={"#" + id}
+                set:html={label}
+                class="text-base/[100%] font-semibold mb-2 ml-0.5"
+            />
+        ) : (
+            ""
+        )
+    }
+    <select
+        name=""
+        id={id}
+        class="bg-white text-emph-high h-14 rounded-generic px-4 outline-2 outline-transparent hover:outline-accent-green focus:outline-accent-blue focus:text-accent-blue"
+    >
+        {options.map((option) => <option value={option} set:html={option} />)}
+    </select>
+</div>
