@@ -1,0 +1,11 @@
+---
+const { title } = Astro.props;
+---
+
+<aside class="bg-surface-1 border border-surface-4 rounded-generic p-8">
+    <h2
+        set:html={title}
+        class="text-xl lg:text-h4 leading-h4 uppercase font-h4 mb-[0.5em]"
+    />
+    <slot />
+</aside>
