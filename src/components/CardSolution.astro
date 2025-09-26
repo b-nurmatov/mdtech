@@ -9,12 +9,7 @@ const { href, title, description, image, price } = Astro.props;
         href={href}
         class="@container group/card block w-full self-stretch rounded-generic p-2 lg:p-4 hover:bg-surface-1 border border-transparent hover:border-surface-4"
     >
-        <!-- <img
-            src={image}
-            alt=""
-            class="w-full aspect-[3/2] object-cover bg-surface-4 rounded-generic lg:hover:rounded-[calc(var(--radius-generic)/4)] hover:rounded-[calc(var(--radius-generic)/2)] transition-all"
-        /> -->
-        <CardImageBlock image={image} alt={title} />
+        <CardImageBlock image={image} alt={title} rounded={true} />
         <h3
             class="text-2xl @max-[320px]:text-base/[120%] font-bold uppercase mt-6 mb-3 @max-[320px]:mt-3 @max-[320px]:mb-1.5"
         >
