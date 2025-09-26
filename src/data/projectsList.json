@@ -1,0 +1,182 @@
+{
+  "prj01": {
+    "clientName": "Национальный банк Узбекистана",
+    "projectName": "Внедрение отказоустойчивого ЦОДа",
+    "date": "Октябрь 2025",
+    "dateValue": "2025-10-01",
+    "projectIndustry": "Финансы",
+    "projectType": "Хранение и обработка данных",
+    "image": "/projects_overview/projects_overview-01.webp"
+  },
+  "prj02": {
+    "clientName": "Стадион \"Янгиабад\"",
+    "projectName": "Развёртывание высокоплотной Wi-Fi сети",
+    "date": "Ноябрь 2025",
+    "dateValue": "2025-11-01",
+    "projectIndustry": "Спорт и развлечения",
+    "projectType": "Сети Wi-Fi",
+    "image": "/projects_overview/projects_overview-02.webp"
+  },
+  "prj03": {
+    "clientName": "Медицинский центр \"Согломлик\"",
+    "projectName": "Модернизация инфраструктуры ЛВС",
+    "date": "Декабрь 2025",
+    "dateValue": "2025-12-01",
+    "projectIndustry": "Медицина и здравоохранение",
+    "projectType": "Сети передачи данных",
+    "image": "/projects_overview/projects_overview-03.webp"
+  },
+  "prj04": {
+    "clientName": "UzAuto Motors",
+    "projectName": "Внедрение корпоративной ВКС",
+    "date": "Январь 2026",
+    "dateValue": "2026-01-01",
+    "projectIndustry": "Промышленные и производственные предприятия",
+    "projectType": "Телефония и Видеоконференцсвязь",
+    "image": "/projects_overview/projects_overview-04.webp"
+  },
+  "prj05": {
+    "clientName": "Отель \"Samarkand Luxury\"",
+    "projectName": "Комплексная система информационной безопасности",
+    "date": "Февраль 2026",
+    "dateValue": "2026-02-01",
+    "projectIndustry": "HoReCa",
+    "projectType": "Информационная безопасность",
+    "image": "/projects_overview/projects_overview-05.webp"
+  },
+  "prj06": {
+    "clientName": "Ташкентский государственный университет",
+    "projectName": "Миграция в частное облако",
+    "date": "Март 2026",
+    "dateValue": "2026-03-01",
+    "projectIndustry": "Образование",
+    "projectType": "Хранение и обработка данных",
+    "image": "/projects_overview/projects_overview-06.webp"
+  },
+  "prj07": {
+    "clientName": "Аэропорт \"Ташкент-Южный\"",
+    "projectName": "СКС и система контроля доступа",
+    "date": "Апрель 2026",
+    "dateValue": "2026-04-01",
+    "projectIndustry": "Транспорт и логистика",
+    "projectType": "СКС и безопасность",
+    "image": "/projects_overview/projects_overview-07.webp"
+  },
+  "prj08": {
+    "clientName": "Министерство цифрового развития",
+    "projectName": "Внедрение системы безопасной печати",
+    "date": "Май 2026",
+    "dateValue": "2026-05-01",
+    "projectIndustry": "Государственное управление",
+    "projectType": "Корпоративная печать",
+    "image": "/projects_overview/projects_overview-08.webp"
+  },
+  "prj09": {
+    "clientName": "Страховая компания \"UzInsurance\"",
+    "projectName": "Развёртывание IP-телефонии",
+    "date": "Июнь 2026",
+    "dateValue": "2026-06-01",
+    "projectIndustry": "Финансы",
+    "projectType": "Телефония",
+    "image": "/projects_overview/projects_overview-09.webp"
+  },
+  "prj10": {
+    "clientName": "Сеть магазинов \"Korzinka.uz\"",
+    "projectName": "Система IP-видеонаблюдения",
+    "date": "Июль 2026",
+    "dateValue": "2026-07-01",
+    "projectIndustry": "Торговля",
+    "projectType": "Комплексные системы безопасности",
+    "image": "/projects_overview/projects_overview-10.webp"
+  },
+  "prj11": {
+    "clientName": "Ферганский НПЗ",
+    "projectName": "Реконструкция сети передачи данных",
+    "date": "Август 2026",
+    "dateValue": "2026-08-01",
+    "projectIndustry": "Нефть и газ",
+    "projectType": "Сети передачи данных",
+    "image": "/projects_overview/projects_overview-11.webp"
+  },
+  "prj12": {
+    "clientName": "Институт \"Узбекгипрострой\"",
+    "projectName": "Оснащение мультимедийного конференц-зала",
+    "date": "Сентябрь 2026",
+    "dateValue": "2026-09-01",
+    "projectIndustry": "Строительство",
+    "projectType": "Мультимедиа решения",
+    "image": "/projects_overview/projects_overview-12.webp"
+  },
+  "prj13": {
+    "clientName": "Теплоэлектроцентраль №1",
+    "projectName": "Миграция на отечественное ПО",
+    "date": "Октябрь 2026",
+    "dateValue": "2026-10-01",
+    "projectIndustry": "Энергетика",
+    "projectType": "Программное обеспечение",
+    "image": "/projects_overview/projects_overview-13.webp"
+  },
+  "prj14": {
+    "clientName": "IT-компания \"Najot Technologies\"",
+    "projectName": "Система резервного копирования",
+    "date": "Ноябрь 2026",
+    "dateValue": "2026-11-01",
+    "projectIndustry": "Разработка ПО",
+    "projectType": "Хранение данных",
+    "image": "/projects_overview/projects_overview-14.webp"
+  },
+  "prj15": {
+    "clientName": "Сеть супермаркетов \"Makro\"",
+    "projectName": "Построение гибридного облака",
+    "date": "Декабрь 2026",
+    "dateValue": "2026-12-01",
+    "projectIndustry": "Торговля",
+    "projectType": "Хранение и обработка данных",
+    "image": "/projects_overview/projects_overview-15.webp"
+  },
+  "prj16": {
+    "clientName": "Ресторанный холдинг \"OSOY\"",
+    "projectName": "Wi-Fi покрытие для гостей и персонала",
+    "date": "Январь 2027",
+    "dateValue": "2027-01-01",
+    "projectIndustry": "HoReCa",
+    "projectType": "Сети Wi-Fi",
+    "image": "/projects_overview/projects_overview-16.webp"
+  },
+  "prj17": {
+    "clientName": "Бизнес-центр \"Ташкент-Сити\"",
+    "projectName": "Апгрейд СКС",
+    "date": "Февраль 2027",
+    "dateValue": "2027-02-01",
+    "projectIndustry": "Строительство",
+    "projectType": "СКС",
+    "image": "/projects_overview/projects_overview-17.webp"
+  },
+  "prj18": {
+    "clientName": "Агентство по государственной службе",
+    "projectName": "Внедрение DLP-системы",
+    "date": "Март 2027",
+    "dateValue": "2027-03-01",
+    "projectIndustry": "Государственное управление",
+    "projectType": "Информационная безопасность",
+    "image": "/projects_overview/projects_overview-18.webp"
+  },
+  "prj19": {
+    "clientName": "Мобильный оператор \"Uzmobile\"",
+    "projectName": "Инфраструктура для биллинговой системы",
+    "date": "Апрель 2027",
+    "dateValue": "2027-04-01",
+    "projectIndustry": "Финансы",
+    "projectType": "Хранение и обработка данных",
+    "image": "/projects_overview/projects_overview-19.webp"
+  },
+  "prj20": {
+    "clientName": "Академический лицей при ТУИТ",
+    "projectName": "Цифровизация учебных аудиторий",
+    "date": "Май 2027",
+    "dateValue": "2027-05-01",
+    "projectIndustry": "Образование",
+    "projectType": "Мультимедиа решения",
+    "image": "/projects_overview/projects_overview-20.webp"
+  }
+}

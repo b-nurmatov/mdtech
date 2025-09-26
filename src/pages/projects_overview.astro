@@ -1,0 +1,116 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import Container from "../layouts/Container.astro";
+import CardProject from "../components/CardProject.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Select from "../components/Select.astro";
+
+import pages from "../data/pages.json";
+import projectsList from "../data/projectsList.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.projectsOverview.label,
+        href: pages.projectsOverview.href,
+    },
+];
+
+const industries = {
+    label: "Отрасль",
+    options: [
+        "Все",
+        "Медицина и здравоохранение",
+        "Финансы (банки, страхование)",
+        "Образование, научная деятельность",
+        "Транспортные компании, грузоперевозки, логистика",
+        "Промышленные и производственные предприятия",
+        "HoReCa (отели, рестораны, кафе)",
+        "Государственное управление",
+        "Торговля, сфера услуг",
+        "Нефть и Газ",
+        "Производство и распределение энергии",
+        "Строительство и проектирование",
+        "Разработка программного обеспечения",
+        "Спорт и развлечения",
+    ],
+};
+
+const projectTypes = {
+    label: "Тип проекта",
+    options: [
+        "Все",
+        "Сети",
+        "Wi-Fi",
+        "Хранение данных",
+        "Безопасность",
+        "Печать",
+        "Почта",
+        "ПО",
+        "Связь",
+        "Мультимедиа",
+        "СКС и безопасность",
+    ],
+};
+---
+
+<Layout>
+    <header
+        class="w-full relative flex flex-col items-center text-white bg-slate-900 py-8 min-h-80"
+    >
+        <Container class="z-10">
+            <Breadcrumbs list={breadcrumbs} dark={true} />
+        </Container>
+        <Container class="z-10">
+            <h1 class="h1">Проекты</h1>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 md:gap-8 items-end"
+            >
+                <Select
+                    label={industries.label}
+                    options={industries.options}
+                    class="lg:col-span-2"
+                />
+                <Select
+                    label={projectTypes.label}
+                    options={projectTypes.options}
+                    class="lg:col-span-2"
+                />
+                <button
+                    class="flex items-center justify-center rounded-generic h-14 px-4 py-2 bg-accent-green hover:bg-accent-green-dark active:bg-accent-green-light text-white uppercase text-base/[100%] font-bold text-center cursor-pointer sm:col-span-2 lg:col-span-1"
+                    >Показать</button
+                >
+            </div>
+        </Container>
+        <img
+            src="/projects_overview/projects_overview-hero.webp"
+            aria-hidden="true"
+            alt=""
+            class="absolute top-0 left-0 w-full h-full object-cover lg:block blur-sm 2xl:blur-none"
+        />
+    </header>
+    <Container>
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 -mx-2 lg:-mx-4 pt-4 pb-8"
+        >
+            {
+                Object.values(projectsList).map((card) => (
+                    <CardProject
+                        clientName={card.clientName}
+                        projectName={card.projectName}
+                        date={card.date}
+                        dateValue={card.dateValue}
+                        projectIndustry={card.projectIndustry}
+                        projectType={card.projectType}
+                        image={card.image}
+                        href={pages.projectPage}
+                    />
+                ))
+            }
+        </div>
+    </Container>
+</Layout>
