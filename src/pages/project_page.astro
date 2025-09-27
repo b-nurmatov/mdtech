@@ -1,0 +1,251 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContentAndSidebar from "../layouts/ContentAndSidebar.astro";
+import ArticleHero from "../components/ArticleHero.astro";
+import ArticleHeroTag from "../components/ArticleHeroTag.astro";
+import ArticleHeroLink from "../components/ArticleHeroLink.astro";
+import Similar from "../layouts/Similar.astro";
+import SidebarModule from "../layouts/SidebarModule.astro";
+import Container from "../layouts/Container.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CardProject from "../components/CardProject.astro";
+import List from "../components/List.astro";
+import Item from "../components/Item.astro";
+import pages from "../data/pages.json";
+import projectsList from "../data/projectsList.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: "Внедрение системы IP-видеонаблюдения для сети супермаркетов Korzinka",
+        href: pages.solutionPage.href,
+    },
+];
+
+const similar = [
+    projectsList.prj15,
+    projectsList.prj04,
+    projectsList.prj05,
+    projectsList.prj07,
+];
+---
+
+<Layout>
+    <Container>
+        <Breadcrumbs list={breadcrumbs} />
+    </Container>
+    <ContentAndSidebar>
+        <ArticleHero
+            title="Внедрение системы IP-видеонаблюдения для сети супермаркетов Korzinka"
+            image="/project_page/project_page-hero.webp"
+        >
+            <ArticleHeroTag
+                >Отрасль:
+                <ArticleHeroLink href="#">Торговля</ArticleHeroLink
+                ></ArticleHeroTag
+            >
+            <ArticleHeroTag
+                >Тип проекта:
+                <ArticleHeroLink href="#"
+                    >Комплексные системы безопасности</ArticleHeroLink
+                ></ArticleHeroTag
+            >
+            <ArticleHeroTag>Июнь 2026</ArticleHeroTag>
+        </ArticleHero>
+        <h2 class="h2">О заказчике</h2>
+        <p class="paragraph">
+            «Korzinka.uz» — крупнейшая розничная сеть Узбекистана, являющаяся
+            флагманом на рынке продуктовой торговли. Под этим брендом работает
+            более 150 супермаркетов по всей стране, предлагая покупателям
+            широкий ассортимент качественных продуктов питания и товаров
+            повседневного спроса. Компания известна своими высокими стандартами
+            обслуживания и внедрением современных технологий для улучшения
+            клиентского опыта.
+        </p>
+        <h2 class="h2">Задача</h2>
+        <p class="paragraph">
+            В связи с планами по масштабированию и ужесточением требований к
+            безопасности, руководство «Korzinka.uz» инициировало проект по
+            модернизации системы видеонаблюдения в 50+ новых и существующих
+            магазинах сети.
+        </p>
+        <p class="paragraph">Для комплексного решения требовалось:</p>
+        <List>
+            <Item>
+                Разработать единый стандарт системы видеонаблюдения для всех
+                объектов сети, обеспечивающий высокое качество изображения и
+                детализацию.
+            </Item>
+            <Item>
+                Обеспечить интеграцию системы с существующими кассовыми узлами и
+                программами лояльности для анализа покупок и предотвращения
+                мошенничества.
+            </Item>
+            <Item>
+                Организовать централизованный удалённый мониторинг и управление
+                системой с головного офиса.
+            </Item>
+            <Item>
+                Гарантировать отказоустойчивость и бесперебойную работу системы
+                24/7.
+            </Item>
+        </List>
+
+        <h3 class="h3">Особенности задачи</h3>
+        <p class="paragraph">
+            Ключевой сложностью стала необходимость интеграции новых IP-камер с
+            уже установленным на некоторых объектах оборудованием различных
+            производителей, а также обеспечение стабильной работы системы в
+            условиях высокой нагрузки в часы пик.
+        </p>
+        <h2 class="h2">Решение</h2>
+        <p class="paragraph">
+            Согласовав техническое задание, команда MD Tech приступила к
+            поэтапной реализации проекта:
+        </p>
+        <List type="ol">
+            <Item>
+                <strong>Аудит и проектирование:</strong> Специалисты MD Tech провели
+                детальный аудит существующей инфраструктуры в магазинах и разработали
+                типовой дизайн системы на основе IP-камер с разрешением 4К и гибридных
+                видеорегистраторов (NVR), способных работать с оборудованием разных
+                вендоров.
+            </Item>
+            <Item>
+                <strong>Подбор оборудования:</strong> Был осуществлён подбор оборудования,
+                оптимального по цене и функциональности. Основой решения стали камеры
+                Dahua с ИК-подсветкой для съёмки в ночное время и гибридные NVR Hikvision
+                для записи и анализа видео.
+            </Item>
+            <Item>
+                <strong>Поставка и тестирование:</strong> Оборудование было поставлено
+                на центральный склад «Korzinka.uz», где специалисты MD Tech провели
+                его предварительную настройку и стресс-тестирование.
+            </Item>
+            <Item>
+                <strong>Пилотное внедрение:</strong> Внедрение началось с пяти пилотных
+                магазинов в Ташкенте. Были смонтированы камеры на кассовых узлах,
+                в торговых залах, складских и подсобных помещениях, а также по периметру
+                зданий.
+            </Item>
+            <Item>
+                <strong>Интеграция:</strong> Система была интегрирована с ПО кассовых
+                терминалов, что позволило привязывать видео к каждой конкретной транзакции.
+            </Item>
+            <Item>
+                <strong>Масштабирование и обучение:</strong> После успешного тестирования
+                пилота система была масштабирована на остальные объекты сети. Сотрудники
+                службы безопасности «Korzinka.uz» были обучены работе с новой системой.
+            </Item>
+        </List>
+        <h3 class="h3">Состав решения</h3>
+        <List>
+            <Item
+                ><strong>IP-камеры купольные и корпусные</strong> – Dahua (4MP, с
+                ИК-подсветкой)</Item
+            >
+            <Item
+                ><strong>Гибридные видеорегистраторы (NVR)</strong> – Hikvision</Item
+            >
+            <Item
+                ><strong>Дисковые массивы для хранения записей</strong> – QNAP</Item
+            >
+            <Item
+                ><strong>Программное обеспечение для видеоаналитики</strong> – Trassir</Item
+            >
+            <Item
+                ><strong>Серверы для обработки и хранения видео</strong> – Huawei</Item
+            >
+        </List>
+
+        <h2 class="h2">Результаты</h2>
+        <p class="paragraph">
+            Результатом проекта стало создание единой, централизованно
+            управляемой системы видеонаблюдения, которая охватила более 50
+            магазинов сети.
+        </p>
+        <List>
+            <Item
+                ><strong>Повышена безопасность:</strong> Значительно снижены риски
+                краж и мошеннических действий как со стороны посетителей, так и персонала.</Item
+            >
+            <Item
+                ><strong>Внедрён видеоанализ:</strong> Система интегрирована с кассовыми
+                узлами, что позволяет оперативно расследовать спорные ситуации и
+                возвраты товаров.</Item
+            >
+            <Item
+                ><strong>Обеспечен удалённый контроль:</strong> Руководство и служба
+                безопасности получили возможность удалённо в режиме реального времени
+                monitorить обстановку в любом магазине сети.</Item
+            >
+            <Item
+                ><strong>Создан масштабируемый стандарт:</strong> Разработанная MD
+                Tech архитектура стала корпоративным стандартом для дальнейшего расширения
+                сети «Korzinka.uz».</Item
+            >
+        </List>
+        <p class="paragraph">
+            Проект был реализован в срок и в рамках утверждённого бюджета, что
+            укрепило долгосрочное партнёрство между MD Tech и розничной сетью
+            «Korzinka.uz».
+        </p>
+
+        <SidebarModule slot="sidebar" title="О заказчике">
+            <img
+                src="/project_page/project_page-logo.webp"
+                alt=""
+                class="w-full aspect-square bg-surface-3 border border-surface-4 rounded-generic object-cover"
+            />
+            <h6 class="h6">Korzinka</h6>
+            <p class="paragraph">Отрасль: торговля</p>
+            <hr class="border-surface-4" />
+            <p class="paragraph">
+                «Korzinka.uz» — крупнейшая розничная сеть Узбекистана,
+                являющаяся флагманом на рынке продуктовой торговли. Под этим
+                брендом работает более 150 супермаркетов по всей стране,
+                предлагая покупателям широкий ассортимент качественных продуктов
+                питания и товаров повседневного спроса. Компания известна своими
+                высокими стандартами обслуживания и внедрением современных
+                технологий для улучшения клиентского опыта.
+            </p>
+        </SidebarModule>
+        <SidebarModule slot="sidebar" title="Особенности проекта">
+            <ul class="list">
+                <li>
+                    Интеграция новых IP-камер с уже установленным оборудование
+                    видеонаблюдения.
+                </li>
+                <li>
+                    Обеспечение стабильной работы системы в условиях высокой
+                    нагрузки.
+                </li>
+            </ul>
+        </SidebarModule>
+    </ContentAndSidebar>
+
+    <Similar>
+        <h2 class="h2">Смотрите также</h2>
+        <div
+            class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 -mx-2 lg:-mx-4"
+        >
+            {
+                Object.values(similar).map((card) => (
+                    <CardProject
+                        clientName={card.clientName}
+                        projectName={card.projectName}
+                        date={card.date}
+                        dateValue={card.dateValue}
+                        projectIndustry={card.projectIndustry}
+                        projectType={card.projectType}
+                        image={card.image}
+                        href={pages.projectPage.href}
+                    />
+                ))
+            }
+        </div>
+    </Similar>
+</Layout>
