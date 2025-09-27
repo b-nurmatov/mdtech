@@ -1,6 +1,8 @@
 ---
 import Icon from "../components/Icon.astro";
 const { list, dark } = Astro.props;
+
+let darkMode = dark === true ? true : false;
 ---
 
 <nav class="py-3 pl-0.5">
@@ -15,11 +17,11 @@ const { list, dark } = Astro.props;
                     )}
                     <a
                         href={item.href}
-                        class={
-                            `text-sm ` + dark
+                        class={`text-sm ${
+                            darkMode
                                 ? `${index > 0 ? "text-white" : "text-accent-green-light underline"} hover:text-accent-green-light hover:underline active:text-accent-green`
                                 : `${index > 0 ? "text-emph-medium" : "text-accent-green-dark underline"} hover:text-accent-green-dark hover:underline active:text-accent-green`
-                        }
+                        }`}
                     >
                         {item.label}
                     </a>
