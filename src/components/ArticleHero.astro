@@ -1,0 +1,21 @@
+---
+const { title, image, tags } = Astro.props;
+---
+
+<header
+    class="w-full relative bg-surface-3 rounded-generic border border-surface-4 aspect-[3/2] overflow-hidden"
+>
+    <div
+        class="absolute left-0 bottom-0 z-10 w-full p-8 text-white bg-linear-180 from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.7)]"
+    >
+        <h1 class="h1" set:html={title} />
+        <ul class="flex flex-wrap gap-4">
+            <slot />
+        </ul>
+    </div>
+    <img
+        src={image}
+        alt=""
+        class="absolute left-0 top-0 w-full h-full object-cover"
+    />
+</header>

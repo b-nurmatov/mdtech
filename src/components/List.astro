@@ -1,0 +1,8 @@
+---
+const { type } = Astro.props;
+const Tag = type === "ol" ? "ol" : "ul";
+---
+
+<Tag class="list">
+    <slot />
+</Tag>

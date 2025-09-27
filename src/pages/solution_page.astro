@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ContentAndSidebar from "../layouts/ContentAndSidebar.astro";
+import ArticleHero from "../components/ArticleHero.astro";
+import ArticleHeroTag from "../components/ArticleHeroTag.astro";
+import ArticleHeroLink from "../components/ArticleHeroLink.astro";
+import Similar from "../layouts/Similar.astro";
 import SidebarModule from "../layouts/SidebarModule.astro";
 import Container from "../layouts/Container.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
@@ -18,8 +23,6 @@ const breadcrumbs = [
         href: pages.solutionsOverview.href,
     },
 ];
-
-const tags = ["Видеоконференцсвязь", "Видеоконференцсвязь"];
 
 const advantages = {
     title: "Возможности решения",
@@ -89,160 +92,126 @@ const required = [
     <Container>
         <Breadcrumbs list={breadcrumbs} />
     </Container>
-    <Container class="pt-12 pb-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <div class="lg:col-start-1 lg:col-end-3">
-                <header
-                    class="w-full relative bg-surface-3 rounded-generic border border-surface-4 aspect-[3/2] overflow-hidden"
+
+    <ContentAndSidebar>
+        <ArticleHero
+            title="Телефония и ВКС для переговорной комнаты (до 10 человек)"
+            image="/solution_page/solution_page-hero.webp"
+        >
+            <ArticleHeroTag>
+                <ArticleHeroLink href="#">Видеоконференцсвязь</ArticleHeroLink>
+            </ArticleHeroTag>
+        </ArticleHero>
+        <h2 class="h2">
+            Профессиональное решение на базе оборудования Yealink
+        </h2>
+        <p class="paragraph">
+            Данный комплект является готовым решением «под ключ» для оснащения
+            переговорной комнаты площадью до 20м² современной системой
+            видеоконференцсвязи и IP-телефонией. Рассчитан на комфортное участие
+            до 10 человек.
+        </p>
+        <p class="paragraph">
+            Решение обеспечивает кристально чистое аудио и видео для ежедневных
+            встреч с клиентами и коллегами. Всё оборудование предварительно
+            настроено и протестировано специалистами MD Tech, что гарантирует
+            простоту использования и бесперебойную работу с первого дня.
+        </p>
+        <h2 class="h2">Готовое решение</h2>
+        <p class="paragraph">
+            Решение на базе оборудования Yealink разработано инженерами MD Tech
+            и является полностью отлаженным и готовым к работе. Оборудование
+            прошло тестирование в реальных условиях офисов наших заказчиков и
+            совместимо со всеми популярными платформами.
+        </p>
+        <h3 class="h3">Возможности решения</h3>
+        <ul class="list">
+            <li>Высокое качество видео в разрешении Full HD</li>
+            <li>Чистый звук благодаря технологии шумоподавления</li>
+            <li>
+                Совместимость с любыми платформами ВКС<span
+                    class="text-accent-red">*</span
                 >
-                    <div
-                        class="absolute left-0 bottom-0 z-10 w-full p-8 text-white bg-linear-180 from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.7)]"
+            </li>
+            <li>Простое управление с помощью сенсорного интерфейса</li>
+            <li>Поддержка беспроводного подключения ноутбуков и смартфонов</li>
+        </ul>
+        <p class="paragraph-small text-right">
+            <span class="text-accent-red">*</span> — Поддерживаются звонки с сервисами:
+            Zoom, Microsoft Teams, Cisco Webex, Яндекс.Телемост и другими.
+        </p>
+        <h2 class="h2">Состав оборудования</h2>
+        <p class="paragraph">
+            Для стабильной работы решения необходим симметричный канал интернета
+            с пропускной способностью не менее 4 Мбит/с.
+        </p>
+        <ul class="flex flex-col sm:gap-2">
+            {
+                equipment.map((item) => (
+                    <li>
+                        <div class="flex flex-col-reverse sm:flex-row-reverse items-center text-center sm:text-left gap-4 sm:bg-surface-1 border-b sm:border border-surface-4 sm:rounded-generic p-8 sm:p-4">
+                            <div class="flex flex-col gap-4 flex-1">
+                                <h3
+                                    set:html={item.title}
+                                    class="text-xl/[100%] sm:text-2xl/[100%] uppercase font-bold"
+                                />
+                                <p
+                                    set:html={item.name}
+                                    class="text-base sm:text-lg font-bold uppercase"
+                                />
+                                <p
+                                    set:html={item.description}
+                                    class="text-base"
+                                />
+                            </div>
+                            <img
+                                src={item.image}
+                                alt=""
+                                class="size-40 aspect-square object-cover bg-surface-3 border border-surface-4 rounded-generic"
+                            />
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <Fragment slot="sidebar">
+            <SidebarModule title="Стоимость">
+                <p class="flex flex-col text-base">
+                    <span
+                        class="text-xl lg:text-3xl font-bold text-accent-green-dark"
+                        >от 50 000 000 сум</span
                     >
-                        <h1 class="h1">
-                            Телефония и ВКС для переговорной комнаты (до 10
-                            человек)
-                        </h1>
-                        <ul class="flex flex-wrap gap-4">
-                            {
-                                tags.map((tag) => (
-                                    <li class="text-base/[100%] font-semibold not-first:before:content-['/'] not-first:before:mr-4 before:opacity-70 before:font-regular">
-                                        <a
-                                            href="#"
-                                            class=" underline hover:text-accent-green-light active:text-accent-green"
-                                        >
-                                            {tag}
-                                        </a>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-                    <img
-                        src="/solution_page/solution_page-hero.webp"
-                        alt=""
-                        class="absolute left-0 top-0 w-full h-full object-cover"
-                    />
-                </header>
-                <h2 class="h2">
-                    Профессиональное решение на базе оборудования Yealink
-                </h2>
-                <p class="paragraph">
-                    Данный комплект является готовым решением «под ключ» для
-                    оснащения переговорной комнаты площадью до 20м² современной
-                    системой видеоконференцсвязи и IP-телефонией. Рассчитан на
-                    комфортное участие до 10 человек.
+                    <span>под ключ</span>
                 </p>
-                <p class="paragraph">
-                    Решение обеспечивает кристально чистое аудио и видео для
-                    ежедневных встреч с клиентами и коллегами. Всё оборудование
-                    предварительно настроено и протестировано специалистами MD
-                    Tech, что гарантирует простоту использования и бесперебойную
-                    работу с первого дня.
-                </p>
-                <h2 class="h2">Готовое решение</h2>
-                <p class="paragraph">
-                    Решение на базе оборудования Yealink разработано инженерами
-                    MD Tech и является полностью отлаженным и готовым к работе.
-                    Оборудование прошло тестирование в реальных условиях офисов
-                    наших заказчиков и совместимо со всеми популярными
-                    платформами.
-                </p>
-                <h3 class="h3">Возможности решения</h3>
+            </SidebarModule>
+
+            <SidebarModule title={advantages.title}>
                 <ul class="list">
-                    <li>Высокое качество видео в разрешении Full HD</li>
-                    <li>Чистый звук благодаря технологии шумоподавления</li>
-                    <li>
-                        Совместимость с любыми платформами ВКС<span
-                            class="text-accent-red">*</span
-                        >
-                    </li>
-                    <li>Простое управление с помощью сенсорного интерфейса</li>
-                    <li>
-                        Поддержка беспроводного подключения ноутбуков и
-                        смартфонов
-                    </li>
+                    {advantages.list.map((item) => <li set:html={item} />)}
                 </ul>
-                <p class="paragraph-small text-right">
-                    <span class="text-accent-red">*</span> — Поддерживаются звонки
-                    с сервисами: Zoom, Microsoft Teams, Cisco Webex, Яндекс.Телемост
-                    и другими.
-                </p>
-                <h2 class="h2">Состав оборудования</h2>
-                <p class="paragraph">
-                    Для стабильной работы решения необходим симметричный канал
-                    интернета с пропускной способностью не менее 4 Мбит/с.
-                </p>
-                <ul class="flex flex-col sm:gap-2">
-                    {
-                        equipment.map((item) => (
-                            <li>
-                                <div class="flex flex-col-reverse sm:flex-row-reverse items-center text-center sm:text-left gap-4 sm:bg-surface-1 border-b sm:border border-surface-4 sm:rounded-generic p-8 sm:p-4">
-                                    <div class="flex flex-col gap-4 flex-1">
-                                        <h3
-                                            set:html={item.title}
-                                            class="text-xl/[100%] sm:text-2xl/[100%] uppercase font-bold"
-                                        />
-                                        <p
-                                            set:html={item.name}
-                                            class="text-base sm:text-lg font-bold uppercase"
-                                        />
-                                        <p
-                                            set:html={item.description}
-                                            class="text-base"
-                                        />
-                                    </div>
-                                    <img
-                                        src={item.image}
-                                        alt=""
-                                        class="size-40 aspect-square object-cover bg-surface-3 border border-surface-4 rounded-generic"
-                                    />
-                                </div>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
-            <div class="lg:col-start-3 lg:col-end-4 flex flex-col gap-4">
-                <SidebarModule title="Стоимость">
-                    <p class="flex flex-col text-base">
-                        <span
-                            class="text-xl lg:text-3xl font-bold text-accent-green-dark"
-                            >от 50 000 000 сум</span
-                        >
-                        <span>под ключ</span>
-                    </p>
-                </SidebarModule>
+            </SidebarModule>
 
-                <SidebarModule title={advantages.title}>
-                    <ul class="list">
-                        {advantages.list.map((item) => <li set:html={item} />)}
-                    </ul>
-                </SidebarModule>
+            <SidebarContacts buttonText="Сделать заказ" />
+        </Fragment>
+    </ContentAndSidebar>
 
-                <SidebarContacts buttonText="Сделать заказ" />
-            </div>
+    <Similar>
+        <h2 class="h2">Смотрите также</h2>
+        <div
+            class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 -mx-2 lg:-mx-4"
+        >
+            {
+                required.map((item) => (
+                    <CardSolution
+                        title={item.title}
+                        description={item.description}
+                        image={item.image}
+                        price={item.price}
+                        href={pages.solutionPage.href}
+                    />
+                ))
+            }
         </div>
-    </Container>
-    <div
-        class="w-full flex flex-col items-center bg-surface-1 border border-surface-4"
-    >
-        <Container class="py-8">
-            <h2 class="h2">Смотрите также</h2>
-            <div
-                class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 -mx-2 lg:-mx-4"
-            >
-                {
-                    required.map((item) => (
-                        <CardSolution
-                            title={item.title}
-                            description={item.description}
-                            image={item.image}
-                            price={item.price}
-                            href={pages.solutionPage.href}
-                        />
-                    ))
-                }
-            </div>
-        </Container>
-    </div>
+    </Similar>
 </Layout>
