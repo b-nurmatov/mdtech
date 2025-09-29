@@ -90,6 +90,9 @@
 .caption {
     @apply text-caption leading-caption my-[1em];
 }
+.link {
+    @apply text-accent-green-dark hover:text-accent-green active:text-accent-green-light underline;
+}
 
 .m-h1,
 .m-h2,
