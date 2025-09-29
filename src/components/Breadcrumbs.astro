@@ -6,7 +6,7 @@ let darkMode = dark === true ? true : false;
 ---
 
 <nav class="py-3 pl-0.5">
-    <ul class="flex gap-4 flex-wrap">
+    <ul class="flex gap-x-4 gap-y-1 flex-wrap">
         {
             list.map((item, index) => (
                 <li class="flex  items-center gap-4">
@@ -17,7 +17,8 @@ let darkMode = dark === true ? true : false;
                     )}
                     <a
                         href={item.href}
-                        class={`text-sm ${
+                        title={item.label}
+                        class={`text-sm max-w-[27ch] text-nowrap overflow-hidden text-ellipsis ${
                             darkMode
                                 ? `${index > 0 ? "text-white" : "text-accent-green-light underline"} hover:text-accent-green-light hover:underline active:text-accent-green`
                                 : `${index > 0 ? "text-emph-medium" : "text-accent-green-dark underline"} hover:text-accent-green-dark hover:underline active:text-accent-green`
