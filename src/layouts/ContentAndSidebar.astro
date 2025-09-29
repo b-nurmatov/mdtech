@@ -1,8 +1,13 @@
 ---
 import Container from "../layouts/Container.astro";
+
+const {ptClass, pbClass} = Astro.props;
+
+const pt = ptClass ? ptClass : "pt-12"
+const pb = pbClass ? pbClass : "pb-12"
 ---
 
-<Container class="pt-12 pb-8">
+<Container class={`${pt} ${pb}`}>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-start-1 lg:col-end-3">
             <slot />
