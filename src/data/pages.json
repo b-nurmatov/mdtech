@@ -25,7 +25,7 @@
   },
   "equipmentPage": {
     "label": "Оборудование. Товар",
-    "href": "/equipment_category"
+    "href": "/equipment_page"
   },
   "servicesOverview": {
     "label": "Услуги",
