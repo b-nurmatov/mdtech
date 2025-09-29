@@ -5,20 +5,22 @@ const {
     infoBlock,
     date,
     dateValue,
+    tags,
     aspectRatio,
     rounded,
     border,
     overlay,
+    class: extraClasses = "",
 } = Astro.props;
 ---
 
 <div
-    class={`w-full relative bg-surface-3 overflow-hidden ${rounded ? "rounded-generic" : "rounded-sm"} ${aspectRatio ? aspectRatio : "aspect-[3/2]"} ${border ? "border border-surface-4" : ""}`}
+    class={`w-full relative bg-surface-3 overflow-hidden ${rounded ? "rounded-generic" : "rounded-sm"} ${aspectRatio ? aspectRatio : "aspect-[3/2]"} ${border ? "border border-surface-4" : ""} ${extraClasses}`}
 >
     {
         infoBlock ? (
-            <div
-                class={`absolute left-0 bottom-0 z-10 w-full p-2 ${overlay ? "bg-linear-180 from-black/0 to-black/50" : ""}`}
+            <footer
+                class={`absolute left-0 bottom-0 z-10 flex flex-col items-start gap-2 w-full p-2 ${overlay ? "bg-linear-180 from-black/0 to-black/50" : ""}`}
             >
                 {date ? (
                     <time
@@ -29,7 +31,22 @@ const {
                 ) : (
                     ""
                 )}
-            </div>
+                {tags ? (
+                    <ul class="text-white flex flex-wrap gap-2 pl-0.5">
+                        {tags.map((tag) => (
+                            <li class="text-base/[100%] font-semibold not-first:before:content-['/'] not-first:before:mr-2 before:opacity-70 before:font-regular"
+                            ><a
+                                    href="#"
+                                    set:html={tag}
+                                    class="underline hover:text-accent-green-light active:text-accent-green"
+                                ></a>
+                            </li>
+                        ))}
+                    </ul>
+                ) : (
+                    ""
+                )}
+            </footer>
         ) : (
             ""
         )
