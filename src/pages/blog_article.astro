@@ -1,0 +1,220 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import Container from "../layouts/Container.astro";
+import ContentAndSidebar from "../layouts/ContentAndSidebar.astro";
+import SidebarModule from "../layouts/SidebarModule.astro";
+import SidebarContacts from "../components/SidebarContacts.astro";
+import CardArticle from "../components/CardArticle.astro";
+import CardSolution from "../components/CardSolution.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import List from "../components/List.astro";
+import Item from "../components/Item.astro";
+
+import pages from "../data/pages.json";
+import articlesList from "../data/articlesList.json";
+import solutionsList from "../data/solutionsList.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.blog.label,
+        href: pages.blog.href,
+    },
+    {
+        label: articlesList.art01.title,
+        href: pages.blogArticle.href,
+    },
+];
+---
+
+<Layout title="Блог">
+    <Container class="z-10">
+        <Breadcrumbs list={breadcrumbs} />
+    </Container>
+    <ContentAndSidebar>
+        <img
+            src="/blog/blog_page-01.webp"
+            alt=""
+            class="bg-surface-3 border border-surface-4 rounded-generic w-full aspect-video object-cover"
+        />
+        <h1 class="h1">
+            Почему гости вашего ресторана «сидят в телефоне» и не заказывают?
+            Всё дело в Wi-Fi
+        </h1>
+        <p class="paragraph">
+            Вы замечали, что посетители вместо изучения меню первым делом
+            спрашивают пароль от Wi-Fi? А потом лицо у них вытягивается, они
+            пытаются поймать сигнал где-то у окна и в итоге… просто заказывают
+            одно кофе и уходят. Вы теряете прибыль, даже не подозревая, что
+            причина — в плохом интернете.
+        </p>
+        <p class="paragraph">
+            Вы замечали, что посетители вместо изучения меню первым делом
+            спрашивают пароль от Wi-Fi? А потом лицо у них вытягивается, они
+            пытаются поймать сигнал где-то у окна и в итоге… просто заказывают
+            одно кофе и уходят. Вы теряете прибыль, даже не подозревая, что
+            причина — в плохом интернете.
+        </p>
+        <h2 class="h2">
+            Ошибка №1: «Домашний» роутер в профессиональном пространстве
+        </h2>
+        <p class="paragraph">
+            Проблема: Установить обычный роутер из магазина — самое простое и
+            дешевое решение. И самое провальное. Он рассчитан на 5-10 устройств
+            в небольшой квартире, а не на 50+ смартфонов в многослойном каменном
+            здании с помехами от микроволновок. Результат: сеть «падает» в
+            обеденный час, когда она нужнее всего.
+        </p>
+        <p class="paragraph">
+            Решение: Использовать коммерческие точки доступа (ТД). Они designed
+            для высоких нагрузок, поддерживают одновременное подключение
+            десятков устройств и имеют мощные антенны. Например, одна правильно
+            размещенная профессиональная ТД от Ubiquiti или Zyxel может
+            стабильно покрыть зону на 100-150 м².
+        </p>
+        <h2 class="h2">
+            Ошибка №2: Одна точка доступа на весь зал
+        </h2>
+        <p class="paragraph">
+            <strong>Проблема:</strong> Сигнал Wi-Fi — это радиоволны. Он плохо проходит через
+            стены, металлические конструкции и даже людей. Если поставить один
+            роутер в углу, в противоположном конце зала, в летней веранде или в
+            уборной связи не будет.
+        </p>
+        <p class="paragraph">
+            <strong>Решение:</strong> Предиктивное проектирование. Прежде чем покупать
+            оборудование, нужно создать радиоплан помещения. Специалисты MD Tech
+            используют специальные программы, которые, учитывая планировку, материалы
+            стен и предполагаемую нагрузку, рассчитывают оптимальное количество и
+            места размещения ТД для бесшовного покрытия без «мертвых зон».
+        </p>
+        <div class="bg-surface-3 border border-surface-4 rounded-generic p-4">
+            <h5 class="h5 px-4">Готовые решения по организации сети</h5>
+            <div class="grid grid-cols-1 sm:grid-cols-2">
+                {
+                    [solutionsList.sol1, solutionsList.sol2].map((card) => (
+                        <CardSolution
+                            title={card.title}
+                            description={card.description}
+                            price={card.price}
+                            image={card.image}
+                            href={pages.solutionPage.href}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+        <h2 class="h2">Ошибка №3: Отсутствие гостевой сети</h2>
+        <p class="paragraph">
+            <strong>Проблема:</strong> Подключая гостей к той же сети, что и кассовый
+            терминал и кухонный принтер, вы открываете дверь для злоумышленников.
+            Достаточно одного недовольного клиента с нужными навыками, чтобы парализовать
+            всю вашу работу.
+        </p>
+        <p class="paragraph">
+            <strong>Решение:</strong> Сегментация сети. Правильная настройка включает
+            как минимум три независимые сети:
+        </p>
+        <List type="ol">
+            <Item
+                ><strong>Гостевая сеть:</strong> Для посетителей. Имеет ограничение
+                по скорости и доступ только в интернет.</Item
+            >
+            <Item
+                ><strong>Рабочая сеть:</strong> Для касс, принтеров, планшетов официантов.
+                Защищена и изолирована.</Item
+            >
+            <Item
+                ><strong>Сеть для персонала:</strong> Для администрации и бухгалтерии.</Item
+            >
+        </List>
+        <p class="paragraph">
+            Это гарантирует, что гость не сможет «достучаться» до вашего
+            фискального регистратора.
+        </p>
+        <h2 class="h2">Ошибка №4: Сложность подключения</h2>
+        <p class="paragraph">
+            <strong>Проблема:</strong> Длинные пароли вида «Wk23$%dfvGY11», которые
+            нужно вводить вручную, отталкивают. Люди не хотят тратить на это время.
+        </p>
+        <p class="paragraph">
+            <strong>Решение: Гостевой портал с авторизацией.</strong> Это профессиональное
+            решение, которое позволяет:
+        </p>
+        <List>
+            <Item
+                ><strong>Авторизоваться через соцсети</strong> (это быстро и удобно
+                для гостя).</Item
+            >
+            <Item
+                ><strong>Проводить маркетинговые акции</strong> (например, показать
+                промо-баннер с акцией на десерт сразу после подключения).</Item
+            >
+            <Item
+                ><strong>Собирать контакты для рассылки</strong> (с согласия гостя).</Item
+            >
+        </List>
+        <h2 class="h2">Что в итоге?</h2>
+        <p class="paragraph-large">
+            Качественный Wi-Fi в ресторане — это не статья расходов, а <strong
+                >инвестиция в лояльность гостя и увеличение прибыли</strong
+            >. Когда гостям комфортно, они дольше сидят, активнее пользуются
+            смартфоном (и вашим меню на сайте), делают больше заказов и с
+            большей вероятностью вернутся.
+        </p>
+        <h4 class="h4">Проверьте свой Wi-Fi прямо сейчас:</h4>
+        <List type="ol">
+            <Item>Пройдитесь по залу с телефоном. Где сигнал пропадает?</Item>
+            <Item
+                >Зайдите в сеть вечером в пятницу. Насколько она медленная?</Item
+            >
+            <Item>Сколько времени занимает подключение?</Item>
+        </List>
+        <p class="paragraph-large">
+            Если ответы вас не радуют, возможно, пора обратиться к
+            профессионалам. Команда MD Tech имеет успешный опыт внедрения <strong
+                >готовых решений Wi-Fi для HoReCa</strong
+            > «под ключ» — от проектирования и подбора оборудования до настройки
+            гостевого портала и техподдержки.
+        </p>
+        <h3 class="h3">
+            Хотите получить бесплатный аудит вашей текущей Wi-Fi сети?
+        </h3>
+        <p class="paragraph-large">
+            Напишите нам в Telegram <a href="https://t.me/" class="link"
+                >@mdtech</a
+            > или оставьте заявку на сайте. Наши инженеры подготовят для вас персональный
+            отчет и рекомендации.
+        </p>
+
+        <aside class="pt-8">
+            <h2 class="text-h2 leading-h2 font-bold uppercase">
+                Похожие материалы
+            </h2>
+            {
+                [
+                    articlesList.art02,
+                    articlesList.art06,
+                    articlesList.art10,
+                ].map((card) => (
+                    <!-- <span>{JSON.stringify(card)}</span> -->
+                    <CardArticle
+                        title={card.title}
+                        description={card.description}
+                        date={card.date}
+                        dateValue={card.dateValue}
+                        tags={card.tags}
+                        image={card.image}
+                        href="#"
+                    />
+                ))
+            }
+        </aside>
+
+        <SidebarContacts slot="sidebar" />
+    </ContentAndSidebar>
+</Layout>

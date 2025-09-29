@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import Container from "../layouts/Container.astro";
+import ContentAndSidebar from "../layouts/ContentAndSidebar.astro";
+import SidebarModule from "../layouts/SidebarModule.astro";
+import CardArticle from "../components/CardArticle.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+import pages from "../data/pages.json";
+import articlesList from "../data/articlesList.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.blog.label,
+        href: pages.blog.href,
+    },
+];
+
+const topics = [
+  {
+    label: "Все",
+    amount: "98",
+  },
+  {
+    label: "Технические обзоры и гайды",
+    amount: "12",
+  },
+  {
+    label: "Отраслевые решения",
+    amount: "2",
+  },
+  {
+    label: "Кейсы и успешные проекты",
+    amount: "15",
+  },
+  {
+    label: "Новости и тренды IT",
+    amount: "25",
+  },
+  {
+    label: "Мнение эксперта",
+    amount: "7",
+  },
+  {
+    label: "Безопасность (Информационная безопасность)",
+    amount: "8",
+  },
+  {
+    label: "Безопасность (Информационная безопасность)",
+    amount: "3",
+  },
+  {
+    label: "Советы и лайфхаки",
+    amount: "10",
+  },
+  {
+    label: "Обзоры ПО и сервисов",
+    amount: "11",
+  },
+  {
+    label: "Коротко о главном",
+    amount: "5",
+  },
+]
+---
+
+<Layout title="Блог">
+    <div class="w-full bg-surface-3 relative flex flex-col items-center py-8 min-h-80 overflow-hidden">
+        <Container class="z-10">
+            <Breadcrumbs list={breadcrumbs} />
+        </Container>
+        <Container class="z-10">
+            <header>
+                <h1 class="h1 uppercase text-emph-medium">Блог</h1>
+                <p class="paragraph-large">Здесь мы собираем полезные статьи, новости и истории.<br> Находите ответы на свои вопросы и открывайте для себя новое.</p>
+            </header>
+        </Container>
+        <img src="/blog/blog_page-hero.webp" alt="" aria-hidden="true" class="hidden lg:block absolute bottom-[-6rem] xl:bottom-[-8.5rem] right-0 w-[40rem] xl:w-[48.88rem] mix-blend-multiply"></img>
+    </div>
+    <ContentAndSidebar>
+        {
+            Object.values(articlesList).map(article => (
+            <CardArticle
+                title={article.title}
+                description={article.description}
+                tags={article.tags}
+                date={article.date}
+                dateValue={article.dateValue}
+                image={article.image}
+                href="/blog_article"
+            ></CardArticle>
+            ))
+        }
+
+        <button class="bg-accent-green hover:bg-accent-green-dark active:bg-accent-green-light text-white text-base/[100%] uppercase w-full p-4 rounded-generic flex justify-center items-center cursor-pointer mt-8">Показать ещё</button>
+
+        <SidebarModule slot="sidebar" title="Рубрики">
+            <ul>
+                {
+                    topics.map((item, index) => (
+                    <li class="py-3 flex justify-between gap-4 border-b border-surface-4">
+                        <a href="#" class={`${index === 0 ? "text-accent-green-dark hover:text-accent-green active:text-accent-green-light font-bold" : "active:text-emph-medium"} hover:underline`}>{item.label}</a>
+                        <span class="text-right text-emph-low">{item.amount}</span>
+                    </li>
+                    ))
+                }
+            </ul>
+        </SidebarModule>
+    </ContentAndSidebar>
+</Layout>
