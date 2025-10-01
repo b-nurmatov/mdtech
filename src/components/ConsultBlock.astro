@@ -1,0 +1,19 @@
+---
+const {buttonFill} = Astro.props;
+
+const fill = buttonFill === true ? "flex-1" : "";
+---
+
+<div
+    class="w-full pt-8 p-4 md:p-8 rounded-generic bg-linear-90 from-accent-green to-accent-green-dark flex flex-col md:flex-row items-stretch md:items-center gap-8"
+>
+    <h2
+        class="flex-1 text-white text-xl xl:text-2xl font-bold text-center md:text-left"
+    >
+        <slot></slot>
+    </h2>
+    <button
+        class={"bg-accent-green hover:bg-accent-green-light active:bg-accent-green rounded-generic p-4 md:px-8 md:py-6 border border-accent-green-light text-white text-lg/[100%] font-bold uppercase cursor-pointer " + fill}
+        ><slot name="button"></slot></button
+    >
+</div>

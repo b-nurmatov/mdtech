@@ -1,0 +1,62 @@
+---
+const {slides} = Astro.props;
+---
+
+<div
+    id="equipSlider"
+    class="swiper equipSlider"
+>
+    <div class="swiper-wrapper">
+        {
+            slides.map((slide) => (
+                <div class="swiper-slide">
+                    <img
+                        src={slide.image}
+                        title={slide.title}
+                        alt=""
+                        class="equipSlider-image"
+                    />
+                </div>
+            ))
+        }
+    </div>
+    <div class="swiper-button-prev equipSlider-arrows"></div>
+    <div class="swiper-button-next equipSlider-arrows"></div>
+</div>
+<div id="equipThumbSlider" class="swiper equipThumbSlider mt-4">
+    <div class="swiper-wrapper">
+        {
+            slides.map((slide) => (
+                <div class="swiper-slide equipThumbSlider-thumb">
+                    <img
+                        src={slide.image}
+                        title={slide.title}
+                        alt=""
+                        class="equipThumbSlider-image"
+                    />
+                </div>
+            ))
+        }
+    </div>
+</div>
+
+<script>
+    const thumbsSwiper = new Swiper("#equipThumbSlider", {
+        spaceBetween: 16,
+        slidesPerView: 4,
+        freeMode: true,
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true,
+    });
+    const swiper = new Swiper("#equipSlider", {
+        autoplay: true,
+        thumbs: {
+            swiper: thumbsSwiper,
+            slideThumbActiveClass: "equipThumbSlider-thumb--active",
+        },
+        navigation: {
+            prevEl: ".swiper-button-prev",
+            nextEl: ".swiper-button-next",
+        },
+    });
+</script>

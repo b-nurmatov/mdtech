@@ -186,6 +186,7 @@ ul.list li::before {
     font-weight: 700;
 }
 
+/* EquipSlider.astro */
 .equipSlider {
     @apply border border-surface-4 rounded-generic;
 }
@@ -208,7 +209,6 @@ ul.list li::before {
     /*color: var(--color-emph-medium);*/
     @apply text-emph-medium
 }
-/*.equipThumbSlider {}*/
 
 .equipThumbSlider-image {
     @apply w-full aspect-[4/3] border border-surface-4 rounded-generic;

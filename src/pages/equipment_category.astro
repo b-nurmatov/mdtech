@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CardEquip from "../components/CardEquip.astro";
+
+import pages from "../data/pages.json";
+import equipmentList from "../data/equipmentList.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.equipmentOverview.label,
+        href: pages.equipmentOverview.href,
+    },
+    {
+        label: "Серверы",
+        href: pages.equipmentCategory.href,
+    },
+];
+
+const filter = [
+  {
+    title: "Производитель:",
+    list: [
+      "Cisco",
+      "Dell",
+      "Fujitsu",
+      "HP",
+      "HPE",
+      "Huawei",
+      "Lenovo",
+      "LWCOM",
+      "xFusion",
+    ]
+  },
+  {
+    title: "Готовая выборка:",
+    list: [
+      "Серверы 1U",
+      "Серверы 2U",
+      "Серверы Tower",
+      "Серверы Supermicro 2U",
+      "Серверы Supermicro 4U",
+      "Серверы Supermicro 1U",
+      "Серверы 4U",
+      "Серверы Supermicro для базы данных",
+      "Серверы для базы данных",
+      "HP blade",
+    ]
+  }
+]
+
+---
+
+<Layout title="Оборудование - категория.">
+    <header
+        class="w-full relative flex flex-col items-center text-white bg-slate-900 pt-8 pb-12 xl:py-8 min-h-80"
+    >
+        <Container class="z-10">
+            <Breadcrumbs list={breadcrumbs} dark={true} />
+        </Container>
+        <Container class="z-10">
+            <h1 class="h1">Серверы</h1>
+            <div class="flex flex-col *:not-last:first:pb-4 *:not-first:pt-4 *:not-first:border-t *:border-white/25">
+                {
+                  filter.map(group => (
+                    <div class="grid grid-cols-1 xl:grid-cols-6 gap-y-4 gap-x-8 items-center">
+                        <h5 class="text-base/[110%] font-semibold uppercase">{group.title}</h5>
+                        <ul class="flex gap-x-6 gap-y-4 flex-wrap col-span-5">
+                            {
+                            group.list.map(item => (
+                            <li class="flex flex-nowrap items-center gap-1">
+                                <input type="checkbox" id={item} class="cursor-pointer">
+                                <label for={item} class="cursor-pointer">{item}</label>
+                            </li>
+                            ))
+                            }
+                        </ul>
+                    </div>
+                  ))
+                }
+            </div>
+        </Container>
+        <img
+            src="/equipment_category/equipment_category-hero.webp"
+            aria-hidden="true"
+            alt=""
+            class="absolute top-0 left-0 w-full h-full object-cover lg:block blur-sm 2xl:blur-none"
+        />
+    </header>
+    <Container class="p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 -mx-4">
+            {
+            Object.values(equipmentList).map(equip => (
+            <CardEquip title={equip.title} href={equip.href} image={equip.image}></CardEquip>
+            ))
+            }
+        </div>
+    </Container>
+    <Container class="pt-4 pb-16">
+        <p class="paragraph">В данном разделе представлено серверное оборудование и системы хранения данных (СХД), которые мы поставляем и внедряем. В каталоге вы найдете проверенные решения от ведущих мировых производителей, таких как HPE, Dell и Supermicro.</p>
+        <p class="paragraph">Мы работаем с оборудованием для задач любого масштаба: от стартапов до корпоративных дата-центров. Все представленные решения могут быть адаптированы под ваши потребности и интегрированы в существующую инфраструктуру с полным циклом монтажа и настройки.</p>
+    </Container>
+</Layout>

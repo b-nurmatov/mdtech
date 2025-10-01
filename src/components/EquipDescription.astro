@@ -1,0 +1,41 @@
+---
+// const {tabs} = Astro.props;
+const tabs = {
+    description: {
+        name: "description",
+        label: "Описание",
+        attrs: {'data-opened': ''},
+    },
+    files: {
+        name: "files",
+        label: "Файлы для скачивания",
+        attrs: "",
+    },
+};
+---
+
+<div>
+    <div class="flex items-end gap-1 relative -bottom-[1px]">
+        {
+            Object.values(tabs).map((tab) => (
+                <button
+                    set:html={tab.label}
+                    data-tabsContainer-toggle
+                    data-targetId={tab.name}
+                    {...tab.attrs}
+                    class="text-base/[100%] font-bold p-3 border-l border-t border-r cursor-pointer border-surface-4 rounded-t-sm bg-accent-green text-white active:bg-accent-green-dark data-opened:bg-surface-1 active:data-opened:bg-surface-3 data-opened:text-emph-medium"
+                />
+            ))
+        }
+    </div>
+    <div
+        class="bg-surface-1 border border-surface-4 px-8 pt-4 pb-8 rounded-tr-generic rounded-b-generic"
+    >
+        <div id={tabs.description.name} class="hidden data-opened:block" {...tabs.description.attrs}>
+            <slot name="description" />
+        </div>
+        <div id={tabs.files.name} class="hidden data-opened:block" {...tabs.files.attrs}>
+            <slot name="files" />
+        </div>
+    </div>
+</div>

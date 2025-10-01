@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
+import ConsultBlock from "../components/ConsultBlock.astro";
+import CardEquipCat from "../components/CardEquipCat.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+import pages from "../data/pages.json";
+import equipmentMenu from "../data/equipmentMenu.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.equipmentOverview.label,
+        href: pages.equipmentOverview.href,
+    },
+]
+---
+
+<Layout>
+    <div class="w-full flex flex-col items-center bg-surface-3 border-b border-surface-4 min-h-80 py-8 xl:pb-16 relative">
+        <Container class="z-10">
+            <Breadcrumbs list={breadcrumbs} />
+        </Container>
+        <Container class="z-10">
+            <h1 class="h1 text-emph-medium uppercase xl:max-w-[40rem]">Оборудование для<br> IT-инфраструктуры</h1>
+            <p class="paragraph-large xl:max-w-[40rem]">Компания MD Tech является официальным партнером ключевых вендоров на рынке ИТ-оборудования. Мы предлагаем комплексные решения для бизнеса: от поставки отдельного сервера или сетевого коммутатора до создания полноценной IT-инфраструктуры «под ключ» в Узбекистане. В нашем каталоге вы найдете сертифицированное оборудование для построения надежных и масштабируемых сетей передачи данных, центров обработки данных (ЦОД), систем хранения, видеонаблюдения и беспроводной связи. Гарантируем официальную гарантию, профессиональную консультацию и полное соответствие оборудования заявленным характеристикам.</p>
+        </Container>
+        <img src="/equipment_overview/equipment_overview-hero.webp" aria-hidden="true" alt="" class="absolute right-0 min-[1800px]:right-[8.75rem] top-0 w-1/2 min-[1800px]:w-[57.5rem] h-full object-contain mix-blend-multiply hidden xl:block">
+    </div>
+    <Container class="py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+            {
+            Object.values(equipmentMenu).map(equip => (
+            <CardEquipCat title={equip.title.label} image={equip.title.image} list={equip.list}></CardEquipCat>
+            ))
+            }
+        </div>
+    </Container>
+    <Container class="py-8">
+        <ConsultBlock buttonFill={true}>
+            <span>Наши инженеры помогут подобрать оборудование, идеально соответствующее вашим техническим требованиям и бюджету.</span>
+            <span slot="button">Получить консультацию</span>
+        </ConsultBlock>
+    </Container>
+</Layout>

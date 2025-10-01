@@ -1,0 +1,318 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Similar from "../layouts/Similar.astro";
+import Icon from "../components/Icon.astro";
+import Container from "../layouts/Container.astro";
+import ContentAndSidebar from "../layouts/ContentAndSidebar.astro";
+import SidebarModule from "../layouts/SidebarModule.astro";
+import SidebarContacts from "../components/SidebarContacts.astro";
+import CardArticle from "../components/CardArticle.astro";
+import CardSolution from "../components/CardSolution.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import List from "../components/List.astro";
+import Item from "../components/Item.astro";
+import ConsultBlock from "../components/ConsultBlock.astro";
+import CardEquip from "../components/CardEquip.astro";
+import EquipDescription from "../components/EquipDescription.astro";
+import DropdownBlock from "../components/DropdownBlock.astro";
+import File from "../components/File.astro";
+import EquipSlider from "../components/EquipSlider.astro";
+
+import pages from "../data/pages.json";
+import articlesList from "../data/articlesList.json";
+import solutionsList from "../data/solutionsList.json";
+import equipmentList from "../data/equipmentList.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.equipmentOverview.label,
+        href: pages.equipmentOverview.href,
+    },
+    {
+        label: "Серверы",
+        href: pages.equipmentCategory.href,
+    },
+    {
+        label: "Fujitsu PRIMERGY RX2540 M6",
+        href: pages.equipmentPage.href,
+    },
+];
+
+const files = [
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Datasheet.pdf",
+        icon: "PDF",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Quote.docx",
+        icon: "Word",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Specifications.xls",
+        icon: "XLS",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Components.csv",
+        icon: "CSV",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Drivers.zip",
+        icon: "Zip",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Config.txt",
+        icon: "Text",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Schema.xml",
+        icon: "XML",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Product.jpg",
+        icon: "Image",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Overview.mp4",
+        icon: "Video",
+    },
+    {
+        name: "Fujitsu-PRIMERGY-RX2540-Drivers.rar",
+        icon: "Unknown",
+    },
+];
+
+const slider = [
+    {
+        image: "/equipment_page/equipment_page-01.webp",
+        title: "Fujitsu PRIMERGY RX2540",
+    },
+    {
+        image: "/equipment_page/equipment_page-02.webp",
+        title: "Fujitsu PRIMERGY RX2540",
+    },
+    {
+        image: "/equipment_page/equipment_page-03.webp",
+        title: "Fujitsu PRIMERGY RX2540",
+    },
+    {
+        image: "/equipment_page/equipment_page-04.webp",
+        title: "Fujitsu PRIMERGY RX2540",
+    },
+];
+---
+
+<Layout title="Оборудование">
+    <Container class="z-10">
+        <Breadcrumbs list={breadcrumbs} />
+        <h1 class="h1">Fujitsu PRIMERGY RX2540 M6</h1>
+    </Container>
+    <ContentAndSidebar ptClass="pt-0" pbClass="pb-8">
+        <div class="w-full pb-8">
+            <EquipSlider slides={slider}></EquipSlider>
+        </div>
+
+        <EquipDescription>
+            <Fragment slot="description">
+                <p class="paragraph">
+                    Fujitsu PRIMERGY RX2540 M6 — это двухпроцессорный стоечный
+                    сервер начального уровня в форм-факторе 2U, созданный для
+                    выполнения широкого круга бизнес-задач. Он идеально подходит
+                    для использования в качестве файлового сервера,
+                    веб-хостинга, платформы для виртуализации или развертывания
+                    корпоративных приложений.
+                </p>
+                <p class="paragraph">
+                    Модель сочетает в себе высокую плотность вычислительной
+                    мощности, гибкость конфигурации и отказоустойчивость,
+                    характерную для enterprise-решений. Благодаря продуманной
+                    системе охлаждения и энергоэффективным компонентам, сервер
+                    обеспечивает стабильную работу при минимальных затратах на
+                    эксплуатацию, что делает его отличным выбором для среднего
+                    бизнеса и филиалов крупных компаний.
+                </p>
+                <h6 class="h6">Технические характеристики</h6>
+                <table class="table w-full">
+                    <thead>
+                        <tr>
+                            <td>Параметр</td>
+                            <td>Характеристика</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Процессоры</td>
+                            <td
+                                >2 x Intel Xeon Scalable (до 40 ядер на
+                                процессор)</td
+                            >
+                        </tr>
+                        <tr>
+                            <td>Память</td>
+                            <td>16 слотов DDR4, до 4 ТБ</td>
+                        </tr>
+                        <tr>
+                            <td>Диски</td>
+                            <td
+                                >До 12 × 2.5" или 4 × 3.5" HDD/SSD (поддержка
+                                NVMe)</td
+                            >
+                        </tr>
+                        <tr>
+                            <td>Сеть</td>
+                            <td
+                                >2 × Gigabit Ethernet (базово), опционально
+                                10/25 Гбит/с</td
+                            >
+                        </tr>
+                        <tr>
+                            <td>Резервирование</td>
+                            <td>Блоки питания с горячей заменой (до 2 шт.)</td>
+                        </tr>
+                        <tr>
+                            <td>Управление</td>
+                            <td>Модуль iRMC S9 для удаленного контроля</td>
+                        </tr>
+                        <tr>
+                            <td>Форм-фактор</td>
+                            <td>Стоечный 2U</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="paragraph">
+                    Fujitsu PRIMERGY RX2540 M6 — это двухпроцессорный стоечный
+                    сервер начального уровня в форм-факторе 2U, созданный для
+                    выполнения широкого круга бизнес-задач. Он идеально подходит
+                    для использования в качестве файлового сервера,
+                    веб-хостинга, платформы для виртуализации или развертывания
+                    корпоративных приложений.
+                </p>
+                <p class="paragraph">
+                    Модель сочетает в себе высокую плотность вычислительной
+                    мощности, гибкость конфигурации и отказоустойчивость,
+                    характерную для enterprise-решений. Благодаря продуманной
+                    системе охлаждения и энергоэффективным компонентам, сервер
+                    обеспечивает стабильную работу при минимальных затратах на
+                    эксплуатацию, что делает его отличным выбором для среднего
+                    бизнеса и филиалов крупных компаний.
+                </p>
+                <DropdownBlock id="block1" dropped={true}>
+                    <h5 slot="head" class="text-h5 leading-5 font-h5 uppercase">
+                        Гарантии
+                    </h5>
+                    <Fragment slot="content">
+                        <p class="paragraph">
+                            Компания MD Tech предоставляет полную гарантию на
+                            всё серверное оборудование.
+                        </p>
+                        <List>
+                            <Item
+                                ><strong>Официальные поставки:</strong> Мы работаем
+                                только с авторизованными дистрибьюторами ведущих
+                                брендов.</Item
+                            >
+                            <Item
+                                ><strong>Заводская гарантия:</strong> На всё оборудование
+                                распространяется официальная гарантия производителя.</Item
+                            >
+                            <Item
+                                ><strong>Сервисная поддержка:</strong> Обеспечиваем
+                                полное сервисное обслуживание в соответствии с стандартами
+                                производителя.</Item
+                            >
+                        </List>
+                        <p class="paragraph">
+                            Мы гарантируем подлинность, надежность и
+                            профессиональную поддержку каждого решения.
+                        </p>
+                    </Fragment>
+                </DropdownBlock>
+
+                <DropdownBlock id="block2">
+                    <h5 slot="head" class="text-h5 leading-5 font-h5 uppercase">
+                        Доставка и оплата
+                    </h5>
+                    <Fragment slot="content">
+                        <p class="paragraph">
+                            Компания MD Tech доставляет оборудование по всему
+                            Узбекистану.
+                        </p>
+                        <List>
+                            <Item
+                                ><strong>По Ташкенту:</strong> Бесплатная доставка
+                                в день заказа (при оформлении до 15:00).</Item
+                            >
+                            <Item
+                                ><strong>По регионам:</strong> Доставка через транспортные
+                                компании.</Item
+                            >
+                            <Item
+                                ><strong>Самовывоз:</strong> Вы можете забрать заказ
+                                самостоятельно с нашего склада по адресу: г. Ташкент,
+                                Юнусабадский район, ул. Амира Темура, 25, офис 4</Item
+                            >
+                        </List>
+                        <h6 class="h6">Способы оплаты</h6>
+                        <List>
+                            <Item
+                                ><strong>Безналичный расчет</strong> для юридических
+                                лиц.</Item
+                            >
+                            <Item
+                                ><strong>Наличный расчет</strong> при самовывозе.</Item
+                            >
+                            <Item
+                                ><strong>Лизинг и отсрочка платежа</strong> для надежных
+                                партнеров.</Item
+                            >
+                        </List>
+                    </Fragment>
+                </DropdownBlock>
+            </Fragment>
+            <Fragment slot="files">
+                <ul>
+                    {
+                        files.map((item) => (
+                            <li>
+                                <File href="#" icon={item.icon}>
+                                    {item.name}
+                                </File>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </Fragment>
+        </EquipDescription>
+
+        <SidebarContacts
+            slot="sidebar"
+            buttonText="Запросить стоимость"
+            button2Text="Почему не видно цены товара?"
+        />
+    </ContentAndSidebar>
+
+    <Similar>
+        <h2 class="h2">Похожее оборудование</h2>
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 -mx-2 lg:-mx-4"
+        >
+            {
+                [
+                    equipmentList.eq08,
+                    equipmentList.eq10,
+                    equipmentList.eq11,
+                    equipmentList.eq12,
+                ].map((card) => (
+                    <CardEquip
+                        title={card.title}
+                        image={card.image}
+                        href={card.href}
+                    />
+                ))
+            }
+        </div>
+    </Similar>
+</Layout>

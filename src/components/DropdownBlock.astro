@@ -1,0 +1,24 @@
+---
+import Icon from "./Icon.astro";
+
+const { dropped, id } = Astro.props;
+
+const dataDropped = dropped === true ? { "data-dropped": "" } : "";
+---
+
+<div id={id} class="group/dropdownBlock">
+    <div class="flex items-center justify-between gap-4 pt-5 pb-2.5 group-[[data-dropped]]/dropdownBlock:border-b-0 border-b border-surface-4">
+        <div class="cursor-pointer hover:text-accent-green active:text-accent-green-dark" data-dropdownBlock-toggle data-targetId={id}>
+            <slot name="head" />
+        </div>
+        <button data-dropdownBlock-toggle data-targetId={id} class="cursor-pointer text-emph-medium hover:text-accent-green active:text-accent-green-dark">
+            <Icon
+                name="chevron-down"
+                class="shrink-0 grow-0 group-[[data-dropped]]/dropdownBlock:-scale-100"
+            />
+        </button>
+    </div>
+    <div class="hidden group-[[data-dropped]]/dropdownBlock:block" {...dataDropped}>
+        <slot name="content" />
+    </div>
+</div>

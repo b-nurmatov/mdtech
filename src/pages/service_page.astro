@@ -1,0 +1,215 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Similar from "../layouts/Similar.astro";
+import Icon from "../components/Icon.astro";
+import Container from "../layouts/Container.astro";
+import ContentAndSidebar from "../layouts/ContentAndSidebar.astro";
+import SidebarModule from "../layouts/SidebarModule.astro";
+import SidebarContacts from "../components/SidebarContacts.astro";
+import CardArticle from "../components/CardArticle.astro";
+import CardSolution from "../components/CardSolution.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import List from "../components/List.astro";
+import Item from "../components/Item.astro";
+import ConsultBlock from "../components/ConsultBlock.astro";
+
+import pages from "../data/pages.json";
+import articlesList from "../data/articlesList.json";
+import solutionsList from "../data/solutionsList.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.servicesOverview.label,
+        href: pages.servicesOverview.href,
+    },
+    {
+        label: "Wi-Fi для офиса «под ключ»",
+        href: pages.servicePage.href,
+    },
+];
+
+const troubles = [
+    "Сотрудники теряют связь при переходе между переговорными",
+    "Видеозвонки прерываются в самый важный момент",
+    "В некоторых кабинетах интернет постоянно пропадает",
+    "Новые сотрудники долго настраивают доступ к сети",
+    "Вы беспокоитесь о безопасности корпоративных данных",
+];
+
+const stages = [
+    {
+        title: "1. Бесплатный аудит",
+        text: "Анализ планировки офиса, измерение уровня сигнала, выявление помех.",
+        image: "/service_page/service_page-02.webp",
+    },
+    {
+        title: "2. 3D-планирование",
+        text: "Проектирование оптимального размещения оборудования с учетом мебели и конструкций.",
+        image: "/service_page/service_page-03.webp",
+    },
+    {
+        title: "3. Подбор оборудования",
+        text: "Выбор точек доступа и контроллеров под ваши задачи и бюджет.",
+        image: "/service_page/service_page-04.webp",
+    },
+    {
+        title: "4. Умный монтаж",
+        text: "Аккуратная установка без повреждения ремонта с минимальным временем простоя.",
+        image: "/service_page/service_page-05.webp",
+    },
+    {
+        title: "5. Настройка и тестирование",
+        text: "Настройка безопасности, приоритизации трафика и тестирование под нагрузкой.",
+        image: "/service_page/service_page-06.webp",
+    },
+];
+
+const reasons = [
+  {
+    title: "Невидимая интеграция",
+    text: "Используем оборудование, которое гармонично вписывается в интерьер",
+  },
+  {
+    title: "Единая система управления",
+    text: "Централизованный контроль всех точек доступа через единую панель",
+  },
+  {
+    title: "Автоматическая оптимизация",
+    text: "Система сама выбирает оптимальные каналы и мощность сигнала",
+  },
+  {
+    title: "Поддержка 24/7",
+    text: "Круглосуточный мониторинг и оперативное решение проблем",
+  }
+]
+---
+
+<Layout title="Услуга">
+    <Container class="z-10">
+        <Breadcrumbs list={breadcrumbs} />
+        <h1 class="h1">Wi-Fi для офиса «под ключ»</h1>
+    </Container>
+    <ContentAndSidebar ptClass="pt-0" pbClass="pb-8">
+        <img
+            src="/service_page/service_page-01.webp"
+            alt=""
+            class="w-full rounded-generic border border-surface-4 aspect-[4/3] object-cover"
+        />
+        <p class="paragraph-large">
+            Проектируем и внедряем профессиональные Wi-Fi решения для офисов
+            любого размера. Обеспечиваем бесперебойную работу видеоконференций,
+            облачных сервисов и корпоративных систем без «мертвых зон».
+        </p>
+        <p class="paragraph-large">
+            Бесшовный роуминг по всему офису — сотрудники остаются на связи при
+            перемещении между кабинетами.
+        </p>
+        <h2 class="h2">Знакомые проблемы с офисным Wi-Fi?</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+            {
+                troubles.map((item) => (
+                    <li class="flex items-start bg-surface-1 border border-surface-4 p-4 gap-4 rounded-generic">
+                        <div class="self-stretch flex flex-col justify-center max-h-12">
+                            <Icon
+                                name="priority"
+                                class="text-accent-red size-8 shrink-0"
+                            />
+                        </div>
+                        <div class="min-h-12 flex flex-col justify-center">
+                            <span set:html={item} />
+                        </div>
+                    </li>
+                ))
+            }
+        </ul>
+        <h2 class="h2">Профессиональный Wi-Fi —  основа эффективной работы</h2>
+        <p class="paragraph">
+            Мы создаем централизованные беспроводные сети, которые:
+        </p>
+        <List>
+            <Item>Обеспечивают стабильное соединение в каждом уголке офиса</Item
+            >
+            <Item>Выдерживают одновременную работу десятков устройств</Item>
+            <Item
+                >Автоматически распределяют нагрузку между точками доступа</Item
+            >
+            <Item
+                >Защищают данные с помощью корпоративных стандартов безопасности</Item
+            >
+            <Item>Легко масштабируются при росте компании</Item>
+        </List>
+        <h2 class="h2">5 этапов создания  идеальной офисной сети</h2>
+        <div class="flex flex-col gap-2">
+            {
+                stages.map((item) => (
+                    <div class="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 bg-surface-1 border border-surface-4 p-2 pb-4 sm:p-4 rounded-generic">
+                        <img
+                            src={item.image}
+                            alt=""
+                            class="w-full aspect-[3/2] rounded-sm sm:rounded-generic border border-surface-4 object-cover"
+                        />
+                        <div class="flex flex-col justify-center gap-2 sm:gap-3 sm:col-span-2">
+                            <h3
+                                class="text-xl sm:text-2xl font-bold"
+                                set:html={item.title}
+                            />
+                            <p set:html={item.text} class="text-base" />
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+        <h2 class="h2">Что входит в услугу</h2>
+        <List>
+            <Item>Радиообследование офисного пространства</Item>
+            <Item>Проектирование Wi-Fi сети с бесшовным роумингом</Item>
+            <Item>Поставка оборудования (точки доступа, контроллеры, коммутаторы)</Item>
+            <Item>Монтаж и настройка оборудования</Item>
+            <Item>Настройка безопасной авторизации сотрудников и гостей</Item>
+            <Item>Гарантийное и постгарантийное обслуживание</Item>
+        </List>
+        <h2 class="h2">Почему офисы выбирают MD Tech?</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {
+            reasons.map(item => (
+            <li class="flex items-center bg-surface-1 border border-surface-4 p-4 gap-4 rounded-generic">
+                <div class="">
+                    <Icon
+                        name="lead_convert"
+                        class="text-accent-green size-8 shrink-0"
+                    />
+                </div>
+                <div class="min-h-12 flex flex-col justify-center">
+                    <h3 set:html={item.title} class="text-lg font-bold" />
+                    <p set:html={item.text} class="text-base"></p>
+                </div>
+            </li>
+            ))
+            }
+        </ul>
+        <h2 class="h2">Стоимость внедрения</h2>
+        <p class="paragraph">Узнайте стоимость Wi-Fi для вашего офиса за 24 часа. <br> Получите бесплатный расчет проекта и варианты решений под ваш бюджет.</p>
+        <ConsultBlock>
+            <span>Оставьте заявку и наш инженер подготовит варианты решений для вашего офиса!</span>
+            <span slot="button">Запросить стоимость</span>
+        </ConsultBlock>
+
+
+        <SidebarContacts slot="sidebar" buttonText="Запросить стоимость" />
+    </ContentAndSidebar>
+
+    <Similar>
+        <h2 class="h2">Типовые решения для офиса</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 -mx-2 lg:-mx-4">
+            {
+            [solutionsList.sol1, solutionsList.sol2, solutionsList.sol3].map(card => (
+            <CardSolution title={card.title} description={card.description} price={card.price} image={card.image}></CardSolution>
+            ))
+            }
+        </div>
+    </Similar>
+</Layout>

@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Container from "../layouts/Container.astro";
+import ConsultBlock from "../components/ConsultBlock.astro";
+import CardEquipCat from "../components/CardEquipCat.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+
+import pages from "../data/pages.json";
+import servicesMenu from "../data/servicesMenu.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.servicesOverview.label,
+        href: pages.servicesOverview.href,
+    },
+]
+---
+
+<Layout>
+    <div class="w-full flex flex-col items-center bg-surface-3 border-b border-surface-4 min-h-80 py-8 xl:pb-16 relative">
+        <Container class="z-10">
+            <Breadcrumbs list={breadcrumbs} />
+        </Container>
+        <Container class="z-10">
+            <h1 class="h1 text-emph-medium uppercase xl:max-w-[40rem]">Профессиональные<br> IT-услуги для бизнеса<br> в Узбекистане</h1>
+            <p class="paragraph-large xl:max-w-[40rem]">Мы специализируемся на проектировании, внедрении и обслуживании современной IT-инфраструктуры, обеспечивая надежную основу для цифровой трансформации вашего бизнеса. Наши эксперты обладают сертификациями ведущих вендоров и более чем 10-летним опытом реализации проектов в различных отраслях - от финансов и медицины до промышленности и ритейла. Предлагаем как разовые услуги, так и полное IT-обслуживание по модели аутсорсинга.</p>
+        </Container>
+        <img src="/services_overview/services_overview-hero.webp" aria-hidden="true" alt="" class="absolute -right-4 min-[1800px]:right-[17.5rem] bottom-0 w-1/2 min-[1800px]:w-[37.56rem] h-[35.63rem] object-contain mix-blend-multiply hidden xl:block">
+    </div>
+    <Container class="py-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
+            {
+            Object.values(servicesMenu).map(serv => (
+            <CardEquipCat title={serv.title.label} image={serv.title.image} list={serv.list}></CardEquipCat>
+            ))
+            }
+        </div>
+    </Container>
+    <Container class="py-8">
+        <ConsultBlock buttonFill={true}>
+            <span>Оставьте заявку для получения бесплатной консультации, и наши специалисты подготовят индивидуальное коммерческое предложение.</span>
+            <span slot="button">Получить консультацию</span>
+        </ConsultBlock>
+    </Container>
+</Layout>
