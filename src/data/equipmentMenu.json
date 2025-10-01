@@ -1,164 +1,216 @@
 [
   {
     "title": {
-      "label": "Сетевое оборудование"
+      "label": "Сетевое оборудование",
+      "href": "/equipment_category",
+      "image": "/equipment_overview/equipment_overview-01.webp"
     },
     "list": [
       {
-        "label": "Коммутаторы"
+        "label": "Коммутаторы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Маршрутизаторы"
+        "label": "Маршрутизаторы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Точки доступа Wi-Fi"
+        "label": "Точки доступа Wi-Fi",
+        "href": "/equipment_category"
       },
       {
-        "label": "Wi-Fi контроллеры"
+        "label": "Wi-Fi контроллеры",
+        "href": "/equipment_category"
       },
       {
-        "label": "Антиспам"
+        "label": "Антиспам",
+        "href": "/equipment_category"
       }
     ]
   },
   {
     "title": {
-      "label": "Серверы и системы хранения данных"
+      "label": "Серверы и системы хранения данных",
+      "href": "/equipment_category",
+      "image": "/equipment_overview/equipment_overview-02.webp"
     },
     "list": [
       {
-        "label": "Серверы"
+        "label": "Серверы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Системы хранения данных"
+        "label": "Системы хранения данных",
+        "href": "/equipment_category"
       },
       {
-        "label": "Ленточные библиотеки"
+        "label": "Ленточные библиотеки",
+        "href": "/equipment_category"
       },
       {
-        "label": "Ленточные автозагрузчики"
+        "label": "Ленточные автозагрузчики",
+        "href": "/equipment_category"
       },
       {
-        "label": "Вычислительные узлы"
+        "label": "Вычислительные узлы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Массивы хранения данных"
+        "label": "Массивы хранения данных",
+        "href": "/equipment_category"
       }
     ]
   },
   {
     "title": {
-      "label": "IP-телефония и видеоконференсвязь"
+      "label": "IP-телефония и видеоконференсвязь",
+      "href": "/equipment_category",
+      "image": "/equipment_overview/equipment_overview-03.webp"
     },
     "list": [
       {
-        "label": "IP-телефоны"
+        "label": "IP-телефоны",
+        "href": "/equipment_category"
       },
       {
-        "label": "IP-АТС"
+        "label": "IP-АТС",
+        "href": "/equipment_category"
       },
       {
-        "label": "Спикерфоны"
+        "label": "Спикерфоны",
+        "href": "/equipment_category"
       },
       {
-        "label": "Системы видеоконференцсвязи"
+        "label": "Системы видеоконференцсвязи",
+        "href": "/equipment_category"
       },
       {
-        "label": "Видеосистемы"
+        "label": "Видеосистемы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Гарнитуры"
+        "label": "Гарнитуры",
+        "href": "/equipment_category"
       }
     ]
   },
   {
     "title": {
-      "label": "Программное обеспечение"
+      "label": "Программное обеспечение",
+      "href": "/equipment_category",
+      "image": "/equipment_overview/equipment_overview-04.webp"
     },
     "list": [
       {
-        "label": "Антивирусы"
+        "label": "Антивирусы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Резервное копирование данных"
+        "label": "Резервное копирование данных",
+        "href": "/equipment_category"
       },
       {
-        "label": "Операционные системы"
+        "label": "Операционные системы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Управление мобильными устройствами"
+        "label": "Управление мобильными устройствами",
+        "href": "/equipment_category"
       },
       {
-        "label": "Виртуализация"
+        "label": "Виртуализация",
+        "href": "/equipment_category"
       },
       {
-        "label": "Почтовые серверы"
+        "label": "Почтовые серверы",
+        "href": "/equipment_category"
       }
     ]
   },
   {
     "title": {
-      "label": "Инженерная инфраструктура"
+      "label": "Инженерная инфраструктура",
+      "href": "/equipment_category",
+      "image": "/equipment_overview/equipment_overview-05.webp"
     },
     "list": [
       {
-        "label": "Источники бесперебойного питания"
+        "label": "Источники бесперебойного питания",
+        "href": "/equipment_category"
       },
       {
-        "label": "Телекоммуникационные шкафы"
+        "label": "Телекоммуникационные шкафы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Монтажные стойки "
+        "label": "Монтажные стойки ",
+        "href": "/equipment_category"
       }
     ]
   },
   {
     "title": {
-      "label": "Печатная техника"
+      "label": "Печатная техника",
+      "href": "/equipment_category",
+      "image": "/equipment_overview/equipment_overview-06.webp"
     },
     "list": [
       {
-        "label": "Цветные МФУ"
+        "label": "Цветные МФУ",
+        "href": "/equipment_category"
       },
       {
-        "label": "Монохромные МФУ"
+        "label": "Монохромные МФУ",
+        "href": "/equipment_category"
       },
       {
-        "label": "Принтеры цветные"
+        "label": "Принтеры цветные",
+        "href": "/equipment_category"
       },
       {
-        "label": "Принтеры монохромные"
+        "label": "Принтеры монохромные",
+        "href": "/equipment_category"
       },
       {
-        "label": "Дупликаторы"
+        "label": "Дупликаторы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Сканеры"
+        "label": "Сканеры",
+        "href": "/equipment_category"
       }
     ]
   },
   {
     "title": {
-      "label": "Информационная безопасность"
+      "label": "Информационная безопасность",
+      "href": "/equipment_category",
+      "image": "/equipment_overview/equipment_overview-07.webp"
     },
     "list": [
       {
-        "label": "VPN клиенты"
+        "label": "VPN клиенты",
+        "href": "/equipment_category"
       },
       {
-        "label": "IPS системы"
+        "label": "IPS системы",
+        "href": "/equipment_category"
       },
       {
-        "label": "DLP-системы"
+        "label": "DLP-системы",
+        "href": "/equipment_category"
       },
       {
-        "label": "SIEM-системы"
+        "label": "SIEM-системы",
+        "href": "/equipment_category"
       },
       {
-        "label": "Защита веб-приложений (WAF)"
+        "label": "Защита веб-приложений (WAF)",
+        "href": "/equipment_category"
       },
       {
-        "label": "Двухфакторная аутентификация"
+        "label": "Двухфакторная аутентификация",
+        "href": "/equipment_category"
       }
     ]
   }

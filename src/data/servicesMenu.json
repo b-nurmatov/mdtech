@@ -1,196 +1,258 @@
 [
   {
     "title": {
-      "label": "Общие разделы"
+      "label": "Общие разделы",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-01.webp"
     },
     "list": [
       {
-        "label": "IT-аутсорсинг"
+        "label": "IT-аутсорсинг",
+        "href": "/service_page"
       },
       {
-        "label": "IT-консалтинг"
+        "label": "IT-консалтинг",
+        "href": "/service_page"
       },
       {
-        "label": "Демо-фонд"
+        "label": "Демо-фонд",
+        "href": "/service_page"
       },
       {
-        "label": "ИТ-поддержка"
+        "label": "ИТ-поддержка",
+        "href": "/service_page"
       },
       {
-        "label": "Поставка ИТ-оборудования"
+        "label": "Поставка ИТ-оборудования",
+        "href": "/service_page"
       },
       {
-        "label": "Производство серверов"
+        "label": "Производство серверов",
+        "href": "/service_page"
       }
     ]
   },
   {
     "title": {
-      "label": "Сети передачи данных"
+      "label": "Сети передачи данных",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-02.webp"
     },
     "list": [
       {
-        "label": "Аудит сетевой инфраструктуры"
+        "label": "Аудит сетевой инфраструктуры",
+        "href": "/service_page"
       },
       {
-        "label": "Проектирование сетей передачи данных"
+        "label": "Проектирование сетей передачи данных",
+        "href": "/service_page"
       },
       {
-        "label": "Проектирование СКС"
+        "label": "Проектирование СКС",
+        "href": "/service_page"
       },
       {
-        "label": "Монтаж СКС"
+        "label": "Монтаж СКС",
+        "href": "/service_page"
       },
       {
-        "label": "Аудит СКС"
+        "label": "Аудит СКС",
+        "href": "/service_page"
       },
       {
-        "label": "Аудит СКС"
+        "label": "Аудит СКС",
+        "href": "/service_page"
       },
       {
-        "label": "Проектирование ЛВС"
+        "label": "Проектирование ЛВС",
+        "href": "/service_page"
       },
       {
-        "label": "Техническое обслуживание ЛВС"
+        "label": "Техническое обслуживание ЛВС",
+        "href": "/service_page"
       }
     ]
   },
   {
     "title": {
-      "label": "Хранение и обработка данных"
+      "label": "Хранение и обработка данных",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-03.webp"
     },
     "list": [
       {
-        "label": "Аудит ИТ-инфраструктуры"
+        "label": "Аудит ИТ-инфраструктуры",
+        "href": "/service_page"
       },
       {
-        "label": "Аудит файлового сервера"
+        "label": "Аудит файлового сервера",
+        "href": "/service_page"
       },
       {
-        "label": "Организация ИТ-инфраструктуры"
+        "label": "Организация ИТ-инфраструктуры",
+        "href": "/service_page"
       },
       {
-        "label": "Планирование и внедрение систем резервного копирования"
+        "label": "Планирование и внедрение систем резервного копирования",
+        "href": "/service_page"
       },
       {
-        "label": "Проектирование и строительство ЦОД"
+        "label": "Проектирование и строительство ЦОД",
+        "href": "/service_page"
       }
     ]
   },
   {
     "title": {
-      "label": "Wi-Fi сети"
+      "label": "Wi-Fi сети",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-04.webp"
     },
     "list": [
       {
-        "label": "Аудит сети Wi-Fi"
+        "label": "Аудит сети Wi-Fi",
+        "href": "/service_page"
       },
       {
-        "label": "Радиопланирование Wi-Fi сетей"
+        "label": "Радиопланирование Wi-Fi сетей",
+        "href": "/service_page"
       },
       {
-        "label": "Радиообследование Wi-Fi"
+        "label": "Радиообследование Wi-Fi",
+        "href": "/service_page"
       },
       {
-        "label": "Проектирование Wi-Fi сетей"
+        "label": "Проектирование Wi-Fi сетей",
+        "href": "/service_page"
       },
       {
-        "label": "Сервисное обслуживание беспроводных сетей"
+        "label": "Сервисное обслуживание беспроводных сетей",
+        "href": "/service_page"
       },
       {
-        "label": "Wi-Fi для офиса"
+        "label": "Wi-Fi для офиса",
+        "href": "/service_page"
       },
       {
-        "label": "Wi-Fi для предприятий"
+        "label": "Wi-Fi для предприятий",
+        "href": "/service_page"
       },
       {
-        "label": "Wi-Fi для ресторанов и кафе"
+        "label": "Wi-Fi для ресторанов и кафе",
+        "href": "/service_page"
       },
       {
-        "label": "Wi-Fi для торговых центров"
+        "label": "Wi-Fi для торговых центров",
+        "href": "/service_page"
       }
     ]
   },
   {
     "title": {
-      "label": "Информационная безопасность"
+      "label": "Информационная безопасность",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-05.webp"
     },
     "list": [
       {
-        "label": "Аудит защищенности корпоративной сети "
+        "label": "Аудит защищенности корпоративной сети ",
+        "href": "/service_page"
       },
       {
-        "label": "Аудит на соответствие средств защиты требованиям законодательства "
+        "label": "Аудит на соответствие средств защиты требованиям законодательства ",
+        "href": "/service_page"
       },
       {
-        "label": "Организация защиты корпоративной сети передачи данных "
+        "label": "Организация защиты корпоративной сети передачи данных ",
+        "href": "/service_page"
       },
       {
-        "label": "Тест на проникновение "
+        "label": "Тест на проникновение ",
+        "href": "/service_page"
       }
     ]
   },
   {
     "title": {
-      "label": "Системы печати"
+      "label": "Системы печати",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-06.webp"
     },
     "list": [
       {
-        "label": "Аудит печати"
+        "label": "Аудит печати",
+        "href": "/service_page"
       },
       {
-        "label": "Оптимизация печати"
+        "label": "Оптимизация печати",
+        "href": "/service_page"
       },
       {
-        "label": "Покопийный контракт"
+        "label": "Покопийный контракт",
+        "href": "/service_page"
       }
     ]
   },
   {
     "title": {
-      "label": "Мультимедиа"
+      "label": "Мультимедиа",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-07.webp"
     },
     "list": [
       {
-        "label": "Видеостены под ключ"
+        "label": "Видеостены под ключ",
+        "href": "/service_page"
       },
       {
-        "label": "Внедрение корпоративного телевидения"
+        "label": "Внедрение корпоративного телевидения",
+        "href": "/service_page"
       },
       {
-        "label": "Система бронирования переговорных комнат"
+        "label": "Система бронирования переговорных комнат",
+        "href": "/service_page"
       }
     ]
   },
   {
     "title": {
-      "label": "Безопасность объекта"
+      "label": "Безопасность объекта",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-08.webp"
     },
     "list": [
       {
-        "label": "Монтаж систем видеонаблюдения"
+        "label": "Монтаж систем видеонаблюдения",
+        "href": "/service_page"
       },
       {
-        "label": "Установка системы контроля и управления доступом"
+        "label": "Установка системы контроля и управления доступом",
+        "href": "/service_page"
       },
       {
-        "label": "Проектирование систем контроля и управления доступом"
+        "label": "Проектирование систем контроля и управления доступом",
+        "href": "/service_page"
       },
       {
-        "label": "Техническое обслуживание СКУД"
+        "label": "Техническое обслуживание СКУД",
+        "href": "/service_page"
       }
     ]
   },
   {
     "title": {
-      "label": "Совместная работа"
+      "label": "Совместная работа",
+      "href": "/service_page",
+      "image": "/services_overview/services_overview-09.webp"
     },
     "list": [
       {
-        "label": "Настройка IP-телефонии"
+        "label": "Настройка IP-телефонии",
+        "href": "/service_page"
       },
       {
-        "label": "Внедрение видеоконференцсвязи"
+        "label": "Внедрение видеоконференцсвязи",
+        "href": "/service_page"
       }
     ]
   }

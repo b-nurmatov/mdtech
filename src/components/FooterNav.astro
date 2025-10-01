@@ -1,16 +1,29 @@
 ---
 import Icon from "./Icon.astro";
+import pages from "../data/pages.json";
 
+// const menu = [
+//     { label: "О компании", href: "/about" },
+//     { label: "Оборудование", href: "/equipment" },
+//     { label: "Решения", href: "/solutions" },
+//     { label: "Проекты", href: "/projects" },
+//     { label: "Акции", href: "/promotions" },
+//     { label: "Карьера", href: "/careers" },
+//     { label: "Блог", href: "/blog" },
+//     { label: "Контакты", href: "/contacts" },
+// ];
 const menu = [
-    { label: "О компании", href: "/about" },
-    { label: "Оборудование", href: "/equipment" },
-    { label: "Решения", href: "/solutions" },
-    { label: "Проекты", href: "/projects" },
-    { label: "Акции", href: "/promotions" },
-    { label: "Карьера", href: "/careers" },
-    { label: "Блог", href: "/blog" },
-    { label: "Контакты", href: "/contacts" },
-];
+  pages.about,
+  pages.servicesOverview,
+  pages.equipmentOverview,
+  pages.solutionsOverview,
+  pages.projectsOverview,
+  { label: "Акции", href: pages.textPage.href },
+  { label: "Карьера", href: pages.textPage.href },
+  pages.blog,
+  pages.contacts
+
+]
 ---
 
 <nav class="w-full flex justify-center items-center bg-gray-900 text-white">

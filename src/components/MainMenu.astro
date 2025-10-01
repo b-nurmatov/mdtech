@@ -122,7 +122,7 @@ const nav = [
                                             <ul class="flex flex-col gap-2 xl:gap-4">
                                                 {submenu.list.map(subitem => (
                                                 <li>
-                                                    <a href="#" class="text-base/[100%] text-emph-high hover:underline hover:text-accent-green-dark active:text-accent-green">{subitem.label}</a>
+                                                    <a href={subitem.href} class="text-base/[100%] text-emph-high hover:underline hover:text-accent-green-dark active:text-accent-green">{subitem.label}</a>
                                                 </li>
                                                 ))}
                                             </ul>

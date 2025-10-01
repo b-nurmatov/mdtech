@@ -3,6 +3,7 @@ function toggleSubmenu(
   targetIdAttrName,
   droppedAttr,
   closeOthers,
+  dontCloseOpened,
 ) {
   const toggles = document.querySelectorAll(`[${toggleAttrName}]`);
 
@@ -24,23 +25,29 @@ function toggleSubmenu(
         });
       }
 
-      // toggle.setAttribute();
-
-      submenu.hasAttribute(droppedAttr)
+      submenu.hasAttribute(droppedAttr) && !dontCloseOpened
         ? submenu.removeAttribute(droppedAttr)
         : submenu.setAttribute(droppedAttr, "");
 
-      toggle.hasAttribute(droppedAttr)
+      toggle.hasAttribute(droppedAttr) && !dontCloseOpened
         ? toggle.removeAttribute(droppedAttr)
         : toggle.setAttribute(droppedAttr, "");
     });
   });
 }
 
-// function toggleNavMenu(toggleAttrName, targetIdAttrName)
-
 document.addEventListener("DOMContentLoaded", () => {
   toggleSubmenu("data-submenu-toggle", "data-targetId", "data-dropped", true);
 
   toggleSubmenu("data-mainMenu-toggle", "data-targetId", "data-dropped");
+
+  toggleSubmenu("data-dropdownBlock-toggle", "data-targetId", "data-dropped");
+
+  toggleSubmenu(
+    "data-tabsContainer-toggle",
+    "data-targetId",
+    "data-opened",
+    true,
+    true,
+  );
 });

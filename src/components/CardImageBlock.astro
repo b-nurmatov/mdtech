@@ -19,34 +19,37 @@ const {
 >
     {
         infoBlock ? (
-            <footer
+            <div
                 class={`absolute left-0 bottom-0 z-10 flex flex-col items-start gap-2 w-full p-2 ${overlay ? "bg-linear-180 from-black/0 to-black/50" : ""}`}
             >
-                {date ? (
-                    <time
-                        datetime={dateValue}
-                        set:html={date}
-                        class="inline-block bg-white px-2 py-1.5 rounded-full text-sm/[100%] text-emph-medium font-semibold"
-                    />
-                ) : (
-                    ""
-                )}
-                {tags ? (
-                    <ul class="text-white flex flex-wrap gap-2 pl-0.5">
-                        {tags.map((tag) => (
-                            <li class="text-base/[100%] font-semibold not-first:before:content-['/'] not-first:before:mr-2 before:opacity-70 before:font-regular"
-                            ><a
-                                    href="#"
-                                    set:html={tag}
-                                    class="underline hover:text-accent-green-light active:text-accent-green"
-                                ></a>
-                            </li>
-                        ))}
-                    </ul>
-                ) : (
-                    ""
-                )}
-            </footer>
+                <slot />
+                <footer>
+                    {date ? (
+                        <time
+                            datetime={dateValue}
+                            set:html={date}
+                            class="inline-block bg-white px-2 py-1.5 rounded-full text-sm/[100%] text-emph-medium font-semibold"
+                        />
+                    ) : (
+                        ""
+                    )}
+                    {tags ? (
+                        <ul class="text-white flex flex-wrap gap-2 pl-0.5">
+                            {tags.map((tag) => (
+                                <li class="text-base/[100%] font-semibold not-first:before:content-['/'] not-first:before:mr-2 before:opacity-70 before:font-regular">
+                                    <a
+                                        href="#"
+                                        set:html={tag}
+                                        class="underline hover:text-accent-green-light active:text-accent-green"
+                                    />
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        ""
+                    )}
+                </footer>
+            </div>
         ) : (
             ""
         )
