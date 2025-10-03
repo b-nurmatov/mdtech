@@ -1,0 +1,65 @@
+---
+import Container from "../layouts/Container.astro";
+import Icon from "./Icon.astro";
+
+const slides = [1, 2, 3, 4, 5];
+---
+
+<div id="homepageSlider" class="swiper">
+    <div class="swiper-wrapper">
+        {
+            slides.map((items) => (
+                <div class="swiper-slide">
+                    <div class="w-full py-10 flex flex-col justify-center items-center">
+                        <Container>
+                            <div class="flex flex-col-reverse md:flex-row gap-4 md:gap-8 lg:gap-12 items-center">
+                                <div class="flex flex-col justify-center items-start gap-3 md:gap-4 lg:gap-6 xl:gap-8 flex-1">
+                                    <h2 class="text-xl md:text-2xl xl:text-[2.5rem]/[120%] font-bold uppercase">
+                                        Надёжные решения для&nbsp;вашей
+                                        IT-инфраструктуры
+                                    </h2>
+                                    <p class="text-base md:text-lg lg:text-[1.25rem]/[160%]">
+                                        Монтаж локальных сетей, сопровождение,
+                                        администрирование и&nbsp;техническая
+                                        поддержка — всё&nbsp;под&nbsp;ключ от&nbsp;mdtech.uz.
+                                    </p>
+                                    <a
+                                        href="/text_page"
+                                        class="inline-flex items-center gap-2 p-3 pl-4 rounded-lg bg-accent-green hover:bg-accent-green-dark active:bg-accent-green-light text-white text-base/[100%] font-bold uppercase"
+                                    >
+                                        <span>Заказать консультацию</span>
+                                        <Icon
+                                            name="arrow-right"
+                                            class="size-4"
+                                        />
+                                    </a>
+                                </div>
+                                <div class="flex-1 w-full">
+                                    <img
+                                        src="/homepage/homepage_slide-01.webp"
+                                        alt=""
+                                        class="w-full aspect-video md:aspect-[4/3] object-cover rounded-generic"
+                                    />
+                                </div>
+                            </div>
+                        </Container>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+    <div class="swiper-pagination sliderPagination"></div>
+</div>
+<script>
+    const homepageSlider = new Swiper("#homepageSlider", {
+        slidesPerView: 1,
+        autoplay: true,
+        pagination: {
+            el: ".sliderPagination",
+            clickable: true,
+            lockClass: "sliderPagination--lock",
+            bulletClass: "sliderPagination-bullet",
+            bulletActiveClass: "sliderPagination-bullet--active",
+        },
+    });
+</script>

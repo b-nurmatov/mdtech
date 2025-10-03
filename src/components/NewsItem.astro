@@ -1,0 +1,10 @@
+---
+const { title, date, datetime, href } = Astro.props;
+---
+
+<li class="py-2 border-b last:border-b-0 border-surface-4 flex-1 flex items-stretch">
+    <a href={href} class="border-l-4 border-accent-green-dark flex flex-col justify-center gap-3 pl-3 pr-4 py-2 group">
+        <time datetime={datetime} set:html={date} class="text-sm/[100%] text-emph-medium" />
+        <span set:html={title} class="text-base/[100%] group-hover:text-accent-green-dark group-hover:underline group-active:text-accent-green-light" />
+    </a>
+</li>

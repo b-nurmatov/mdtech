@@ -6,21 +6,28 @@ const {
     date,
     dateValue,
     tags,
+    tagsSeparator: tagsSeparator="slash",
+    tagsDarker,
     aspectRatio,
     rounded,
     border,
     overlay,
+    brightness,
     class: extraClasses = "",
 } = Astro.props;
+
+const tagsSeparatorClass = `cardImageBlock-tag--separator--${tagsSeparator}`
+const brightnessClass = brightness ? `brightness-${brightness}` : "";
+const tagsDarkerClass = tagsDarker === true ? "cardImageBlock-tag--darker" : "";
 ---
 
 <div
-    class={`w-full relative bg-surface-3 overflow-hidden ${rounded ? "rounded-generic" : "rounded-sm"} ${aspectRatio ? aspectRatio : "aspect-[3/2]"} ${border ? "border border-surface-4" : ""} ${extraClasses}`}
+    class={`cardImageBlock ${rounded ? "rounded-generic" : "rounded-sm"} ${aspectRatio ? aspectRatio : "aspect-[3/2]"} ${border ? "border border-surface-4" : ""} ${extraClasses}`}
 >
     {
         infoBlock ? (
             <div
-                class={`absolute left-0 bottom-0 z-10 flex flex-col items-start gap-2 w-full p-2 ${overlay ? "bg-linear-180 from-black/0 to-black/50" : ""}`}
+                class={`cardImageBlock-content ${overlay ? "bg-linear-180 from-black/0 to-black/50" : ""}`}
             >
                 <slot />
                 <footer>
@@ -28,21 +35,20 @@ const {
                         <time
                             datetime={dateValue}
                             set:html={date}
-                            class="inline-block bg-white px-2 py-1.5 rounded-full text-sm/[100%] text-emph-medium font-semibold"
+                            class="cardImageBlock-date"
                         />
                     ) : (
                         ""
                     )}
                     {tags ? (
-                        <ul class="text-white flex flex-wrap gap-2 pl-0.5">
+                        <ul class="cardImageBlock-tagList">
                             {tags.map((tag) => (
-                                <li class="text-base/[100%] font-semibold not-first:before:content-['/'] not-first:before:mr-2 before:opacity-70 before:font-regular">
-                                    <a
+                                <li class={"cardImageBlock-tag " + `${tagsDarkerClass} ${tagsSeparatorClass}`}
+                                    ><a
                                         href="#"
                                         set:html={tag}
-                                        class="underline hover:text-accent-green-light active:text-accent-green"
-                                    />
-                                </li>
+                                        class="cardImageBlock-tagLink"
+                                /></li>
                             ))}
                         </ul>
                     ) : (
@@ -57,6 +63,6 @@ const {
     <img
         src={image}
         alt={alt}
-        class={`w-full h-full absolute left-0 top-0 object-cover`}
+        class={`cardImageBlock-image ${brightnessClass}`}
     />
 </div>

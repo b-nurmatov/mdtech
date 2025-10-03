@@ -1,0 +1,11 @@
+---
+import Icon from "./Icon.astro";
+
+const {title, text, icon, iconColorClass} = Astro.props;
+---
+
+<div class="flex flex-col gap-4 p-4 pr-8 border border-surface-4 rounded-generic">
+    <Icon name={icon} class={"size-16 " + iconColorClass}></Icon>
+    <h3 set:html={title} class="text-[1.25rem]/[135.2%] font-medium"></h3>
+    <p set:html={text} class="text-base/[138%]"></p>
+</div>

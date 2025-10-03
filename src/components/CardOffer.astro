@@ -1,0 +1,15 @@
+---
+import Icon from "./Icon.astro";
+
+const { href, linkText } = Astro.props;
+---
+
+<div class="flex items-start gap-4 p-4 bg-surface-1 border border-surface-4 rounded-generic">
+    <div class="pt-1.5">
+        <Icon name="lead_convert" class="size-9 text-accent-green" />
+    </div>
+    <div>
+        <p class="paragraph mt-0!"><slot /></p>
+        <a href={href} set:html={linkText} class="text-base/[120%] underline text-accent-green-dark hover:text-accent-green active:text-accent-green-light"></a>
+    </div>
+</div>

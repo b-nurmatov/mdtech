@@ -1,0 +1,22 @@
+---
+import CardImageBlock from "./CardImageBlock.astro";
+
+const { title, tags, image, href } = Astro.props;
+---
+
+<aside>
+    <CardImageBlock
+        tags={tags}
+        tagsSeparator="comma"
+        tagsDarker={true}
+        image={image}
+        infoBlock={true}
+        overlay={true}
+        brightness="50"
+        rounded={true}
+        class="pb-2"
+        ><h3 class="text-base/[120%] font-bold text-white">
+            <a href={href} set:html={title}></a>
+        </h3></CardImageBlock
+    >
+</aside>

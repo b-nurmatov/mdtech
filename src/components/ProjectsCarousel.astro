@@ -1,0 +1,48 @@
+---
+import SlideProject from "./SlideProject.astro";
+
+const { projectsList, id } = Astro.props;
+---
+
+<div id="projectsCarousel" class="swiper w-full overflow-y-visible!">
+    <div class="swiper-wrapper">
+        {
+            projectsList.map((slide) => (
+                <div class="swiper-slide">
+                    <SlideProject title={slide.title} tags={slide.tags} image={slide.image}></SlideProject>
+                </div>
+            ))
+        }
+    </div>
+    <div class="sliderPagination"></div>
+</div>
+<script>
+    const projectsCarousel = new Swiper("#projectsCarousel", {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        autoplay: true,
+        loop: true,
+        watchOverflow: true,
+        pagination: {
+            el: ".sliderPagination",
+            clickable: true,
+            lockClass: "sliderPagination--lock",
+            bulletClass: "sliderPagination-bullet",
+            bulletActiveClass: "sliderPagination-bullet--active",
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 3,
+            },
+            1024: {
+                slidesPerView: 4,
+            },
+            1280: {
+                slidesPerView: 4,
+            },
+            1536: {
+                slidesPerView: 5,
+            },
+        },
+    });
+</script>

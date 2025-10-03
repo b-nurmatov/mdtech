@@ -1,0 +1,11 @@
+---
+const { href, class: extraClasses = "" } = Astro.props;
+---
+
+<a href={href} class={"px-2 py-3 rounded-generic text-white flex flex-col gap-4 items-start justify-between bg-accent-green hover:bg-accent-green-dark active:bg-accent-green-light " + extraClasses}>
+    <span class="px-2 py-1 border border-white rounded-full text-sm/[100%]">Акция</span>
+    <div>
+        <h3 class="text-[1.25rem]/[135.2%] font-bold"><slot name="title" /></h3>
+        <p class="text-base/[138%] mt-1"><slot name="text" /></p>
+    </div>
+</a>

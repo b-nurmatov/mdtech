@@ -1,0 +1,43 @@
+---
+import Container from "../layouts/Container.astro";
+
+const { stats, image } = Astro.props;
+---
+
+<section
+    class="w-full bg-accent-green text-white py-12 text-center flex flex-col items-center relative"
+>
+    <Container class="z-10">
+        <slot />
+        <div
+            class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-10 pt-10 flex-wrap lg:flex-nowrap"
+        >
+            {
+                stats.map((item) => (
+                    <p class="flex flex-col items-center flex-1 min-w-40">
+                        <span
+                            set:html={item.value}
+                            class="text-3xl 2xl:text-5xl font-extrabold"
+                        />
+                        <span
+                            set:html={item.label}
+                            class="text-base/[138%] font-semibold max-w-72"
+                        />
+                    </p>
+                ))
+            }
+        </div>
+    </Container>
+    {
+        image ? (
+            <img
+                src={image}
+                aria-hidden="true"
+                alt=""
+                class="absolute left-0 top-0 w-full h-full mix-blend-hard-light opacity-10 object-cover"
+            />
+        ) : (
+            ""
+        )
+    }
+</section>

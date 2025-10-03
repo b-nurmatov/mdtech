@@ -1,23 +1,388 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Container from "../layouts/Container.astro";
+import Icon from "../components/Icon.astro";
+import NewsList from "../components/NewsList.astro";
+import NewsItem from "../components/NewsItem.astro";
+import CardPromo from "../components/CardPromo.astro";
+import Stats from "../components/Stats.astro";
+import CardAdv from "../components/CardAdv.astro";
+import LogoCarousel from "../components/LogoCarousel.astro";
+import ProjectsCarousel from "../components/ProjectsCarousel.astro";
+import SliderHero from "../components/SliderHero.astro";
+
+import pages from "../data/pages.json";
+
+const services = [
+    {
+        label: "Проектирование и монтаж локальных сетей",
+        icon: "new_custom67",
+        color: "text-accent-red",
+    },
+    {
+        label: "IT-аутсорсинг и администрирование",
+        icon: "new_person_account",
+        color: "text-accent-blue",
+    },
+    {
+        label: "Аудит и оптимизация IT-инфраструктуры",
+        icon: "new_custom63",
+        color: "text-accent-accent",
+    },
+    {
+        label: "Информационная безопасность",
+        icon: "new_custom91",
+        color: "text-accent-red",
+    },
+    {
+        label: "Облачные решения и виртуализация",
+        icon: "new_custom68",
+        color: "text-accent-blue",
+    },
+    {
+        label: "Сервис и обслуживание офисной техники",
+        icon: "new_custom27",
+        color: "text-accent-green",
+    },
+];
+
+const news = [
+    {
+        date: "15 октября 2025",
+        datetime: "2025-10-15",
+        title: "MDTech открыла новое представительство в Самарканде",
+        href: "/text_page",
+    },
+    {
+        date: "29 сентября 2025",
+        datetime: "2025-09-29",
+        title: "Внедрена система информационной безопасности для крупного банка",
+        href: "/text_page",
+    },
+    {
+        date: "03 сентября 2025",
+        datetime: "2025-09-03",
+        title: "Успешно реализован проект по модернизации IT-инфраструктуры в Ташкенте",
+        href: "/text_page",
+    },
+];
+
+const stats = [
+    {
+        label: "успешно реализованных проектов",
+        value: "350+",
+    },
+    {
+        label: "корпоративных клиентов по Узбекистану",
+        value: "50+",
+    },
+    {
+        label: "уровень удовлетворенности заказчиков",
+        value: "99%",
+    },
+    {
+        label: "опыта в отрасли",
+        value: "10 лет",
+    },
+    {
+        label: "сертифицированных IT-специалистов",
+        value: "15",
+    },
+];
+
+const adv = [
+    {
+        title: "Комплексный подход",
+        text: "Мы предоставляем весь спектр IT-услуг — от проектирования до поддержки, избавляя клиента от необходимости искать подрядчиков.",
+        icon: "record",
+        iconColorClass: "text-accent-green",
+    },
+    {
+        title: "Опыт и экспертиза",
+        text: "За плечами нашей команды десятки крупных проектов в различных отраслях: от медицины до производства.",
+        icon: "new_contact",
+        iconColorClass: "text-accent-red",
+    },
+    {
+        title: "Актуальные технологии",
+        text: "Мы работаем только с современным оборудованием и программным обеспечением, обеспечивая MDTech сотрудничает с ведущими производителями оборудования и ПО, что гарантирует высокое качество решений.эффективность и безопасность.",
+        icon: "new_custom100",
+        iconColorClass: "text-accent-blue",
+    },
+    {
+        title: "Прозрачные условия",
+        text: "Честные цены, понятные договоры и полная отчетность по каждому этапу.",
+        icon: "manage_perm_sets",
+        iconColorClass: "text-accent-blue",
+    },
+    {
+        title: "Быстрая реакция",
+        text: "Оперативная техническая поддержка 24/7 — мы всегда на связи.",
+        icon: "new_task",
+        iconColorClass: "text-accent-green",
+    },
+    {
+        title: "Надёжные партнёры",
+        text: "MDTech сотрудничает с ведущими производителями оборудования и ПО, что гарантирует высокое качество решений.",
+        icon: "new_group",
+        iconColorClass: "text-accent-red",
+    },
+];
+
+const partnersCarousel = [
+    "/homepage/logo-01.webp",
+    "/homepage/logo-02.webp",
+    "/homepage/logo-03.webp",
+    "/homepage/logo-04.webp",
+    "/homepage/logo-05.webp",
+    "/homepage/logo-01.webp",
+    "/homepage/logo-02.webp",
+    "/homepage/logo-03.webp",
+    "/homepage/logo-04.webp",
+    "/homepage/logo-05.webp",
+];
+
+const projects = [
+    {
+        title: "Модернизация сетевой инфраструктуры на производственном предприятии",
+        tags: ["Промышленные и производственные предприятия"],
+        image: "/homepage/homepage_project-01.webp",
+        href: pages.projectPage.href,
+    },
+    {
+        title: "Внедрение системы резервного копирования в частной клинике",
+        tags: ["Медицина и здравоохранение"],
+        image: "/homepage/homepage_project-02.webp",
+        href: pages.projectPage.href,
+    },
+    {
+        title: "Построение локальной сети и видеонаблюдения в бизнес-центре",
+        tags: ["Сети передачи данных", "Информационная безопасность"],
+        image: "/homepage/homepage_project-03.webp",
+        href: pages.projectPage.href,
+    },
+    {
+        title: "Полный аутсорсинг IT для стартап-хаба в Нукусе",
+        tags: ["IT и технологические кластеры"],
+        image: "/homepage/homepage_project-04.webp",
+        href: pages.projectPage.href,
+    },
+    {
+        title: "Монтаж корпоративной сети <br> для логистической компании в Ташкенте",
+        tags: ["Сети передачи данных"],
+        image: "/homepage/homepage_project-05.webp",
+        href: pages.projectPage.href,
+    },
+
+    {
+        title: "Внедрение отказоустойчивого ЦОДа",
+        tags: ["Хранение и обработка данных"],
+        image: "/projects_overview/projects_overview-01.webp",
+        href: pages.projectPage.href,
+    },
+    {
+        title: "Развёртывание высокоплотной Wi-Fi сети",
+        tags: ["Сети Wi-Fi"],
+        image: "/projects_overview/projects_overview-02.webp",
+        href: pages.projectPage.href,
+    },
+    {
+        title: "Модернизация инфраструктуры ЛВС",
+        tags: ["Сети передачи данных"],
+        image: "/projects_overview/projects_overview-03.webp",
+        href: pages.projectPage.href,
+    },
+    {
+        title: "Внедрение корпоративной ВКС",
+        tags: ["Телефония и Видеоконференцсвязь"],
+        image: "/projects_overview/projects_overview-04.webp",
+        href: pages.projectPage.href,
+    },
+    {
+        title: "Комплексная система информационной безопасности",
+        tags: ["Информационная безопасность"],
+        image: "/projects_overview/projects_overview-05.webp",
+        href: pages.projectPage.href,
+    },
+];
 ---
 
 <Layout title="Главная страница">
+    <div class="w-full bg-linear-180 from-surface-3 to-surface-1 relative overflow-hidden">
+        <SliderHero></SliderHero>
+        <img src="/assets/images/black_circuit_pattern.webp" aria-hidden="true" alt="" class="w-1/2 h-full absolute top-0 right-0 object-cover mix-blend-multiply opacity-5" />
+    </div>
+
     <Container>
-        <div class="slider">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-            </div>
+        <section class="py-10">
+            <ul
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6"
+            >
+                {
+                    services.map((item) => (
+                        <li class="p-6 border-surface-4 max-sm:border-b max-sm:last:border-b-0 sm:max-md:border-b-0 sm:max-md:odd:border-r  md:max-xl:border-r md:max-xl:nth-[3n]:border-r-0 xl:border-r xl:last:border-r-0">
+                            <div class="flex flex-col items-center gap-2">
+                                <Icon
+                                    name={item.icon}
+                                    class={"size-24 " + item.color}
+                                />
+                                <span
+                                    set:html={item.label}
+                                    class="text-base/[138%] font-semibold text-center"
+                                />
+                            </div>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+        <div
+            class="py-10 grid grid-cols-1 xl:grid-cols-2 xl:grid-rows-[min-content_min-content] gap-y-8 xl:gap-y-0 gap-x-12"
+        >
+            <section class="grid xl:grid-rows-subgrid xl:row-span-2">
+                <h2 class="text-[2rem]/[137.5%] font-bold uppercase mb-4">
+                    Новости
+                </h2>
+                <NewsList>
+                    {
+                        news.map((item) => (
+                            <NewsItem
+                                title={item.title}
+                                date={item.date}
+                                datetime={item.datetime}
+                                href={item.href}
+                            />
+                        ))
+                    }
+                </NewsList>
+            </section>
+            <section class="grid xl:grid-rows-subgrid xl:row-span-2">
+                <h2 class="text-[2rem]/[137.5%] font-bold uppercase mb-4">
+                    Акции и спецпредложения
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
+                    <CardPromo href="/text_page">
+                        <Fragment slot="title">Осень с&nbsp;MDTech!</Fragment>
+                        <Fragment slot="text"
+                            >Подключите услугу администрирования до конца октября и
+                            получите месяц обслуживания бесплатно!</Fragment
+                        >
+                    </CardPromo>
+                    <CardPromo
+                        href="/text_page"
+                        class="bg-accent-blue! hover:bg-accent-blue-dark! active:bg-accent-blue-light!"
+                    >
+                        <Fragment slot="title">Быстрый старт</Fragment>
+                        <Fragment slot="text"
+                            >Закажите любую из наших услуг до конца месяца — и
+                            получите бесплатный аудит текущего состояния IT-систем
+                            вашей компании.
+                        </Fragment>
+                    </CardPromo>
+                    <CardPromo
+                        href="/text_page"
+                        class="bg-accent-red hover:bg-accent-red-dark! active:bg-accent-red-light!"
+                    >
+                        <Fragment slot="title"
+                            >Три&nbsp;месяца поддержки в&nbsp;подарок</Fragment
+                        >
+                        <Fragment slot="text"
+                            >Круглосуточная поддержка, мониторинг серверов и сети,
+                            защита от вирусов и киберугроз.</Fragment
+                        >
+                    </CardPromo>
+                </div>
+            </section>
         </div>
-        <script>
-            const swiper = new Swiper(".slider", {
-                autoplay: true,
-                wrapperClass: "slider-wrapper",
-                slideClass: "slider-slide",
-            });
-        </script>
+        <section class="py-8 lg:py-16">
+            <h2 class="text-[3rem]/[100%] font-extrabold mb-4">Проекты</h2>
+            <ProjectsCarousel projectsList={projects} />
+        </section>
     </Container>
+    <Stats stats={stats} image="/assets/images/city_background.webp">
+        <h2 class="text-[2rem]/[100%] font-extrabold uppercase text-center">
+            Наши результаты
+        </h2>
+    </Stats>
+    <Container>
+        <section class="py-16">
+            <h2
+                class="text-h2 leading-h2 lg:text-5xl font-extrabold text-emph-medium mb-6"
+            >
+                Почему мы?
+            </h2>
+            <ul
+                class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4"
+            >
+                {
+                    adv.map((item) => (
+                        <li class="flex">
+                            <CardAdv
+                                title={item.title}
+                                text={item.text}
+                                icon={item.icon}
+                                iconColorClass={item.iconColorClass}
+                            />
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+        <section class="pt-8 pb-16 xl:py-16">
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 xl:gap-16">
+                <div>
+                    <h2
+                        class="text-h2 leading-h2 lg:text-5xl font-extrabold text-emph-medium mb-4"
+                    >
+                        О нас
+                    </h2>
+                    <p
+                        class="text-paragraph leading-paragraph lg:text-[1.25rem]/[150%] text-emph-medium my-4"
+                    >
+                        MDTech — это команда опытных IT-специалистов, которая более
+                        10 лет занимается проектированием, монтажом и обслуживанием
+                        локальных и корпоративных сетей, внедрением систем связи и
+                        IT-инфраструктуры. Мы работаем по всему Узбекистану, помогая
+                        компаниям и организациям создавать надёжную, безопасную и
+                        современную IT-среду для стабильной работы бизнеса.
+                    </p>
+                    <p
+                        class="text-paragraph leading-paragraph lg:text-[1.25rem]/[150%] text-emph-medium my-4"
+                    >
+                        Наша миссия — предоставлять комплексные и эффективные
+                        решения, которые помогают клиентам оптимизировать рабочие
+                        процессы, повысить производительность и защитить данные. Мы
+                        берём на себя полный цикл работ: от консультации и подбора
+                        оборудования до внедрения и последующего обслуживания.
+                    </p>
+                    <p
+                        class="text-paragraph leading-paragraph lg:text-[1.25rem]/[150%] text-emph-medium my-[1em] lg:my-4"
+                    >
+                        MDTech — это надёжность, техническая компетентность и
+                        внимание к деталям. Мы уверены, что качественная
+                        IT-инфраструктура — это основа успешного бизнеса, и готовы
+                        обеспечить её для вас.
+                    </p>
+                </div>
+                <div class="hidden xl:flex justify-end items-stretch">
+                    <img
+                        src="/assets/images/homepage_about_us.svg"
+                        aria-hidden="true"
+                        alt=""
+                        class="max-w-full object-contain"
+                    />
+                </div>
+            </div>
+        </section>
+    </Container>
+    <div class="w-full bg-surface-3 flex flex-col items-center">
+        <Container class="py-16">
+            <h2
+                class="text-h2 leading-h2 lg:text-5xl text-emph-medium font-extrabold text-center mb-6"
+            >
+                Наши партнёры
+            </h2>
+            <LogoCarousel logoList={partnersCarousel} />
+        </Container>
+    </div>
 </Layout>

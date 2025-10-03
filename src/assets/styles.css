@@ -9,7 +9,11 @@
     --color-accent-green-light: rgb(145, 221, 120);
     --color-accent-green-dark: rgb(65, 159, 34);
     --color-accent-blue: rgb(96, 106, 224);
+    --color-accent-blue-light: rgb(136, 142, 223);
+    --color-accent-blue-dark: rgb(64, 74, 205);
     --color-accent-red: rgb(222, 73, 99);
+    --color-accent-red-light: rgb(225, 137, 153);
+    --color-accent-red-dark: rgb(200, 40, 69);
     --color-emph-high: rgb(15, 23, 43);
     --color-emph-medium: rgb(49, 65, 88);
     --color-emph-low: rgb(144, 161, 185);
@@ -93,6 +97,9 @@
 .link {
     @apply text-accent-green-dark hover:text-accent-green active:text-accent-green-light underline;
 }
+.hr {
+    @apply border-surface-4;
+}
 
 .m-h1,
 .m-h2,
@@ -142,17 +149,16 @@
 
 ul.list,
 ol.list {
-    font-size: 1rem;
-    line-height: 150%;
+    @apply text-base/[150%];
 }
 
 ul.list li,
 ol.list li {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--color-surface-4);
-    box-sizing: border-box;
-    display: flex;
+    @apply py-2 flex border-surface-4;
+}
+ul.list:not(.list--noBorder) li,
+ol.list:not(.list--noBorder) li {
+    @apply border-b;
 }
 
 ol.list {
@@ -191,7 +197,7 @@ ul.list li::before {
     @apply border border-surface-4 rounded-generic;
 }
 .equipSlider-image {
-    @apply w-full aspect-[4/3] max-h-[44.0625rem] object-cover
+    @apply w-full aspect-[4/3] max-h-[44.0625rem] object-cover;
 }
 .equipSlider-arrows {
     @apply hidden;
@@ -207,13 +213,62 @@ ul.list li::before {
 }
 .equipSlider-arrows::after {
     /*color: var(--color-emph-medium);*/
-    @apply text-emph-medium
+    @apply text-emph-medium;
 }
 
 .equipThumbSlider-image {
     @apply w-full aspect-[4/3] border border-surface-4 rounded-generic;
 }
+equipThumbSlider-thumb {
+    @apply pr-[1px];
+}
 .equipThumbSlider-thumb--active .equipThumbSlider-image {
     /*border-color: var(--color-accent-green) !important;*/
     @apply border-2 border-accent-green!;
+}
+
+/* LogoCarousel.astro */
+.sliderPagination {
+    @apply static flex justify-center items-center gap-2 sm:gap-3 lg:gap-4 py-6 px-4;
+}
+.sliderPagination--lock {
+    @apply hidden;
+}
+.sliderPagination-bullet {
+    @apply inline-block size-2 sm:size-3 lg:size-4 border-2 border-accent-green rounded-xs;
+}
+.sliderPagination-bullet--active {
+    @apply bg-accent-green;
+}
+
+/* CardImageBlock.astro */
+.cardImageBlock {
+    @apply w-full relative bg-surface-3 overflow-hidden flex flex-col justify-end;
+}
+.cardImageBlock-content {
+    @apply @container/infoBlock relative left-0 bottom-0 z-10 flex flex-col items-start gap-3 w-full p-2;
+}
+.cardImageBlock-date {
+    @apply inline-block bg-white px-2 py-1.5 rounded-full text-sm/[100%] text-emph-medium font-semibold;
+}
+.cardImageBlock-tagList {
+    @apply flex flex-wrap gap-x-2 pl-0.5;
+}
+.cardImageBlock-tag {
+    @apply text-white text-sm/[135%] @min-[320px]:text-base/[100%] font-semibold;
+}
+.cardImageBlock-tag--separator--slash {
+    @apply not-first:before:content-['/'] not-first:before:mr-2 before:opacity-70;
+}
+.cardImageBlock-tag--separator--comma {
+    @apply not-last:after:content-[','] before:opacity-70;
+}
+.cardImageBlock-tag--darker {
+    @apply text-white/80!;
+}
+.cardImageBlock-tagLink {
+    @apply underline hover:text-accent-green-light active:text-accent-green;
+}
+.cardImageBlock-image {
+    @apply w-full h-full absolute left-0 top-0 object-cover;
 }

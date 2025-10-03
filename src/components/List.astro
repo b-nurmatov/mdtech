@@ -1,8 +1,9 @@
 ---
-const { type } = Astro.props;
+const { type, noBorder } = Astro.props;
 const Tag = type === "ol" ? "ol" : "ul";
+const mods = `${noBorder === true ? "list--noBorder" : ""}`
 ---
 
-<Tag class="list">
+<Tag class={"list " + mods}>
     <slot />
 </Tag>

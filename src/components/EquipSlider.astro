@@ -1,11 +1,8 @@
 ---
-const {slides} = Astro.props;
+const { slides } = Astro.props;
 ---
 
-<div
-    id="equipSlider"
-    class="swiper equipSlider"
->
+<div id="equipSlider" class="swiper equipSlider">
     <div class="swiper-wrapper">
         {
             slides.map((slide) => (
@@ -27,13 +24,15 @@ const {slides} = Astro.props;
     <div class="swiper-wrapper">
         {
             slides.map((slide) => (
-                <div class="swiper-slide equipThumbSlider-thumb">
-                    <img
-                        src={slide.image}
-                        title={slide.title}
-                        alt=""
-                        class="equipThumbSlider-image"
-                    />
+                <div class="swiper-slide">
+                    <div class="equipThumbSlider-thumb">
+                        <img
+                            src={slide.image}
+                            title={slide.title}
+                            alt=""
+                            class="equipThumbSlider-image"
+                        />
+                    </div>
                 </div>
             ))
         }
@@ -41,17 +40,23 @@ const {slides} = Astro.props;
 </div>
 
 <script>
-    const thumbsSwiper = new Swiper("#equipThumbSlider", {
-        spaceBetween: 16,
-        slidesPerView: 4,
+    const equipThumbSlider = new Swiper("#equipThumbSlider", {
+        spaceBetween: 15,
+        slidesPerView: 3,
         freeMode: true,
         watchSlidesProgress: true,
         watchSlidesVisibility: true,
+        roundLengths: true,
+        breakpoints: {
+          640: {
+            slidesPerView: 4,
+          }
+        }
     });
-    const swiper = new Swiper("#equipSlider", {
+    const equipSlider = new Swiper("#equipSlider", {
         autoplay: true,
         thumbs: {
-            swiper: thumbsSwiper,
+            swiper: equipThumbSlider,
             slideThumbActiveClass: "equipThumbSlider-thumb--active",
         },
         navigation: {

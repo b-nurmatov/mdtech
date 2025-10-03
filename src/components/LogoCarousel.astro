@@ -1,0 +1,42 @@
+---
+const { logoList, id } = Astro.props;
+---
+
+<div id="partnersCarousel" class="swiper w-full overflow-y-visible!">
+    <div class="swiper-wrapper">
+        {
+            logoList.map((image) => (
+                <div class="swiper-slide">
+                    <div class="bg-surface-1 rounded-generic overflow-hidden">
+                        <img src={image} alt="" class="" />
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+    <div class="logoCarousel-pagination"></div>
+</div>
+<script>
+    const partnersCarousel = new Swiper("#partnersCarousel", {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        autoplay: true,
+        loop: true,
+        watchOverflow: true,
+        pagination: {
+            el: ".logoCarousel-pagination",
+            clickable: true,
+            lockClass: "logoCarousel-pagination--lock",
+            bulletClass: "logoCarousel-paginationBullet",
+            bulletActiveClass: "logoCarousel-paginationBullet--active",
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 3,
+            },
+            1024: {
+                slidesPerView: 5,
+            },
+        },
+    });
+</script>

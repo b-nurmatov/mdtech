@@ -1,0 +1,310 @@
+---
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Container from "../layouts/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import Stats from "../components/Stats.astro";
+import List from "../components/List.astro";
+import Item from "../components/Item.astro";
+import CardOffer from "../components/CardOffer.astro";
+
+import pages from "../data/pages.json";
+
+const breadcrumbs = [
+    {
+        label: pages.homepage.label,
+        href: pages.homepage.href,
+    },
+    {
+        label: pages.about.label,
+        href: pages.about.href,
+    },
+];
+
+const stats = [
+    {
+        label: "Год основания",
+        value: "2025",
+    },
+    {
+        label: "Реализованых проектов",
+        value: "250+",
+    },
+    {
+        label: "Городов покрытия",
+        value: "15+",
+    },
+    {
+        label: "Сотрудников в команде",
+        value: "30+",
+    },
+    {
+        label: "Среднее время реакции на запрос",
+        value: "< 2 часов",
+    },
+];
+---
+
+<Layout title="О компании">
+    <header
+        class="w-full flex flex-col items-center justify-center relative xl:h-[36rem] 2xl:h-[40rem] min-[1800px]:h-[58.5rem] bg-[linear-gradient(-26.57deg,var(--color-surface-3),#fff_100%)] border-b border-surface-4 overflow-hidden"
+    >
+        <div class="w-full absolute left-0 top-0 z-10 flex justify-center">
+            <Container>
+                <Breadcrumbs list={breadcrumbs} />
+            </Container>
+        </div>
+        <Container class="z-10 py-8">
+            <h1
+                class="xl:max-w-[40rem] mt-12 mb-6 text-[2.5rem] leading-[100%] uppercase text-emph-medium font-semibold flex flex-col gap-2"
+            >
+                <span class="text-[3.5rem] font-extrabold text-accent-green"
+                    >MDTech:</span
+                >
+                <span>IT-инфраструктура  для вашего бизнеса</span>
+            </h1>
+            <p class="paragraph xl:max-w-[40rem]">
+                Более 10 лет мы помогаем компаниям по всему Узбекистану
+                становиться эффективнее, безопаснее и технологичнее. Наша работа
+                — это комплексные IT-решения, которые работают на ваш успех.
+            </p>
+            <p class="paragraph xl:max-w-[40rem]">
+                От проектирования сети до её ежедневной поддержки — мы берём на
+                себя все задачи, чтобы вы могли сосредоточиться на главном:
+                развитии своего дела.
+            </p>
+        </Container>
+        <img
+            src="/about/about_page-01.webp"
+            aria-hidden="true"
+            alt=""
+            class="hidden xl:block aspect-[557/468] h-full absolute bottom-0 -right-12 object-cover mix-blend-multiply"
+        />
+    </header>
+    <section class="py-8 lg:py-16">
+        <Container>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16">
+                <img
+                    src="/about/about_page-02.webp"
+                    aria-hidden="true"
+                    alt=""
+                    class="mix-blend-multiply w-full hidden lg:block"
+                />
+                <div class="flex flex-col justify-center">
+                    <div>
+                        <h4 class="h4 text-emph-medium">
+                            <span class="font-black text-accent-green"
+                                >Наша философия:</span
+                            ><br />
+                            технологии как конкурентное преимущество
+                        </h4>
+                        <p class="paragraph-large">
+                            Мы убеждены, что в современном мире технологии
+                            являются таким же ключевым активом, как и люди. Они
+                            должны быть надёжными, безопасными и
+                            масштабируемыми.
+                        </p>
+                        <p class="paragraph-large">
+                            Именно поэтому в каждом проекте мы уделяем
+                            максимальное внимание деталям, проектируя системы с
+                            запасом на будущее и используя только проверенное
+                            оборудование.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </Container>
+    </section>
+
+    <Stats stats={stats}>
+        <h2 class="text-2xl/[150%] uppercase">
+            <span class="text-4xl/[100%] font-extrabold">MDTech</span><br /> в цифрах
+        </h2>
+    </Stats>
+
+    <section class="py-16">
+        <Container>
+            <section>
+                <h2 class="h2 max-sm:mb-[1em]! text-emph-medium text-center">Что для нас важно</h2>
+                <div
+                    class="grid sm:grid-cols-[1fr_1px_1fr] sm:grid-rows-[repeat(2,_minmax(min-content,_max_content))] gap-y-8 sm:gap-y-0 sm:gap-x-4 lg:gap-x-8 2xl:gap-x-16"
+                >
+                    <div class="sm:grid sm:grid-rows-subgrid sm:row-span-2">
+                        <div>
+                            <img
+                                src="/about/about_page-03.webp"
+                                alt=""
+                                class="block w-full aspect-[3/2] rounded-generic object-cover"
+                            />
+                        </div>
+                        <div class="text-center">
+                            <h4 class="h4 text-emph-medium">Надёжность</h4>
+                            <p class="paragraph-large">
+                                Мы несём ответственность за каждый реализованный
+                                проект и обеспечиваем его бесперебойную работу
+                                на годы вперёд.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="py-8 hidden sm:flex flex-col row-span-1">
+                        <div class="flex-1 border-r border-surface-4"></div>
+                    </div>
+                    <div class="sm:grid sm:grid-rows-subgrid sm:row-span-2">
+                        <div>
+                            <img
+                                src="/about/about_page-04.webp"
+                                alt=""
+                                class="block w-full aspect-[3/2] rounded-generic object-cover"
+                            />
+                        </div>
+                        <div class="text-center">
+                            <h4 class="h4 text-emph-medium">Компетентность</h4>
+                            <p class="paragraph-large">
+                                Наши инженеры регулярно проходят обучение и
+                                сертификацию у ведущих вендоров, чтобы
+                                предлагать вам только современные и проверенные
+                                решения.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-4 pt-12">
+                <section
+                    class="bg-surface-1 border border-surface-4 rounded-generic p-4 lg:p-8 flex flex-col"
+                >
+                    <h2
+                        class="text-[1rem]/[100%] xl:text-[1.25rem]/[100%] 2xl:text-[1.5rem]/[100%] font-extrabold uppercase flex flex-col gap-[0.4583333333333333em] mt-2 mb-4"
+                    >
+                        <span class="ml-0.5 text-emph-medium"
+                            >Основные этапы</span
+                        >
+                        <span
+                            class="text-[1.75em] xl:text-[2.333333333333333em]/[100%] text-accent-green"
+                            >сотрудничества</span
+                        >
+                    </h2>
+                    <hr class="hr my-2" />
+                    <h5 class="h5 text-emph-medium">1. Консультация и аудит</h5>
+                    <List noBorder={true}>
+                        <Item
+                            >Глубокий анализ ваших потребностей и существующей
+                            инфраструктуры</Item
+                        >
+                        <Item
+                            >Формирование технического задания и коммерческого
+                            предложения</Item
+                        >
+                        <Item>Согласование плана работ и сроков</Item>
+                    </List>
+                    <hr class="hr my-2" />
+                    <h5 class="h5 text-emph-medium">2. Проектирование и планирование</h5>
+                    <List noBorder={true}>
+                        <Item>Разработка детального плана проекта</Item>
+                        <Item
+                            >Подбор оптимального оборудования и программного
+                            обеспечения</Item
+                        >
+                        <Item>Составление сметы и графика поставок</Item>
+                    </List>
+                    <hr class="hr my-2" />
+                    <h5 class="h5 text-emph-medium">3. Внедрение и интеграция</h5>
+                    <List noBorder={true}>
+                        <Item>Монтажные и пусконаладочные работы</Item>
+                        <Item>Интеграция новых систем с существующими</Item>
+                        <Item>Тестирование под нагрузкой</Item>
+                    </List>
+                </section>
+                <section
+                    class="bg-surface-1 border border-surface-4 rounded-generic p-4 lg:p-8"
+                >
+                    <h2
+                        class="text-[1rem]/[100%] xl:text-[1.25rem]/[100%] 2xl:text-[1.5rem]/[100%] font-extrabold uppercase flex flex-col gap-[0.1666666666666667em] mt-2 mb-4"
+                    >
+                        <span class="ml-0.5 text-emph-medium"
+                            >Дополнительные</span
+                        >
+                        <span
+                            class="text-[2.666666666666667em]/[100%] text-accent-green"
+                            >услуги</span
+                        >
+                    </h2>
+                    <hr class="hr my-2" />
+                    <h5 class="h5 text-emph-medium">Техническая поддержка</h5>
+                    <List noBorder={true}>
+                        <Item>Круглосуточный мониторинг</Item>
+                        <Item>Удалённое решение инцидентов</Item>
+                        <Item>Выезд специалистов по гарантии</Item>
+                    </List>
+                    <hr class="hr my-2" />
+                    <h5 class="h5 text-emph-medium">Обслуживание и развитие</h5>
+                    <List noBorder={true}>
+                        <Item>Плановые аудиты безопасности</Item>
+                        <Item>Модернизация мощностей</Item>
+                        <Item>Консультации по развитию IT-инфраструктуры</Item>
+                    </List>
+                    <hr class="hr my-2" />
+                    <h5 class="h5 text-emph-medium">Обучение</h5>
+                    <List noBorder={true}>
+                        <Item
+                            >Обучение ваших сотрудников работе с новыми
+                            системами</Item
+                        >
+                        <Item>Предоставление технической документации</Item>
+                    </List>
+                </section>
+            </div>
+            <section class="w-full pt-12">
+                <h2 class="h1 text-center  text-emph-medium">
+                    Готовы сделать <span class="text-accent-green"
+                        >ваш бизнес</span
+                    > технологичнее?
+                </h2>
+                <ul
+                    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4"
+                >
+                    <li class="flex">
+                        <CardOffer href="#" linkText="Получить консультацию"
+                            ><strong
+                                >Получите бесплатную консультацию от наших
+                                инженеров.</strong
+                            > Проанализируем ваши задачи и предложим варианты решения.</CardOffer
+                        >
+                    </li>
+                    <li class="flex">
+                        <CardOffer href="#" linkText="Заказать аудит"
+                            ><strong
+                                >Закажите бесплатный аудит IT-инфраструктуры.</strong
+                            > Мы найдём слабые места и предложим план по их устранению.</CardOffer
+                        >
+                    </li>
+                    <li class="flex">
+                        <CardOffer href="#" linkText="Контакты"
+                            ><strong
+                                >Пришлите нам своё техническое задание.</strong
+                            > Мы подготовим коммерческое предложение в течение 24
+                            часов.</CardOffer
+                        >
+                    </li>
+                    <li class="flex">
+                        <CardOffer href="#" linkText="Наши проекты"
+                            ><strong>Посмотрите наши кейсы.</strong> Убедитесь в
+                            нашем опыте на реальных примерах из вашей отрасли.</CardOffer
+                        >
+                    </li>
+                    <li class="flex">
+                        <CardOffer href="#" linkText="Контакты"
+                            ><strong>Станьте нашим партнёром.</strong> Мы предлагаем
+                            специальные условия для постоянных клиентов.</CardOffer
+                        >
+                    </li>
+                    <li class="flex">
+                        <CardOffer href="#" linkText="Вакансии"
+                            ><strong>Хотите работать у нас?</strong> Посмотрите открытые
+                            вакансии и присоединяйтесь к нашей команде.</CardOffer
+                        >
+                    </li>
+                </ul>
+            </section>
+        </Container>
+    </section>
+</Layout>
