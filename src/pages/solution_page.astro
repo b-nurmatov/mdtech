@@ -22,6 +22,10 @@ const breadcrumbs = [
         label: "Готовые решения",
         href: pages.solutionsOverview.href,
     },
+    {
+        label: "Телефония и ВКС для переговорной комнаты (до 10 человек)",
+        href: pages.solutionPage.href,
+    },
 ];
 
 const advantages = {
@@ -99,7 +103,7 @@ const required = [
             image="/solution_page/solution_page-hero.webp"
         >
             <ArticleHeroTag>
-                <ArticleHeroLink href="#">Видеоконференцсвязь</ArticleHeroLink>
+                <ArticleHeroLink href={pages.solutionsOverview.href}>Видеоконференцсвязь</ArticleHeroLink>
             </ArticleHeroTag>
         </ArticleHero>
         <h2 class="h2">

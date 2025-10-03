@@ -20,8 +20,12 @@ const breadcrumbs = [
         href: pages.homepage.href,
     },
     {
+        label: pages.projectsOverview.label,
+        href: pages.projectsOverview.href,
+    },
+    {
         label: "Внедрение системы IP-видеонаблюдения для сети супермаркетов Korzinka",
-        href: pages.solutionPage.href,
+        href: pages.projectPage.href,
     },
 ];
 
@@ -44,12 +48,12 @@ const similar = [
         >
             <ArticleHeroTag
                 >Отрасль:
-                <ArticleHeroLink href="#">Торговля</ArticleHeroLink
+                    <ArticleHeroLink href={pages.projectsOverview.href}>Торговля</ArticleHeroLink
                 ></ArticleHeroTag
             >
             <ArticleHeroTag
                 >Тип проекта:
-                <ArticleHeroLink href="#"
+                    <ArticleHeroLink href={pages.projectsOverview.href}
                     >Комплексные системы безопасности</ArticleHeroLink
                 ></ArticleHeroTag
             >

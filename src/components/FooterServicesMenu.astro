@@ -1,5 +1,6 @@
 ---
 import servicesMenu from "../data/servicesMenu.json";
+import pages from "../data/pages.json";
 ---
 
 <div class="w-full flex justify-center bg-surface-3">
@@ -16,7 +17,7 @@ import servicesMenu from "../data/servicesMenu.json";
                         {group.list.map((item) => (
                             <li>
                                 <a
-                                    href="#"
+                                    href={pages.servicesOverview.href}
                                     class="text-emph-medium text-base/[150%] hover:underline hover:text-accent-green-dark active:text-accent-green"
                                 >
                                     {item.label}

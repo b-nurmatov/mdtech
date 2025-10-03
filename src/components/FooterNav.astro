@@ -13,6 +13,7 @@ import pages from "../data/pages.json";
 //     { label: "Контакты", href: "/contacts" },
 // ];
 const menu = [
+  pages.homepage,
   pages.about,
   pages.servicesOverview,
   pages.equipmentOverview,
@@ -30,13 +31,13 @@ const menu = [
     <div
         class="w-full lg:container px-4 py-10 xl:px-8 flex flex-col xl:flex-row gap-8 justify-between"
     >
-        <ul class="flex flex-col lg:flex-row gap-6">
+        <ul class="flex flex-col flex-wrap lg:flex-row gap-6">
             {
                 menu.map((item) => (
                     <li>
                         <a
                             href={item.href}
-                            class="text-base uppercase font-semibold hover:underline active:text-white/70"
+                            class="text-sm xl:text-base uppercase font-semibold hover:underline active:text-white/70"
                         >
                             {item.label}
                         </a>

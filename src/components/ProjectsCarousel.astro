@@ -9,7 +9,7 @@ const { projectsList, id } = Astro.props;
         {
             projectsList.map((slide) => (
                 <div class="swiper-slide">
-                    <SlideProject title={slide.title} tags={slide.tags} image={slide.image}></SlideProject>
+                    <SlideProject title={slide.title} tags={slide.tags} image={slide.image} href={slide.href} tagsHref={slide.tagsHref}></SlideProject>
                 </div>
             ))
         }
@@ -20,7 +20,7 @@ const { projectsList, id } = Astro.props;
     const projectsCarousel = new Swiper("#projectsCarousel", {
         slidesPerView: 1,
         spaceBetween: 16,
-        autoplay: true,
+        autoplay: false,
         loop: true,
         watchOverflow: true,
         pagination: {

@@ -113,7 +113,7 @@ const nav = [
                         <li class=`${item.showOnDesktop ? '' : 'xl:hidden'}`>
                             {
                             item.submenu ? (
-                            <p class="flex items-center gap-2 uppercase text-base/[100%] 2xl:text-xl/[100%] font-semibold text-emph-medium sticky top-0 bg-surface-1 xl:bg-transparent p-4 p-4 xl:px-4 xl:py-0 xl:h-mainMenu hover:text-accent-green-dark active:text-accent-green border-surface-4 data-[dropped]:border-b cursor-pointer group" data-submenu-toggle data-targetId={item.submenu.targetId}>
+                            <p class="flex items-center gap-2 uppercase text-base/[100%] 2xl:text-xl/[100%] font-semibold text-emph-medium sticky top-0 bg-surface-1 xl:bg-transparent p-4 p-4 xl:px-4 xl:py-0 xl:h-mainMenu hover:text-accent-green-dark active:text-accent-green border-surface-4 max-lg:data-[dropped]:border-b cursor-pointer group" data-submenu-toggle data-targetId={item.submenu.targetId}>
                                 <Icon name={item.icon} class="size-5 2xl:size-6 group-[[data-dropped]]:text-accent-green-dark" />
                                 <span>{item.label}</span>
                                 <Icon name="chevron-down" class="size-5 2xl:size-6 -ml-1 group-[[data-dropped]]:-scale-100" />

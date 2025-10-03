@@ -14,10 +14,15 @@ import Footer from "../components/Footer.astro";
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link
+        <!-- <link
             rel="preload"
             href="/sprite.svg"
             as="image"
+            type="image/svg+xml"
+        /> -->
+        <link
+            rel="icon"
+            href="/sprite.svg"
             type="image/svg+xml"
         />
         <script src="../assets/scripts.js"></script>
@@ -33,7 +38,7 @@ import Footer from "../components/Footer.astro";
         <title>{Astro.props.title}</title>
     </head>
     <body class="text-emph-high bg-surface-2 max-xl:hyphens-auto">
-        <script>
+        <!-- <script>
             if (!document.querySelector("svg[sprite]")) {
                 fetch("/sprite.svg")
                     .then((r) => r.text())
@@ -44,7 +49,7 @@ import Footer from "../components/Footer.astro";
                         document.body.appendChild(div);
                     });
             }
-        </script>
+        </script> -->
         <TopMenu />
         <MainMenu />
         <main class="w-full flex flex-col items-center">

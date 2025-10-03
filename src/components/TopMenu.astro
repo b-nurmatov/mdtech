@@ -1,12 +1,14 @@
 ---
 import Icon from "./Icon.astro";
 
+import pages from "../data/pages.json";
+
 const menu = [
-    { label: "О компании", href: "/about" },
-    { label: "Партнёры", href: "/text-page" },
-    { label: "Карьера", href: "/text-page" },
-    { label: "Блог", href: "/blog" },
-    { label: "Контакты", href: "/contacts" },
+    { label: pages.about.label, href: pages.about.href },
+    { label: "Партнёры", href: pages.textPage.href },
+    { label: "Карьера", href: pages.textPage.href },
+    { label: pages.blog.label, href: pages.blog.href },
+    { label: pages.contacts.label, href: pages.contacts.href },
 ];
 
 const socialMedia = [

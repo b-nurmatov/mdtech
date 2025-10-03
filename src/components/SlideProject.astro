@@ -1,7 +1,9 @@
 ---
 import CardImageBlock from "./CardImageBlock.astro";
 
-const { title, tags, image, href } = Astro.props;
+import pages from "../data/pages.json";
+
+const { title, tags, image, href, tagsHref } = Astro.props;
 ---
 
 <aside>
@@ -9,10 +11,11 @@ const { title, tags, image, href } = Astro.props;
         tags={tags}
         tagsSeparator="comma"
         tagsDarker={true}
+        tagsHref={tagsHref}
         image={image}
         infoBlock={true}
         overlay={true}
-        brightness="50"
+        brightnessClass="brightness-50"
         rounded={true}
         class="pb-2"
         ><h3 class="text-base/[120%] font-bold text-white">

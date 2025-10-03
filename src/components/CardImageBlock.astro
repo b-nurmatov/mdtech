@@ -8,16 +8,17 @@ const {
     tags,
     tagsSeparator: tagsSeparator="slash",
     tagsDarker,
+    tagsHref,
     aspectRatio,
     rounded,
     border,
     overlay,
-    brightness,
+    brightnessClass,
     class: extraClasses = "",
 } = Astro.props;
 
 const tagsSeparatorClass = `cardImageBlock-tag--separator--${tagsSeparator}`
-const brightnessClass = brightness ? `brightness-${brightness}` : "";
+// const brightnessClass = brightness ? `brightness-${brightness}` : "";
 const tagsDarkerClass = tagsDarker === true ? "cardImageBlock-tag--darker" : "";
 ---
 
@@ -45,7 +46,7 @@ const tagsDarkerClass = tagsDarker === true ? "cardImageBlock-tag--darker" : "";
                             {tags.map((tag) => (
                                 <li class={"cardImageBlock-tag " + `${tagsDarkerClass} ${tagsSeparatorClass}`}
                                     ><a
-                                        href="#"
+                                        href={tagsHref ? tagsHref: "#"}
                                         set:html={tag}
                                         class="cardImageBlock-tagLink"
                                 /></li>
@@ -63,6 +64,6 @@ const tagsDarkerClass = tagsDarker === true ? "cardImageBlock-tag--darker" : "";
     <img
         src={image}
         alt={alt}
-        class={`cardImageBlock-image ${brightnessClass}`}
+        class={"cardImageBlock-image " + brightnessClass}
     />
 </div>
