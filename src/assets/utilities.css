@@ -1,0 +1,73 @@
+@utility h1 {
+    @apply text-[calc(var(--text-h1)*0.6)] sm:text-h1 leading-h1 font-extrabold mt-[1em] mb-[0.5em];
+}
+@utility h2 {
+    @apply text-[calc(var(--text-h2)*0.6)] sm:text-h2 leading-h2 font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+@utility h3 {
+    @apply text-[calc(var(--text-h3)*0.6)] sm:text-h3 leading-h3 font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+@utility h4 {
+    @apply text-[calc(var(--text-h4)*0.6)] sm:text-h4 leading-h4 font-extrabold sm:font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+@utility h5 {
+    @apply text-[calc(var(--text-h5)*0.7)] sm:text-h5 leading-h5 font-extrabold sm:font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+@utility h6 {
+    @apply text-[calc(var(--text-h6)*0.75)] sm:text-h6 leading-h6 font-extrabold sm:font-bold mt-[1em] mb-[0.5em] uppercase;
+}
+@utility paragraph {
+    @apply text-paragraph leading-paragraph mt-[1em] mb-[1em];
+}
+@utility paragraph-large {
+    @apply text-paragraph-large leading-paragraph-large mt-[1em] mb-[1em];
+}
+@utility paragraph-small {
+    @apply text-paragraph-small leading-paragraph-small mt-[1em] mb-[1em];
+}
+@utility caption {
+    @apply text-caption leading-caption my-[1em];
+}
+@utility link {
+    @apply text-accent-green-dark hover:text-accent-green active:text-accent-green-light underline;
+}
+@utility hr {
+    @apply border-surface-4;
+}
+
+@utility m-h1 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+@utility m-h2 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+@utility m-h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+@utility m-h4 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+@utility m-h5 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+@utility m-h6 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+@utility m-paragraph {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+@utility m-paragraph-large {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+@utility m-paragraph-small {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
