@@ -2,7 +2,7 @@
 import Container from "../layouts/Container.astro";
 import Icon from "./Icon.astro";
 
-const slides = [1, 2, 3, 4, 5];
+const slides = [1, 2, 3];
 ---
 
 <div id="homepageSlider" class="swiper">
@@ -36,7 +36,7 @@ const slides = [1, 2, 3, 4, 5];
                                 </div>
                                 <div class="flex-1 w-full">
                                     <img
-                                        src="/homepage/homepage_slide-01.webp"
+                                        src="/media/homepage/homepage_slide-01.webp"
                                         alt=""
                                         class="w-full aspect-video md:aspect-[4/3] object-cover rounded-generic"
                                     />
@@ -55,6 +55,7 @@ const slides = [1, 2, 3, 4, 5];
         slidesPerView: 1,
         autoplay: true,
         loop: true,
+        watchOverflow: true,
         pagination: {
             el: ".sliderPagination",
             clickable: true,

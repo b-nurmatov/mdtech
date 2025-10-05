@@ -14,7 +14,7 @@ const { logoList, id } = Astro.props;
             ))
         }
     </div>
-    <div class="logoCarousel-pagination"></div>
+    <div class="sliderPagination"></div>
 </div>
 <script>
     const partnersCarousel = new Swiper("#partnersCarousel", {
@@ -24,11 +24,11 @@ const { logoList, id } = Astro.props;
         loop: true,
         watchOverflow: true,
         pagination: {
-            el: ".logoCarousel-pagination",
+            el: ".sliderPagination",
             clickable: true,
-            lockClass: "logoCarousel-pagination--lock",
-            bulletClass: "logoCarousel-paginationBullet",
-            bulletActiveClass: "logoCarousel-paginationBullet--active",
+            lockClass: "sliderPagination--lock",
+            bulletClass: "sliderPagination-bullet",
+            bulletActiveClass: "sliderPagination-bullet--active",
         },
         breakpoints: {
             640: {

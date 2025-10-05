@@ -5,8 +5,8 @@ const {title, image, href} = Astro.props;
 ---
 
 <article class="flex">
-    <a href={href} class="@container group/card flex flex-col-reverse justify-end w-full self-stretch rounded-generic p-2 lg:p-4 hover:bg-surface-1 border border-transparent hover:border-surface-4">
-        <h3 set:html={title} class="w-full text-base text-center mt-2"></h3>
+    <a href={href} class="cardEquip">
         <CardImageBlock image={image} border={true}></CardImageBlock>
+        <h3 set:html={title} class="w-full text-base text-center mt-2"></h3>
     </a>
 </article>

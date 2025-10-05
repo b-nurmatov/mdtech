@@ -3,18 +3,17 @@ import CardImageBlock from "./CardImageBlock.astro";
 
 const {title, image, list} = Astro.props;
 ---
-<!-- <span>{JSON.stringify(title)}</span> -->
-<div>
+<section class="cardCategory">
     <CardImageBlock image={image} infoBlock={true} rounded={true} overlay={true} aspectRatio="aspect-video sm:aspect-[3/2]">
-        <h3 set:html={title} class="text-white text-xl font-bold"></h3>
+        <h3 set:html={title} class="cardCategory-title"></h3>
     </CardImageBlock>
-    <ul class="mt-2.5">
+    <ul class="cardCategory-list">
         {
         list.map(item => (
-        <li class="py-3 text-base border-b border-surface-4">
-            <a href={item.href} set:html={item.label} class="hover:underline hover:text-accent-green-dark active:text-accent-green"></a>
+        <li class="cardCategory-item">
+            <a href={item.href} set:html={item.label} class="cardCategory-link"></a>
         </li>
         ))
         }
     </ul>
-</div>
+</section>

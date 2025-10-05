@@ -64,6 +64,6 @@ const tagsDarkerClass = tagsDarker === true ? "cardImageBlock-tag--darker" : "";
     <img
         src={image}
         alt={alt}
-        class={"cardImageBlock-image " + brightnessClass}
+        class={"cardImageBlock-image " + `${brightnessClass ? brightnessClass : ""}`}
     />
 </div>

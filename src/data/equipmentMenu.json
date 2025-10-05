@@ -3,7 +3,7 @@
     "title": {
       "label": "Сетевое оборудование",
       "href": "/equipment_category",
-      "image": "/equipment_overview/equipment_overview-01.webp"
+      "image": "/media/equipment_overview/equipment_overview-01.webp"
     },
     "list": [
       {
@@ -32,7 +32,7 @@
     "title": {
       "label": "Серверы и системы хранения данных",
       "href": "/equipment_category",
-      "image": "/equipment_overview/equipment_overview-02.webp"
+      "image": "/media/equipment_overview/equipment_overview-02.webp"
     },
     "list": [
       {
@@ -65,7 +65,7 @@
     "title": {
       "label": "IP-телефония и видеоконференсвязь",
       "href": "/equipment_category",
-      "image": "/equipment_overview/equipment_overview-03.webp"
+      "image": "/media/equipment_overview/equipment_overview-03.webp"
     },
     "list": [
       {
@@ -98,7 +98,7 @@
     "title": {
       "label": "Программное обеспечение",
       "href": "/equipment_category",
-      "image": "/equipment_overview/equipment_overview-04.webp"
+      "image": "/media/equipment_overview/equipment_overview-04.webp"
     },
     "list": [
       {
@@ -131,7 +131,7 @@
     "title": {
       "label": "Инженерная инфраструктура",
       "href": "/equipment_category",
-      "image": "/equipment_overview/equipment_overview-05.webp"
+      "image": "/media/equipment_overview/equipment_overview-05.webp"
     },
     "list": [
       {
@@ -152,7 +152,7 @@
     "title": {
       "label": "Печатная техника",
       "href": "/equipment_category",
-      "image": "/equipment_overview/equipment_overview-06.webp"
+      "image": "/media/equipment_overview/equipment_overview-06.webp"
     },
     "list": [
       {
@@ -185,7 +185,7 @@
     "title": {
       "label": "Информационная безопасность",
       "href": "/equipment_category",
-      "image": "/equipment_overview/equipment_overview-07.webp"
+      "image": "/media/equipment_overview/equipment_overview-07.webp"
     },
     "list": [
       {

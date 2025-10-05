@@ -3,90 +3,90 @@
     "title": "Базовая сеть Wi-Fi для малого офиса (до 15 пользователей)",
     "description": "Готовое решение для стабильного беспроводного интернета и создания локальной сети в офисе. Включает маршрутизатор, коммутатор и точки доступа.",
     "price": "8 000 000",
-    "image": "/solutions_overview/solutions_overview_page-01.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-01.webp"
   },
   "sol2": {
     "title": "Высокоплотная Wi-Fi сеть для общественного пространства (кафе, отель, ресторан)",
     "description": "Решение для обеспечения устойчивого Wi-Fi покрытия для гостей и отдельной защищенной сети для персонала и платёжных систем.",
     "price": "35 000 000",
-    "image": "/solutions_overview/solutions_overview_page-02.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-02.webp"
   },
   "sol3": {
     "title": "Сервер начального уровня для виртуализации и 1С",
     "description": "Готовый серверный комплекс для размещения виртуальных машин и работы с 1С. Включает сервер, СХД и базовое ПО.",
     "price": "120 000 000",
-    "image": "/solutions_overview/solutions_overview_page-03.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-03.webp"
   },
   "sol4": {
     "title": "Система видеонаблюдения для магазина (до 8 камер)",
     "description": "Комплект для контроля безопасности и оперативной реакции на incidents. Включает IP-камеры, видеорегистратор, ПО и монитор.",
     "price": "25 000 000",
-    "image": "/solutions_overview/solutions_overview_page-04.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-04.webp"
   },
   "sol5": {
     "title": "Комплексная система информационной безопасности для офиса",
     "description": "Многоуровневая защита периметра сети и конечных устройств. Включает межсетевой экран нового поколения (NGFW) и антивирусное ПО.",
     "price": "40 000 000",
-    "image": "/solutions_overview/solutions_overview_page-05.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-05.webp"
   },
   "sol6": {
     "title": "Телефония и ВКС для переговорной комнаты (до 10 человек)",
     "description": "Оснащение переговорной современной системой видеоконференцсвязи и IP-телефонией для качественной связи с клиентами и партнерами.",
     "price": "50 000 000",
-    "image": "/solutions_overview/solutions_overview_page-06.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-06.webp"
   },
   "sol7": {
     "title": "Мультимедийный конференц-зал (до 20 человек)",
     "description": "Профессиональное оборудование для презентаций: проектор или дисплей, система звука, микрофоны и средства ВКС.",
     "price": "75 000 000",
-    "image": "/solutions_overview/solutions_overview_page-07.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-07.webp"
   },
   "sol8": {
     "title": "Структурированная кабельная система (СКС) для офиса (до 50 рабочих мест)",
     "description": "Создание современной и масштабируемой кабельной инфраструктуры здания. Включает проектирование, монтаж и пусконаладку.",
     "price": "60 000 000",
-    "image": "/solutions_overview/solutions_overview_page-08.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-08.webp"
   },
   "sol9": {
     "title": "Система корпоративной печати и документооборота",
     "description": "Организация безопасной и экономичной печати с системой учёта и контроля для всего офиса. Включает МФУ и сервер печати.",
     "price": "20 000 000",
-    "image": "/solutions_overview/solutions_overview_page-09.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-09.webp"
   },
   "sol10": {
     "title": "Комплексное решение для удалённого офиса (филиала)",
     "description": "Оборудование для организации защищённого канала связи с головным офисом, включая маршрутизатор, телефонию и точку доступа.",
     "price": "30 000 000",
-    "image": "/solutions_overview/solutions_overview_page-10.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-10.webp"
   },
   "sol11": {
     "title": "Облачное хранилище и резервное копирование для бизнеса",
     "description": "Надёжное и безопасное хранение данных с доступом из любой точки мира. Включает настройку облачного решения и политик бэкапа.",
     "price": "15 000 000",
-    "image": "/solutions_overview/solutions_overview_page-11.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-11.webp"
   },
   "sol12": {
     "title": "IT-инфраструктура для медицинского кабинета",
     "description": "Специализированное решение для безопасного хранения медицинских данных и работы с электронными картами пациентов.",
     "price": "45 000 000",
-    "image": "/solutions_overview/solutions_overview_page-12.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-12.webp"
   },
   "sol13": {
     "title": "Wi-Fi для складских и промышленных помещений",
     "description": "Устойчивое покрытие для работы терминалов сбора данных, сканеров и планшетов в условиях больших площадей и помеховой обстановки.",
     "price": "50 000 000",
-    "image": "/solutions_overview/solutions_overview_page-13.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-13.webp"
   },
   "sol14": {
     "title": "Модернизация ЛВС для образовательного учреждения",
     "description": "Создание современной и высокоскоростной проводной сети в школе или лицее для компьютерных классов и цифрового обучения.",
     "price": "70 000 000",
-    "image": "/solutions_overview/solutions_overview_page-14.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-14.webp"
   },
   "sol15": {
     "title": "Отказоустойчивый кластер для критичных приложений",
     "description": "Двухузловой серверный кластер для обеспечения бесперебойной работы 1С, CRM-систем и других бизнес-приложений 24/7.",
     "price": "250 000 000",
-    "image": "/solutions_overview/solutions_overview_page-15.webp"
+    "image": "/media/solutions_overview/solutions_overview_page-15.webp"
   }
 }

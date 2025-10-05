@@ -4,9 +4,9 @@ import Icon from "./Icon.astro";
 const {icon, href=""} = Astro.props;
 ---
 
-<div class="flex items-center gap-2 py-2 border-b border-surface-4">
-    <Icon name={icon} class="size-6"></Icon>
-    <a href={href} class="text-base underline xl:no-underline hover:underline active:text-accent-green-dark">
+<div class="file">
+    <Icon name={icon} class="file-icon"></Icon>
+    <a href={href} class="file-link">
         <slot></slot>
     </a>
 </div>

@@ -40,12 +40,12 @@ const contactsTashkent = {
 ---
 
 <aside
-    class="bg-surface-1 border border-surface-4 rounded-generic p-4 @container"
+    class="sidebarContacts"
 >
-    <div class="flex flex-col @min-[480px]:flex-row min-[480px]:gap-4">
-        <div class="@min-[480px]:flex-1 flex flex-col @min-[480px]:pb-4">
+    <div class="sidebarContacts-wrapper">
+        <div class="sidebarContacts-mapWrapper">
             <div
-                class="relative overflow-hidden rounded-sm border border-surface-4 aspect-video @min-[480px]:aspect-auto @min-[480px]:flex-1"
+                class="sidebarContacts-map"
             >
                 <a
                     href="https://yandex.uz/maps/10335/tashkent/?utm_medium=mapframe&utm_source=maps"
@@ -61,8 +61,8 @@ const contactsTashkent = {
                     class="relative w-full h-full"></iframe>
             </div>
         </div>
-        <div class="flex-1">
-            <ul class="flex flex-col">
+        <div class="sidebarContacts-content">
+            <ul class="sidebarContacts-list">
                 {
                     Object.values(contactsTashkent).map((item) => (
                         <li>
@@ -71,18 +71,18 @@ const contactsTashkent = {
                     ))
                 }
             </ul>
-            <div class="flex flex-col pt-6 pb-4 gap-4">
+            <div class="sidebarContacts-buttons">
                 <a
                     href="#"
                     set:html={buttonText}
-                    class="bg-accent-green hover:bg-accent-green-dark active:bg-accent-green-light text-white px-4 py-3.5 flex justify-center rounded-sm text-center text-lg/[100%] uppercase font-medium"
+                    class="sidebarContacts-button"
                 />
                 {
                     button2Text ? (
                         <a
                             href="#"
                             set:html={button2Text}
-                            class="flex justify-center text-center text-base/[100%] text-accent-blue underline hover:text-accent-green-dark active:text-accent-green"
+                            class="sidebarContacts-link"
                         />
                     ) : (
                         ""

@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Icon from "../components/Icon.astro";
 import Container from "../layouts/Container.astro";
 import ContentAndSidebar from "../layouts/ContentAndSidebar.astro";
-import SidebarModule from "../layouts/SidebarModule.astro";
 import SidebarContacts from "../components/SidebarContacts.astro";
 import CardArticle from "../components/CardArticle.astro";
 import CardSolution from "../components/CardSolution.astro";
@@ -37,7 +35,7 @@ const breadcrumbs = [
     </Container>
     <ContentAndSidebar>
         <img
-            src="/blog/blog_page-01.webp"
+            src="/media/blog/blog_page-01.webp"
             alt=""
             class="bg-surface-3 border border-surface-4 rounded-generic w-full aspect-video object-cover"
         />
@@ -201,7 +199,6 @@ const breadcrumbs = [
                     articlesList.art06,
                     articlesList.art10,
                 ].map((card) => (
-                    <!-- <span>{JSON.stringify(card)}</span> -->
                     <CardArticle
                         title={card.title}
                         description={card.description}
@@ -215,6 +212,6 @@ const breadcrumbs = [
             }
         </aside>
 
-        <SidebarContacts slot="sidebar" />
+        <SidebarContacts slot="sidebar" buttonText="Заказать консультацию" />
     </ContentAndSidebar>
 </Layout>

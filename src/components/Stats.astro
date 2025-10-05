@@ -5,23 +5,23 @@ const { stats, image } = Astro.props;
 ---
 
 <section
-    class="w-full bg-accent-green text-white py-12 text-center flex flex-col items-center relative"
+    class="stats"
 >
     <Container class="z-10">
         <slot />
         <div
-            class="w-full flex flex-col sm:flex-row items-center sm:items-start gap-10 pt-10 flex-wrap lg:flex-nowrap"
+            class="stats-row"
         >
             {
                 stats.map((item) => (
-                    <p class="flex flex-col items-center flex-1 min-w-40">
+                    <p class="stats-item">
                         <span
                             set:html={item.value}
-                            class="text-3xl 2xl:text-5xl font-extrabold"
+                            class="stats-value"
                         />
                         <span
                             set:html={item.label}
-                            class="text-base/[138%] font-semibold max-w-72"
+                            class="stats-captions"
                         />
                     </p>
                 ))

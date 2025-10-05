@@ -3,19 +3,19 @@ const { title, image, tags } = Astro.props;
 ---
 
 <header
-    class="@container w-full relative bg-surface-3 rounded-generic border border-surface-4 aspect-[3/2] overflow-hidden"
+    class="articleHeader"
 >
     <div
-        class="absolute left-0 bottom-0 z-10 w-full px-2 py-3 sm:p-4 md:p-8 text-white bg-linear-180 from-[rgba(0,0,0,0)] to-[rgba(0,0,0,0.7)]"
+        class="articleHeader-content"
     >
-        <h1 class="@max-[720px]:text-[5cqw] text-h1 leading-h1 font-h1 mt-[1em] mb-[0.5em]" set:html={title} />
-        <ul class="flex flex-wrap gap-4 @max-[720px]:text-xs/[100%] text-base/[100%] font-semibold">
+        <h1 class="articleHeader-title" set:html={title} />
+        <ul class="articleHeader-tags">
             <slot />
         </ul>
     </div>
     <img
         src={image}
         alt=""
-        class="absolute left-0 top-0 w-full h-full object-cover"
+        class="articleHeader-image"
     />
 </header>

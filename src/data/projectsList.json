@@ -6,7 +6,7 @@
     "dateValue": "2025-10-01",
     "projectIndustry": "Финансы",
     "projectType": "Хранение и обработка данных",
-    "image": "/projects_overview/projects_overview-01.webp"
+    "image": "/media/projects_overview/projects_overview-01.webp"
   },
   "prj02": {
     "clientName": "Стадион \"Янгиабад\"",
@@ -15,7 +15,7 @@
     "dateValue": "2025-11-01",
     "projectIndustry": "Спорт и развлечения",
     "projectType": "Сети Wi-Fi",
-    "image": "/projects_overview/projects_overview-02.webp"
+    "image": "/media/projects_overview/projects_overview-02.webp"
   },
   "prj03": {
     "clientName": "Медицинский центр \"Согломлик\"",
@@ -24,7 +24,7 @@
     "dateValue": "2025-12-01",
     "projectIndustry": "Медицина и здравоохранение",
     "projectType": "Сети передачи данных",
-    "image": "/projects_overview/projects_overview-03.webp"
+    "image": "/media/projects_overview/projects_overview-03.webp"
   },
   "prj04": {
     "clientName": "UzAuto Motors",
@@ -33,7 +33,7 @@
     "dateValue": "2026-01-01",
     "projectIndustry": "Промышленные и производственные предприятия",
     "projectType": "Телефония и Видеоконференцсвязь",
-    "image": "/projects_overview/projects_overview-04.webp"
+    "image": "/media/projects_overview/projects_overview-04.webp"
   },
   "prj05": {
     "clientName": "Отель \"Samarkand Luxury\"",
@@ -42,7 +42,7 @@
     "dateValue": "2026-02-01",
     "projectIndustry": "HoReCa",
     "projectType": "Информационная безопасность",
-    "image": "/projects_overview/projects_overview-05.webp"
+    "image": "/media/projects_overview/projects_overview-05.webp"
   },
   "prj06": {
     "clientName": "Ташкентский государственный университет",
@@ -51,7 +51,7 @@
     "dateValue": "2026-03-01",
     "projectIndustry": "Образование",
     "projectType": "Хранение и обработка данных",
-    "image": "/projects_overview/projects_overview-06.webp"
+    "image": "/media/projects_overview/projects_overview-06.webp"
   },
   "prj07": {
     "clientName": "Аэропорт \"Ташкент-Южный\"",
@@ -60,7 +60,7 @@
     "dateValue": "2026-04-01",
     "projectIndustry": "Транспорт и логистика",
     "projectType": "СКС и безопасность",
-    "image": "/projects_overview/projects_overview-07.webp"
+    "image": "/media/projects_overview/projects_overview-07.webp"
   },
   "prj08": {
     "clientName": "Министерство цифрового развития",
@@ -69,7 +69,7 @@
     "dateValue": "2026-05-01",
     "projectIndustry": "Государственное управление",
     "projectType": "Корпоративная печать",
-    "image": "/projects_overview/projects_overview-08.webp"
+    "image": "/media/projects_overview/projects_overview-08.webp"
   },
   "prj09": {
     "clientName": "Страховая компания \"UzInsurance\"",
@@ -78,7 +78,7 @@
     "dateValue": "2026-06-01",
     "projectIndustry": "Финансы",
     "projectType": "Телефония",
-    "image": "/projects_overview/projects_overview-09.webp"
+    "image": "/media/projects_overview/projects_overview-09.webp"
   },
   "prj10": {
     "clientName": "Сеть магазинов \"Korzinka.uz\"",
@@ -87,7 +87,7 @@
     "dateValue": "2026-07-01",
     "projectIndustry": "Торговля",
     "projectType": "Комплексные системы безопасности",
-    "image": "/projects_overview/projects_overview-10.webp"
+    "image": "/media/projects_overview/projects_overview-10.webp"
   },
   "prj11": {
     "clientName": "Ферганский НПЗ",
@@ -96,7 +96,7 @@
     "dateValue": "2026-08-01",
     "projectIndustry": "Нефть и газ",
     "projectType": "Сети передачи данных",
-    "image": "/projects_overview/projects_overview-11.webp"
+    "image": "/media/projects_overview/projects_overview-11.webp"
   },
   "prj12": {
     "clientName": "Институт \"Узбекгипрострой\"",
@@ -105,7 +105,7 @@
     "dateValue": "2026-09-01",
     "projectIndustry": "Строительство",
     "projectType": "Мультимедиа решения",
-    "image": "/projects_overview/projects_overview-12.webp"
+    "image": "/media/projects_overview/projects_overview-12.webp"
   },
   "prj13": {
     "clientName": "Теплоэлектроцентраль №1",
@@ -114,7 +114,7 @@
     "dateValue": "2026-10-01",
     "projectIndustry": "Энергетика",
     "projectType": "Программное обеспечение",
-    "image": "/projects_overview/projects_overview-13.webp"
+    "image": "/media/projects_overview/projects_overview-13.webp"
   },
   "prj14": {
     "clientName": "IT-компания \"Najot Technologies\"",
@@ -123,7 +123,7 @@
     "dateValue": "2026-11-01",
     "projectIndustry": "Разработка ПО",
     "projectType": "Хранение данных",
-    "image": "/projects_overview/projects_overview-14.webp"
+    "image": "/media/projects_overview/projects_overview-14.webp"
   },
   "prj15": {
     "clientName": "Сеть супермаркетов \"Makro\"",
@@ -132,7 +132,7 @@
     "dateValue": "2026-12-01",
     "projectIndustry": "Торговля",
     "projectType": "Хранение и обработка данных",
-    "image": "/projects_overview/projects_overview-15.webp"
+    "image": "/media/projects_overview/projects_overview-15.webp"
   },
   "prj16": {
     "clientName": "Ресторанный холдинг \"OSOY\"",
@@ -141,7 +141,7 @@
     "dateValue": "2027-01-01",
     "projectIndustry": "HoReCa",
     "projectType": "Сети Wi-Fi",
-    "image": "/projects_overview/projects_overview-16.webp"
+    "image": "/media/projects_overview/projects_overview-16.webp"
   },
   "prj17": {
     "clientName": "Бизнес-центр \"Ташкент-Сити\"",
@@ -150,7 +150,7 @@
     "dateValue": "2027-02-01",
     "projectIndustry": "Строительство",
     "projectType": "СКС",
-    "image": "/projects_overview/projects_overview-17.webp"
+    "image": "/media/projects_overview/projects_overview-17.webp"
   },
   "prj18": {
     "clientName": "Агентство по государственной службе",
@@ -159,7 +159,7 @@
     "dateValue": "2027-03-01",
     "projectIndustry": "Государственное управление",
     "projectType": "Информационная безопасность",
-    "image": "/projects_overview/projects_overview-18.webp"
+    "image": "/media/projects_overview/projects_overview-18.webp"
   },
   "prj19": {
     "clientName": "Мобильный оператор \"Uzmobile\"",
@@ -168,7 +168,7 @@
     "dateValue": "2027-04-01",
     "projectIndustry": "Финансы",
     "projectType": "Хранение и обработка данных",
-    "image": "/projects_overview/projects_overview-19.webp"
+    "image": "/media/projects_overview/projects_overview-19.webp"
   },
   "prj20": {
     "clientName": "Академический лицей при ТУИТ",
@@ -177,6 +177,6 @@
     "dateValue": "2027-05-01",
     "projectIndustry": "Образование",
     "projectType": "Мультимедиа решения",
-    "image": "/projects_overview/projects_overview-20.webp"
+    "image": "/media/projects_overview/projects_overview-20.webp"
   }
 }

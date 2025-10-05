@@ -3,7 +3,7 @@
     "title": {
       "label": "Общие разделы",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-01.webp"
+      "image": "/media/services_overview/services_overview-01.webp"
     },
     "list": [
       {
@@ -36,7 +36,7 @@
     "title": {
       "label": "Сети передачи данных",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-02.webp"
+      "image": "/media/services_overview/services_overview-02.webp"
     },
     "list": [
       {
@@ -77,7 +77,7 @@
     "title": {
       "label": "Хранение и обработка данных",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-03.webp"
+      "image": "/media/services_overview/services_overview-03.webp"
     },
     "list": [
       {
@@ -106,7 +106,7 @@
     "title": {
       "label": "Wi-Fi сети",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-04.webp"
+      "image": "/media/services_overview/services_overview-04.webp"
     },
     "list": [
       {
@@ -151,7 +151,7 @@
     "title": {
       "label": "Информационная безопасность",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-05.webp"
+      "image": "/media/services_overview/services_overview-05.webp"
     },
     "list": [
       {
@@ -176,7 +176,7 @@
     "title": {
       "label": "Системы печати",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-06.webp"
+      "image": "/media/services_overview/services_overview-06.webp"
     },
     "list": [
       {
@@ -197,7 +197,7 @@
     "title": {
       "label": "Мультимедиа",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-07.webp"
+      "image": "/media/services_overview/services_overview-07.webp"
     },
     "list": [
       {
@@ -218,7 +218,7 @@
     "title": {
       "label": "Безопасность объекта",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-08.webp"
+      "image": "/media/services_overview/services_overview-08.webp"
     },
     "list": [
       {
@@ -243,7 +243,7 @@
     "title": {
       "label": "Совместная работа",
       "href": "/service_page",
-      "image": "/services_overview/services_overview-09.webp"
+      "image": "/media/services_overview/services_overview-09.webp"
     },
     "list": [
       {
