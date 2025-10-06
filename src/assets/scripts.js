@@ -1,4 +1,4 @@
-function toggleSubmenu(
+function toggleDropdown(
   toggleAttrName,
   targetIdAttrName,
   droppedAttr,
@@ -9,25 +9,27 @@ function toggleSubmenu(
 
   toggles.forEach((toggle) => {
     toggle.addEventListener("click", () => {
-      const submenuId = toggle.getAttribute(targetIdAttrName);
-      const submenu = document.getElementById(submenuId);
+      const dropdownId = toggle.getAttribute(targetIdAttrName);
+      const dropdown = document.getElementById(dropdownId);
 
-      if (closeOthers) {
-        toggles.forEach((item) => {
-          const otherMenu = document.getElementById(
+      function closeAllDropdowns(togglesList) {
+        togglesList.forEach((item) => {
+          const targetElem = document.getElementById(
             item.getAttribute(targetIdAttrName),
           );
-          otherMenu !== submenu
-            ? otherMenu.removeAttribute(droppedAttr)
+          targetElem !== dropdown
+            ? targetElem.removeAttribute(droppedAttr)
             : false;
 
-          otherMenu !== submenu ? item.removeAttribute(droppedAttr) : false;
+          targetElem !== dropdown ? item.removeAttribute(droppedAttr) : false;
         });
       }
 
-      submenu.hasAttribute(droppedAttr) && !dontCloseOpened
-        ? submenu.removeAttribute(droppedAttr)
-        : submenu.setAttribute(droppedAttr, "");
+      closeOthers ? closeAllDropdowns(toggles) : false;
+
+      dropdown.hasAttribute(droppedAttr) && !dontCloseOpened
+        ? dropdown.removeAttribute(droppedAttr)
+        : dropdown.setAttribute(droppedAttr, "");
 
       toggle.hasAttribute(droppedAttr) && !dontCloseOpened
         ? toggle.removeAttribute(droppedAttr)
@@ -37,13 +39,13 @@ function toggleSubmenu(
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  toggleSubmenu("data-submenu-toggle", "data-targetId", "data-dropped", true);
+  toggleDropdown("data-submenu-toggle", "data-targetId", "data-dropped", true);
 
-  toggleSubmenu("data-mainMenu-toggle", "data-targetId", "data-dropped");
+  toggleDropdown("data-mainMenu-toggle", "data-targetId", "data-dropped");
 
-  toggleSubmenu("data-dropdownBlock-toggle", "data-targetId", "data-dropped");
+  toggleDropdown("data-dropdownBlock-toggle", "data-targetId", "data-dropped");
 
-  toggleSubmenu(
+  toggleDropdown(
     "data-tabsContainer-toggle",
     "data-targetId",
     "data-opened",
